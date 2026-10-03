@@ -1,12 +1,12 @@
 <script setup lang="ts">
-useHead({ title: 'Kebijakan Privasi | LampungMediaWeb' })
+useHead({ title: 'Kebijakan Privasi | BantuBuatWeb' })
 </script>
 
 <template>
   <LegalPage
     title="Kebijakan Privasi"
-    updated="1 Juni 2026"
-    intro="LampungMediaWeb menghormati privasi Anda. Kebijakan ini menjelaskan data apa yang kami kumpulkan, bagaimana data digunakan, dan hak Anda atas data tersebut."
+    updated="1 Oktober 2026"
+    intro="BantuBuatWeb menghormati privasi Anda. Kebijakan ini menjelaskan data apa yang kami kumpulkan, bagaimana data digunakan, dan hak Anda atas data tersebut."
     :sections="[
       {
         heading: '1. Data yang Kami Kumpulkan',
@@ -25,19 +25,19 @@ useHead({ title: 'Kebijakan Privasi | LampungMediaWeb' })
       {
         heading: '3. Cookie & Teknologi Pelacakan',
         body: [
-          'Situs ini menggunakan cookie untuk mengingat preferensi Anda, mengukur performa halaman, dan mendukung analitik. Anda dapat mengelola atau menonaktifkan cookie melalui pengaturan browser kapan saja. Lihat halaman Kebijakan Cookie untuk detail lebih lanjut.',
+          'Situs ini menggunakan cookie untuk mengingat preferensi Anda, mengukur performa halaman, dan mendukung analitik. Anda dapat mengelola atau menonaktifkan cookie melalui pengaturan browser kapan saja.',
         ],
       },
       {
         heading: '4. Keamanan Data',
         body: [
-          'Kami menerapkan langkah keamanan yang wajar, termasuk HTTPS dan perlindungan akses, untuk melindungi data Anda dari akses tidak sah. Namun, tidak ada metode transmisi di internet yang 100% aman.',
+          'Kami menerapkan langkah keamanan yang wajar, termasuk HTTPS dan perlindungan akses, untuk melindungi data Anda dari akses tidak sah.',
         ],
       },
       {
         heading: '5. Hak Anda',
         body: [
-          'Anda berhak mengakses, memperbaiki, atau meminta penghapusan data pribadi Anda. Ajukan permintaan melalui email halo@lampungmediaweb.com dan kami akan memprosesnya dalam waktu wajar sesuai peraturan yang berlaku.',
+          'Anda berhak mengakses, memperbaiki, atau meminta penghapusan data pribadi Anda. Ajukan permintaan melalui email halo@bantubuatweb.com dan kami akan memprosesnya dalam waktu wajar.',
         ],
       },
     ]"

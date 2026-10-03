@@ -1,11 +1,11 @@
 <script setup lang="ts">
-useHead({ title: 'Kebijakan Cookie | LampungMediaWeb' })
+useHead({ title: 'Kebijakan Cookie | BantuBuatWeb' })
 </script>
 
 <template>
   <LegalPage
     title="Kebijakan Cookie"
-    updated="1 Juni 2026"
+    updated="1 Oktober 2026"
     intro="Cookie adalah file kecil yang disimpan di perangkat Anda saat mengunjungi situs web. Kebijakan ini menjelaskan cookie yang kami gunakan dan opsi yang tersedia bagi Anda."
     :sections="[
       {
@@ -18,7 +18,7 @@ useHead({ title: 'Kebijakan Cookie | LampungMediaWeb' })
       {
         heading: '2. Cookie Pihak Ketiga',
         body: [
-          'Kami dapat menyematkan konten atau layanan pihak ketiga (misalnya ikon media sosial atau video) yang menggunakan cookie milik penyedia tersebut. Penggunaan mereka tunduk pada kebijakan privasi masing-masing penyedia.',
+          'Kami dapat menyematkan konten atau layanan pihak ketiga yang menggunakan cookie milik penyedia tersebut. Penggunaan mereka tunduk pada kebijakan privasi masing-masing penyedia.',
         ],
       },
       {
@@ -30,7 +30,7 @@ useHead({ title: 'Kebijakan Cookie | LampungMediaWeb' })
       {
         heading: '4. Kontak',
         body: [
-          'Jika ada pertanyaan seputar kebijakan cookie ini, silakan hubungi kami di halo@lampungmediaweb.com.',
+          'Jika ada pertanyaan seputar kebijakan cookie ini, silakan hubungi kami di halo@bantubuatweb.com.',
         ],
       },
     ]"

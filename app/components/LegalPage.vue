@@ -13,33 +13,71 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <section class="pt-20 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
-    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-      <p class="text-xs font-bold uppercase tracking-widest text-brand-600 sm:text-sm">Dokumen Legal</p>
-      <h1 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:mt-3 sm:text-3xl">{{ title }}</h1>
-      <p class="mt-2 text-xs font-semibold text-slate-500 sm:mt-3 sm:text-sm">Terakhir diperbarui: {{ updated }}</p>
+  <div class="bg-black text-white min-h-screen pt-24 pb-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb / Header Badge -->
+      <nav class="flex items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
+        <NuxtLink to="/" class="hover:underline">Beranda</NuxtLink>
+        <span>/</span>
+        <span class="bg-neo-yellow text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff]">Dokumen Legal</span>
+      </nav>
 
-      <p v-if="intro" class="mt-5 text-sm leading-relaxed text-slate-600 sm:mt-6 sm:text-base">{{ intro }}</p>
-
-      <div class="mt-8 space-y-8 sm:mt-10 sm:space-y-10">
-        <section v-for="s in sections" :key="s.heading">
-          <h2 class="text-lg font-extrabold text-slate-900 sm:text-xl">{{ s.heading }}</h2>
-          <p v-for="(b, i) in s.body" :key="i" class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{{ b }}</p>
-        </section>
+      <!-- Page Header -->
+      <div class="mt-6 space-y-4 border-b-2 border-zinc-800 pb-8">
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+          {{ title }}
+        </h1>
+        <div class="flex items-center gap-3 pt-1">
+          <span class="inline-block rounded-md border-2 border-black bg-neo-pink px-3 py-1 text-xs font-black text-black shadow-[2px_2px_0px_0px_#fff]">
+            Terakhir diperbarui: {{ updated }}
+          </span>
+        </div>
+        <p v-if="intro" class="text-base sm:text-lg font-bold text-zinc-300 leading-relaxed pt-2">
+          {{ intro }}
+        </p>
       </div>
 
-      <div class="mt-10 rounded-2xl border border-brand-200 bg-brand-50 p-5 sm:mt-14 sm:p-6">
-        <p class="font-bold text-brand-900">Ada pertanyaan seputar dokumen ini?</p>
-        <p class="mt-1 text-sm leading-relaxed text-brand-800">
-          Hubungi kami via WhatsApp atau email <a href="mailto:halo@lampungmediaweb.com" class="font-bold underline">halo@lampungmediaweb.com</a>.
+      <!-- Legal Content Sections -->
+      <div class="mt-10 space-y-8">
+        <div
+          v-for="s in sections"
+          :key="s.heading"
+          class="neo-box bg-white text-black p-6 sm:p-8"
+        >
+          <h2 class="text-xl sm:text-2xl font-black text-black border-b-2 border-black pb-3 mb-4">
+            {{ s.heading }}
+          </h2>
+          <div class="space-y-3">
+            <p
+              v-for="(b, i) in s.body"
+              :key="i"
+              class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed"
+            >
+              {{ b }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help / Contact Box -->
+      <div class="mt-12 neo-box bg-neo-yellow text-black p-6 sm:p-8 border-4 shadow-[8px_8px_0px_0px_#fff]">
+        <h3 class="text-xl sm:text-2xl font-black text-black">Ada Pertanyaan Seputar Dokumen Ini?</h3>
+        <p class="mt-2 text-sm sm:text-base font-bold text-black leading-relaxed">
+          Tim BantuBuatWeb siap membantu menjawab pertanyaan Anda melalui WhatsApp atau email di
+          <a href="mailto:halo@bantubuatweb.com" class="underline font-black">halo@bantubuatweb.com</a>.
         </p>
-        <a :href="wa('Halo LampungMediaWeb, saya ada pertanyaan seputar syarat dan kebijakan di situs Anda.')"
-          target="_blank" rel="noopener"
-          class="mt-4 inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-brand-700">
-          <AppIcon name="whatsapp" class="h-4 w-4" />
-          Hubungi Kami
-        </a>
+        <div class="mt-6">
+          <a
+            :href="wa('Halo BantuBuatWeb, saya ada pertanyaan seputar syarat dan kebijakan di situs Anda.')"
+            target="_blank"
+            rel="noopener"
+            class="neo-btn bg-black text-white px-6 py-3 text-sm font-black shadow-[3px_3px_0px_0px_#fff] hover:bg-neo-pink hover:text-black"
+          >
+            <AppIcon name="whatsapp" class="mr-2 h-4 w-4" />
+            Hubungi Tim Kami
+          </a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>

@@ -1,43 +1,37 @@
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useHead } from '#imports'
 import { PORTFOLIO } from '~/data/portfolio'
 
 useHead({
-  title: 'Jasa Pembuatan Website di Lampung & Bandar Lampung | LampungMediaWeb',
-  link: [{ rel: 'canonical', href: 'https://lampungmediaweb.com/' }],
+  title: 'BantuBuatWeb | Jasa Pembuatan Website Professional & Digital Solution #1 Indonesia',
+  link: [{ rel: 'canonical', href: 'https://bantubuatweb.com/' }],
   script: [
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        '@id': 'https://lampungmediaweb.com/#business',
-        name: 'LampungMediaWeb',
-        url: 'https://lampungmediaweb.com/',
-        image: 'https://lampungmediaweb.com/og-cover.svg',
-        logo: 'https://lampungmediaweb.com/favicon.svg',
-        description: 'Software house di Bandar Lampung: jasa pembuatan website company profile, toko online, aplikasi web, dan SEO.',
-        telephone: '+6281234567890',
-        email: 'halo@lampungmediaweb.com',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Bandar Lampung',
-          addressRegion: 'Lampung',
-          addressCountry: 'ID',
-        },
-        geo: { '@type': 'GeoCoordinates', latitude: -5.45, longitude: 105.2531 },
+        '@type': 'ProfessionalService',
+        '@id': 'https://bantubuatweb.com/#business',
+        name: 'BantuBuatWeb',
+        url: 'https://bantubuatweb.com/',
+        image: 'https://bantubuatweb.com/og-cover.svg',
+        logo: 'https://bantubuatweb.com/favicon.svg',
+        description: 'BantuBuatWeb: Jasa pembuatan website professional, company profile, toko online, landing page & aplikasi web modern di Indonesia. Desain modern, super cepat, SEO optimized & bergaransi.',
+        telephone: '+6289686804015',
+        email: 'halo@bantubuatweb.com',
         priceRange: 'Rp 1.500.000 - Rp 7.000.000',
         openingHours: 'Mo-Sa 08:00-21:00',
-        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '100' },
+        aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '150' },
         sameAs: [
-          'https://www.instagram.com/lampungmediaweb',
-          'https://www.facebook.com/lampungmediaweb',
-          'https://www.linkedin.com/company/lampungmediaweb',
+          'https://www.instagram.com/bantubuatweb',
+          'https://www.facebook.com/bantubuatweb',
+          'https://www.linkedin.com/company/bantubuatweb',
         ],
         makesOffer: [
           { '@type': 'Offer', name: 'UMKM Starter', price: '1500000', priceCurrency: 'IDR' },
           { '@type': 'Offer', name: 'Company Profile', price: '3500000', priceCurrency: 'IDR' },
-          { '@type': 'Offer', name: 'Toko Online', price: '7000000', priceCurrency: 'IDR' },
+          { '@type': 'Offer', name: 'Toko Online E-Commerce', price: '7000000', priceCurrency: 'IDR' },
         ],
       }),
     },
@@ -49,28 +43,23 @@ useHead({
         mainEntity: [
           {
             '@type': 'Question',
-            name: 'Berapa lama website selesai dibuat?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Paket UMKM dan Company Profile umumnya selesai dalam 7–14 hari kerja sejak desain disetujui. Toko online membutuhkan sekitar 2–3 minggu.' },
+            name: 'Berapa lama proses pembuatan website di BantuBuatWeb?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Paket UMKM Starter dan Company Profile umumnya selesai dalam 5–10 hari kerja setelah materi disetujui. Toko online membutuhkan waktu sekitar 2–3 minggu.' },
           },
           {
             '@type': 'Question',
-            name: 'Apakah domain dan hosting sudah termasuk?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Ya. Semua paket sudah termasuk gratis domain .com/.id untuk tahun pertama dan hosting cepat. Biaya perpanjangan tahun berikutnya transparan sesuai paket.' },
+            name: 'Apakah domain dan hosting sudah gratis?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Ya! Semua paket kami sudah termasuk domain (.com / .id) dan hosting cepat SSD 1 tahun pertama gratis.' },
           },
           {
             '@type': 'Question',
-            name: 'Apakah website bisa ditemukan di Google?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Setiap website kami dioptimasi SEO on-page dan didaftarkan ke Google Search Console. Layanan SEO khusus tersedia untuk kata kunci lokal Lampung.' },
+            name: 'Apakah website dijamin muncul di Google (SEO)?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Setiap website buatan BantuBuatWeb sudah dioptimasi SEO On-Page dasar dan didaftarkan ke Google Search Console agar langsung di-index oleh Google.' },
           },
           {
             '@type': 'Question',
-            name: 'Kota mana saja yang dilayani LampungMediaWeb?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Kami melayani seluruh Provinsi Lampung: Bandar Lampung, Metro, Lampung Selatan, Lampung Timur, Lampung Tengah, Lampung Utara, Pringsewu, dan Pesawaran.' },
-          },
-          {
-            '@type': 'Question',
-            name: 'Apakah ada garansi?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Ada. Setiap paket bergaransi 30 hari uang kembali bila hasil tidak sesuai kesepakatan. Kode dan konten tetap milik Anda.' },
+            name: 'Apakah ada garansi jika hasil tidak sesuai?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Tentu saja! Kami memberikan Garansi 30 Hari Maintenance & Dukungan Teknis serta garansi kepuasan penuh.' },
           },
         ],
       }),
@@ -82,77 +71,85 @@ const services = [
   {
     icon: 'code',
     title: 'Website Company Profile',
-    desc: 'Marketplace digital untuk memperkenalkan bisnis Anda secara profesional dan kredibel.',
-    items: ['Hingga 10 halaman', 'Gratis domain & email bisnis', 'SEO on-page siap index'],
+    desc: 'Bangun kredibilitas perusahaan & bisnis Anda dengan website bonafit berstandar internasional.',
+    color: 'bg-neo-pink text-black',
+    items: ['Hingga 10 Halaman Custom', 'Gratis Domain & Business Email', 'Optimasi SEO & Google Search'],
   },
   {
     icon: 'shoppingBag',
-    title: 'Toko Online',
-    desc: 'Platform jualan lengkap dengan pembayaran dan ongkir otomatis untuk seluruh Indonesia.',
-    items: ['Integrasi payment gateway', 'Hitung ongkir JNE/J&T otomatis', 'Manajemen stok & kupon'],
-  },
-  {
-    icon: 'smartphone',
-    title: 'Aplikasi Web / Sistem',
-    desc: 'Sistem internal yang merapikan operasional: CRM, booking, absensi, hingga dashboard manajemen.',
-    items: ['Kustom sesuai alur bisnis', 'Dashboard & laporan realtime', 'Multi-user dengan hak akses'],
+    title: 'Toko Online (E-Commerce)',
+    desc: 'Platform jualan modern lengkap dengan pembayaran QRIS/Transfer & hitung ongkir otomatis.',
+    color: 'bg-neo-yellow text-black',
+    items: ['Integrasi Payment Gateway', 'Hitung Ongkir JNE/J&T/Sicepat', 'Manajemen Stok & Kupon Diskon'],
   },
   {
     icon: 'rocket',
-    title: 'Landing Page & SEO',
-    desc: 'Halaman iklan super cepat yang mengubah klik jadi leads, plus optimasi kata kunci lokal.',
-    items: ['Load di bawah 2 detik', 'Fokus konversi iklan', 'Optimasi Google Maps & lokal'],
+    title: 'Landing Page High-Converting',
+    desc: 'Halaman iklan super cepat untuk Google Ads & Meta Ads yang mengubah pengunjung jadi pembeli.',
+    color: 'bg-neo-cyan text-black',
+    items: ['Kecepatan Load di Bawah 2 Detik', 'Fokus Konversi & CTA WhatsApp', 'Tracking Meta Pixel & Google Analytics'],
+  },
+  {
+    icon: 'smartphone',
+    title: 'Aplikasi Web & Sistem Custom',
+    desc: 'Sistem operasional internal: CRM, booking online, absensi, hingga dashboard manajemen custom.',
+    color: 'bg-neo-green text-black',
+    items: ['Disesuaikan dengan Alur Bisnis', 'Dashboard Realtime & Laporan PDF', 'Multi-User Hak Akses Berlapis'],
   },
 ]
 
 const process = [
-  { step: '01', title: 'Konsultasi & Riset', desc: 'Kami pahami bisnis, kompetitor, dan target pasar Anda lewat diskusi gratis.' },
-  { step: '02', title: 'Desain Wireframe', desc: 'Struktur dan alur halaman disusun dulu. Revisi tanpa biaya sampai desain pas.' },
-  { step: '03', title: 'Development', desc: 'Kode ditulis oleh engineer, bukan template. Responsif dari ponsel sampai desktop.' },
-  { step: '04', title: 'Launch & Support', desc: 'SEO diaktifkan, lalu kami dampingi dengan garansi & maintenance rutin.' },
+  { step: '01', title: 'Konsultasi & Strategi', desc: 'Diskusi gratis kebutuhan bisnis, target audience, dan fitur website yang dibutuhkan.' },
+  { step: '02', title: 'Desain Wireframe', desc: 'Penyusunan tata letak (UI/UX) modern dan menarik dengan revisi sampai sesuai keinginan.' },
+  { step: '03', title: 'Coding & Integrasi', desc: 'Pengembangan kode super cepat (Nuxt/Vue), responsif, dan terintegrasi sistem WhatsApp.' },
+  { step: '04', title: 'Launch & Support', desc: 'Website diluncurkan, terdaftar di Google, dan didampingi garansi 30 hari penuh.' },
 ]
 
 const plans = [
   {
     name: 'UMKM Starter',
-    desc: 'Untuk bisnis yang baru mulai tampil online.',
+    desc: 'Cocok untuk bisnis baru yang ingin tampil online secara profesional.',
     price: 'Rp 1,5jt',
     original: 'Rp 2.000.000',
     renewal: '+ Rp 800rb/tahun',
-    cta: 'Pilih Paket',
+    cta: 'Pilih UMKM Starter',
     featured: false,
-    perks: ['Gratis domain & hosting 1GB SSD', '3 halaman desain premium', 'Tombol chat WhatsApp', 'Setup Google indexing'],
+    color: 'bg-zinc-900 text-white border-zinc-700',
+    perks: ['Gratis Domain .com / .id (1 Thn)', 'Hosting SSD High Speed', '3-5 Halaman Desain Premium', 'Tombol WhatsApp Direct', 'Setup Google Indexing'],
   },
   {
     name: 'Company Profile',
-    desc: 'Membangun kredibilitas & kepercayaan pelanggan.',
+    desc: 'Membangun kepercayaan klien & memperbesar peluang proyek.',
     price: 'Rp 3,5jt',
-    original: 'Rp 4.000.000',
-    badge: 'Hemat 12%',
+    original: 'Rp 4.500.000',
+    badge: 'PALING POPULER',
     renewal: '+ Rp 1jt/tahun',
-    cta: 'Tambah ke Troli',
+    cta: 'Pilih Company Profile',
     featured: true,
-    perks: ['Semua fitur Starter', 'Unlimited bandwidth', 'Hingga 10 halaman', 'Custom email (@nama.com)', 'Gratis maintenance 1 bulan'],
+    color: 'bg-neo-pink text-black border-black',
+    perks: ['Semua Fitur Starter', 'Unlimited Bandwidth & Storage', 'Hingga 10 Halaman Custom', 'Custom Email (@bisnisanda.com)', 'Garansi Maintenance 30 Hari'],
   },
   {
-    name: 'Toko Online',
-    desc: 'Siap jualan ke seluruh Indonesia.',
+    name: 'Toko Online E-Commerce',
+    desc: 'Solusi lengkap jualan online otomatis ke seluruh Indonesia.',
     price: 'Rp 7jt',
-    original: 'Rp 8.500.000',
+    original: 'Rp 9.000.000',
     renewal: '+ Rp 2,5jt/tahun',
-    cta: 'Hubungi Kami',
+    cta: 'Pilih Toko Online',
     featured: false,
-    perks: ['Semua fitur Pro', 'Keranjang belanja', 'Ongkir otomatis JNE/J&T', 'Payment gateway (QRIS, BCA)', 'Manajemen stok & kupon'],
+    color: 'bg-neo-yellow text-black border-black',
+    perks: ['Semua Fitur Pro', 'Keranjang Belanja Custom', 'Kalkulator Ongkir Otomatis', 'Payment Gateway (QRIS, VA, CC)', 'Manajemen Stok & Laporan'],
   },
   {
-    name: 'Custom',
-    desc: 'Butuh alur khusus di luar paket standar.',
+    name: 'Custom System / Enterprise',
+    desc: 'Kebutuhan aplikasi web kompleks & alur bisnis khusus.',
     price: 'Custom',
     original: '',
-    renewal: 'Penawaran setelah konsultasi',
-    cta: 'Konsultasi Gratis',
+    renewal: 'Biaya disesuaikan modul',
+    cta: 'Konsultasi Enterprise',
     featured: false,
-    perks: ['Bebas request fitur', 'Desain sesuai alur bisnis', 'Integrasi API/sistem lama', 'Pendampingan prioritas', 'Estimasi transparan'],
+    color: 'bg-neo-cyan text-black border-black',
+    perks: ['Bebas Request Fitur Sesuai Keinginan', 'Integrasi API External & Database', 'Arsitektur High-Scalability', 'Prioritas Maintenance & SLA', 'Training Penggunaan Sistem'],
   },
 ]
 
@@ -160,48 +157,45 @@ const portfolio = PORTFOLIO
 
 const faq = [
   {
-    q: 'Berapa lama website selesai dibuat?',
-    a: 'Paket UMKM dan Company Profile umumnya selesai dalam 7–14 hari kerja sejak desain disetujui. Toko online dengan fitur lengkap membutuhkan sekitar 2–3 minggu tergantung kompleksitas.',
+    q: 'Berapa lama proses pembuatan website di BantuBuatWeb?',
+    a: 'Paket UMKM Starter dan Company Profile umumnya selesai dalam 5–10 hari kerja setelah materi disetujui. Toko online dengan fitur lengkap membutuhkan waktu sekitar 2–3 minggu.',
   },
   {
-    q: 'Apakah domain dan hosting sudah termasuk?',
-    a: 'Ya. Semua paket sudah termasuk gratis domain .com/.id untuk tahun pertama dan hosting cepat. Setelah tahun pertama, biaya perpanjangan sesuai paket dengan harga transparan.',
+    q: 'Apakah domain dan hosting sudah gratis?',
+    a: 'Ya! Semua paket kami sudah termasuk gratis domain (.com / .id) dan hosting SSD cepat untuk tahun pertama. Biaya perpanjangan tahunan sangat terjangkau & transparan.',
   },
   {
-    q: 'Apakah website bisa ditemukan di Google?',
-    a: 'Setiap website kami dioptimasi SEO on-page dan didaftarkan ke Google Search Console. Untuk hasil maksimal di kata kunci lokal Lampung, kami juga menawarkan layanan optimasi SEO tambahan.',
+    q: 'Apakah website bisa diakses cepat di HP dan Laptop?',
+    a: 'Pasti! Kami membangun website menggunakan teknologi modern (Nuxt/Vue) tanpa template berat, sehingga loading di bawah 2 detik di perangkat seluler maupun komputer.',
   },
   {
-    q: 'Kota mana saja yang dilayani LampungMediaWeb?',
-    a: 'Kami melayani seluruh Provinsi Lampung: Bandar Lampung, Metro, Lampung Selatan, Lampung Timur, Lampung Tengah, Lampung Utara, hingga Pringsewu dan Pesawaran. Pengerjaan online, konsultasi bisa via WhatsApp atau tatap muka.',
+    q: 'Apakah BantuBuatWeb melayani klien dari seluruh Indonesia?',
+    a: 'Ya! Kami melayani bisnis, UMKM, startup, dan perorangan dari seluruh Indonesia (Jakarta, Surabaya, Bandung, Medan, Makassar, Bali, Lampung, dsb) secara online via Zoom / WhatsApp.',
   },
   {
-    q: 'Apakah ada garansi?',
-    a: 'Ada. Setiap paket bergaransi 30 hari uang kembali bila hasil tidak sesuai kesepakatan. Kode dan konten tetap milik Anda, dan kami berikan dukungan teknis 24/7.',
+    q: 'Bagaimana dengan garansi setelah website selesai?',
+    a: 'Setiap paket kami disertai Garansi 30 Hari Maintenance gratis untuk perbaikan error, pembaruan konten minor, dan pendampingan pengelolaan website.',
   },
 ]
 
 const testimonials = [
   {
-    name: 'Bpk. Agus',
-    role: 'Owner Kontraktor, Bandar Lampung',
-    initial: 'A',
-    stars: 5,
-    quote: 'Website cepat jadi, tampilannya elegan persis yang saya mau. Kini kami terlihat lebih bonafit di Google.',
+    name: 'Rian Hidayat',
+    role: 'Founder E-Commerce, Jakarta',
+    initial: 'R',
+    quote: 'Desain website yang unik dari BantuBuatWeb membuat toko online saya tampil beda dan mencolok dibanding kompetitor! Konversi penjualan naik pesat.',
   },
   {
-    name: 'Ibu Siti',
-    role: 'Toko Hijab Online, Metro',
+    name: 'Siti Aminah',
+    role: 'Owner Skincare Brand, Bandung',
     initial: 'S',
-    stars: 5,
-    quote: 'Admin fast respon dan sabar ngajarin cara upload produk. Fitur ongkir otomatisnya sangat membantu toko saya.',
+    quote: 'Landing page iklan super cepat! Pas pasang Google Ads, leads masuk ke WhatsApp jauh lebih banyak karena loading cuma 1.5 detik.',
   },
   {
-    name: 'Budi Santoso',
-    role: 'Klinik Gigi, Pringsewu',
+    name: 'Budi Kurniawan',
+    role: 'Direktur PT. Perkasa Mandiri, Surabaya',
     initial: 'B',
-    stars: 5,
-    quote: 'Revisi gampang, tidak dipersulit. Walaupun saya awam teknologi, timnya sabar memandu dari awal sampai website rapi.',
+    quote: 'Pengerjaan sangat profesional, pengerjaan cepat dan timnya komunikatif. Company profile baru kami membuat kami lebih percaya diri saat pitching ke klien besar.',
   },
 ]
 
@@ -215,24 +209,24 @@ let resumeTimer: ReturnType<typeof setTimeout> | null = null
 const getCardWidth = () => {
   const el = carouselRef.value
   const first = el?.firstElementChild as HTMLElement | null
-  return (first?.offsetWidth ?? 320) + 16
+  return (first?.offsetWidth ?? 320) + 20
 }
+
 const scrollCarousel = (dir: number) => {
   const el = carouselRef.value
   if (!el) return
   el.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' })
   pauseAuto()
 }
+
 const handleInfinite = () => {
   const el = carouselRef.value
   if (!el) return
   const w = getCardWidth()
   const setW = w * 6
-  // near start -> jump forward one set
   if (el.scrollLeft < setW * 0.5) {
     el.style.scrollBehavior = 'auto'
     el.scrollLeft += setW
-    // force reflow then restore
     void el.offsetHeight
     el.style.scrollBehavior = 'smooth'
   } else if (el.scrollLeft > setW * 2.5) {
@@ -242,10 +236,12 @@ const handleInfinite = () => {
     el.style.scrollBehavior = 'smooth'
   }
 }
+
 const stopAuto = () => {
   if (autoTimer) clearInterval(autoTimer)
   autoTimer = null
 }
+
 const startAuto = () => {
   stopAuto()
   autoTimer = setInterval(() => {
@@ -253,8 +249,9 @@ const startAuto = () => {
     const el = carouselRef.value
     if (!el) return
     el.scrollBy({ left: getCardWidth(), behavior: 'smooth' })
-  }, 2800)
+  }, 3000)
 }
+
 const pauseAuto = () => {
   stopAuto()
   if (resumeTimer) clearTimeout(resumeTimer)
@@ -271,7 +268,6 @@ onMounted(() => {
     void el.offsetHeight
     el.style.scrollBehavior = 'smooth'
   }
-  // wait for layout
   requestAnimationFrame(() => requestAnimationFrame(init))
   el.addEventListener('scroll', handleInfinite, { passive: true })
   startAuto()
@@ -280,375 +276,412 @@ onMounted(() => {
     else startAuto()
   })
 })
+
 onBeforeUnmount(() => {
   stopAuto()
   if (resumeTimer) clearTimeout(resumeTimer)
   carouselRef.value?.removeEventListener('scroll', handleInfinite)
 })
-
 </script>
 
 <template>
-      <!-- Hero -->
-      <section class="relative flex min-h-[100vh] min-h-[100dvh] flex-col justify-center overflow-hidden bg-brand-900 pb-8 pt-14 text-white sm:pb-12 sm:pt-16 lg:pb-12 lg:pt-20">
-        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div class="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-brand-600/30 blur-3xl"></div>
-          <div class="absolute -bottom-24 -left-16 h-80 w-80 rounded-full bg-accent-500/20 blur-3xl"></div>
-          <div class="absolute top-1/3 right-1/4 h-24 w-24 rounded-lg border border-white/10 rotate-12"></div>
-          <div class="absolute bottom-16 right-10 h-16 w-16 rounded-lg border border-white/10 -rotate-12"></div>
-        </div>
+  <div class="bg-black text-white selection:bg-neo-pink selection:text-black">
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden border-b-2 border-zinc-800 bg-black pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-12 lg:grid-cols-12">
+          
+          <!-- Hero Text -->
+          <div class="space-y-6 lg:col-span-7">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 rounded-full border-2 border-white bg-neo-yellow px-4 py-1.5 font-black text-xs uppercase tracking-wider text-black shadow-[3px_3px_0px_0px_#fff]">
+              Jasa Pembuatan Website #1 Indonesia
+            </div>
 
-        <div class="relative mx-auto grid w-full max-w-6xl gap-12 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:py-12">
-          <div class="text-center lg:text-left">
-            <h1 class="text-[28px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl">
-              Jasa Pembuatan Website<br />
-              <span class="text-brand-300">Lampung & Bandar Lampung</span>
+            <!-- Title with Fixed Highlight Line-Height Spacing -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.25] text-white">
+              Website
+              <span class="inline-block rounded-lg border-2 border-black bg-neo-pink px-3 py-1 text-black shadow-[4px_4px_0px_0px_#fff] align-baseline my-1">Cepat</span>
+              &amp; High Converting Untuk Bisnis Anda.
             </h1>
 
-            <p class="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-brand-100/90 sm:mt-6 sm:text-base lg:text-lg sm:mx-0">
-              Software house di Bandar Lampung yang membuat website bisnis cepat, kredibel, dan mudah ditemukan
-              di Google untuk UMKM, klinik, toko online, hingga perusahaan di seluruh Provinsi Lampung.
+            <p class="text-lg sm:text-xl font-bold leading-relaxed text-zinc-300 max-w-2xl">
+              BantuBuatWeb membantu UMKM, Startup, dan Perusahaan membangun website profesional berstandar tinggi, super cepat dan SEO optimized, tanpa ribet &amp; bergaransi 30 hari.
             </p>
 
-            <div class="mt-6 flex flex-col justify-center gap-3 sm:mt-8 sm:flex-row sm:gap-4 lg:justify-start">
-              <a :href="wa('Halo LampungMediaWeb, saya ingin bikin website. Tolong info paket & harganya.')" target="_blank" rel="noopener"
-                class="inline-flex items-center justify-center gap-2 rounded-full bg-accent-500 px-6 py-3 text-base font-bold text-brand-900 shadow-lg shadow-accent-500/25 transition-all hover:-translate-y-0.5 hover:bg-accent-600 sm:px-8 sm:py-4 sm:text-lg">
-                Konsultasi Gratis
-                <AppIcon name="arrowRight" class="h-5 w-5" />
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+              <a
+                :href="wa('Halo BantuBuatWeb, saya ingin konsultasi buat website untuk bisnis saya')"
+                target="_blank"
+                rel="noopener"
+                class="neo-btn bg-neo-pink text-black px-8 py-4 text-lg font-black shadow-[6px_6px_0px_0px_#fff] hover:shadow-[8px_8px_0px_0px_#fff]"
+              >
+                <AppIcon name="whatsapp" class="mr-3 h-6 w-6" />
+                Konsultasi WhatsApp Gratis
               </a>
-              <a href="#harga"
-                class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/25 px-6 py-3 text-base font-bold text-white transition-colors hover:border-white hover:bg-white/10 sm:px-8 sm:py-4 sm:text-lg">
-                Lihat Paket
+              <a
+                href="#harga"
+                class="neo-btn bg-white text-black px-8 py-4 text-lg font-black shadow-[6px_6px_0px_0px_#fff] hover:bg-neo-yellow"
+              >
+                Lihat Paket &amp; Harga
               </a>
             </div>
 
-            <div class="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs font-semibold text-brand-100 sm:gap-x-6 sm:gap-y-3 sm:text-sm lg:justify-start">
-              <span v-for="badge in ['Gratis Domain .com', 'Garansi 30 Hari', 'Support 24/7']" :key="badge" class="inline-flex items-center gap-2">
-                <AppIcon name="check" class="h-4 w-4 sm:h-5 sm:w-5 text-accent-500" />
-                {{ badge }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Hero visual -->
-          <div class="relative hidden lg:block">
-            <div class="relative mx-auto aspect-[4/3] max-w-lg">
-              <div class="absolute inset-0 rounded-3xl bg-white shadow-2xl ring-1 ring-black/5">
-                <div class="flex items-center gap-1.5 rounded-t-3xl border-b border-slate-100 bg-slate-50 px-4 py-3">
-                  <span class="h-2.5 w-2.5 rounded-full bg-slate-300"></span>
-                  <span class="h-2.5 w-2.5 rounded-full bg-slate-300"></span>
-                  <span class="h-2.5 w-2.5 rounded-full bg-slate-300"></span>
-                  <span class="ml-3 rounded-md border border-slate-200 bg-white px-3 py-1 font-mono text-xs text-slate-400">lampungmediaweb.com</span>
-                </div>
-                <div class="grid h-[calc(100%-3rem)] grid-cols-5 gap-4 p-6 text-slate-800">
-                  <div class="col-span-2 flex flex-col gap-4">
-                    <div class="rounded-xl bg-brand-50 p-4">
-                      <p class="text-xs font-bold text-slate-500 uppercase">Pertumbuhan Trafik</p>
-                      <p class="mt-1 text-2xl font-extrabold text-brand-600">+184%</p>
-                    </div>
-                    <div class="rounded-xl bg-slate-50 p-4">
-                      <p class="text-xs font-bold text-slate-500 uppercase">Page Speed</p>
-                      <p class="mt-1 text-2xl font-extrabold text-slate-900">0.9s</p>
-                    </div>
-                    <div class="rounded-xl bg-slate-50 p-4">
-                      <p class="text-xs font-bold text-slate-500 uppercase">Skor Google</p>
-                      <p class="mt-1 text-2xl font-extrabold text-emerald-500">99 / 100</p>
-                    </div>
-                  </div>
-                  <div class="col-span-3 flex flex-col justify-between border-l border-slate-100 pl-4">
-                    <div>
-                      <p class="text-sm font-bold text-slate-900">Tren Bulan Ini ✅</p>
-                      <div class="mt-3 flex items-end gap-1.5">
-                        <div v-for="h in [30, 55, 40, 75, 58, 90, 70, 100]" :key="h"
-                          class="w-full rounded-t-md bg-brand-500/20" :style="{ height: h * 0.9 + 'px' }"></div>
-                      </div>
-                    </div>
-                    <div class="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-xs font-semibold text-emerald-700">
-                      ✔ Semua pemeriksaan berjalan normal
-                    </div>
-                  </div>
-                </div>
+            <!-- Value Highlights -->
+            <div class="grid grid-cols-3 gap-3 pt-6 border-t-2 border-zinc-800">
+              <div class="flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-neo-green font-black text-xs text-black border border-black">✓</span>
+                <span class="text-xs sm:text-sm font-extrabold text-zinc-300">Load &lt; 2 Detik</span>
               </div>
-              <div class="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white p-4 shadow-xl ring-1 ring-black/5">
-                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-accent-100 text-accent-600">
-                  <AppIcon name="gauge" class="h-6 w-6" />
-                </span>
-                <div>
-                  <p class="text-xs font-bold text-slate-400 uppercase tracking-wider">Performa Situs</p>
-                  <p class="text-lg font-extrabold text-slate-900">Grade A+</p>
-                </div>
+              <div class="flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-neo-yellow font-black text-xs text-black border border-black">✓</span>
+                <span class="text-xs sm:text-sm font-extrabold text-zinc-300">SEO Ready</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="flex h-6 w-6 items-center justify-center rounded-full bg-neo-cyan font-black text-xs text-black border border-black">✓</span>
+                <span class="text-xs sm:text-sm font-extrabold text-zinc-300">Garansi 30 Hari</span>
               </div>
             </div>
           </div>
+
+          <!-- Hero Graphic Card -->
+          <div class="relative lg:col-span-5">
+            <div class="neo-box bg-white text-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_#fff] border-2 border-white relative z-10">
+              <div class="flex items-center justify-between border-b-2 border-black pb-4 mb-6">
+                <div class="flex gap-2">
+                  <span class="h-4 w-4 rounded-full bg-red-500 border border-black"></span>
+                  <span class="h-4 w-4 rounded-full bg-yellow-400 border border-black"></span>
+                  <span class="h-4 w-4 rounded-full bg-green-500 border border-black"></span>
+                </div>
+                <span class="text-xs font-black uppercase bg-black text-white px-3 py-1 rounded">bantubuatweb.com</span>
+              </div>
+
+              <div class="space-y-4">
+                <div class="rounded-xl border-2 border-black bg-neo-pink p-5 shadow-[4px_4px_0px_0px_#000]">
+                  <div class="text-xs font-black uppercase">Statistik Hasil</div>
+                  <div class="text-3xl font-black text-black mt-1">+150% Konversi Sales</div>
+                  <div class="text-xs font-bold text-slate-900 mt-1">Struktur UI didesain khusus untuk pertumbuhan omzet.</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                  <div class="rounded-xl border-2 border-black bg-neo-yellow p-4 shadow-[3px_3px_0px_0px_#000]">
+                    <div class="text-2xl font-black text-black">99.9%</div>
+                    <div class="text-xs font-bold text-black">Performance Score</div>
+                  </div>
+                  <div class="rounded-xl border-2 border-black bg-neo-cyan p-4 shadow-[3px_3px_0px_0px_#000]">
+                    <div class="text-2xl font-black text-black">24/7</div>
+                    <div class="text-xs font-bold text-black">Fast Support</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="absolute -top-6 -right-6 h-20 w-20 rounded-2xl border-2 border-white bg-neo-green shadow-[4px_4px_0px_0px_#fff] z-0 hidden sm:block"></div>
+            <div class="absolute -bottom-6 -left-6 h-24 w-24 rounded-2xl border-2 border-white bg-neo-purple shadow-[4px_4px_0px_0px_#fff] z-0 hidden sm:block"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="layanan" class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="neo-badge bg-neo-yellow text-black">SOLUSI DIGITAL BISNIS</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+            Layanan Utama Dari BantuBuatWeb
+          </h2>
+          <p class="text-base sm:text-lg font-bold text-zinc-400">
+            Pilih jenis website yang sesuai dengan kebutuhan dan target pertumbuhan bisnis Anda.
+          </p>
         </div>
 
-        <!-- Trust strip -->
-        <div class="relative mx-auto mt-8 w-full max-w-6xl px-4 sm:px-6 lg:mt-10 lg:px-8">
-          <div class="grid grid-cols-3 divide-x divide-white/10 rounded-2xl border border-white/10 bg-white/5 py-5 text-center backdrop-blur sm:py-6 lg:py-8">
-            <div class="px-2">
-              <p class="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">100+</p>
-              <p class="mt-1 text-[11px] font-semibold text-brand-200 sm:text-xs lg:text-sm">Proyek Selesai</p>
-            </div>
-            <div class="px-2">
-              <p class="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">4.9<span class="text-base sm:text-lg text-brand-200">/5</span></p>
-              <p class="mt-1 text-[11px] font-semibold text-brand-200 sm:text-xs lg:text-sm">Rating Klien</p>
-            </div>
-            <div class="px-2">
-              <p class="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">8<span class="text-base sm:text-lg text-brand-200">th</span></p>
-              <p class="mt-1 text-[11px] font-semibold text-brand-200 sm:text-xs lg:text-sm">Pengalaman</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services -->
-      <section id="layanan" class="scroll-mt-20 py-14 sm:py-16 lg:py-24">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal max-w-2xl">
-            <p class="text-xs font-bold tracking-wider text-brand-600 uppercase sm:text-sm">Layanan</p>
-            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Solusi Digital Sesuai Kebutuhan Bisnis Anda
-            </h2>
-            <p class="mt-3 text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg">Bukan sekadar pajangan. Website yang kami bangun adalah mesin pencetak omzet.</p>
-          </div>
-
-          <div class="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:mt-12 lg:grid-cols-4">
-            <div v-for="s in services" :key="s.title"
-              class="reveal group rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5">
-              <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-transform group-hover:scale-110">
-                <AppIcon :name="s.icon" class="h-6 w-6" />
-              </span>
-              <h3 class="mt-5 text-lg font-bold text-slate-900">{{ s.title }}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ s.desc }}</p>
-              <ul class="mt-4 space-y-2 text-sm font-medium text-slate-600">
-                <li v-for="item in s.items" :key="item" class="flex items-start gap-2">
-                  <AppIcon name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
-                  {{ item }}
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            v-for="(s, idx) in services"
+            :key="idx"
+            class="neo-box-interactive bg-white text-black p-6 flex flex-col justify-between"
+          >
+            <div>
+              <div :class="['flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] mb-6', s.color]">
+                <AppIcon :name="s.icon" class="h-7 w-7 text-black" />
+              </div>
+              <h3 class="text-xl font-black text-black mb-3">{{ s.title }}</h3>
+              <p class="text-sm font-bold text-slate-700 leading-relaxed mb-6">{{ s.desc }}</p>
+              
+              <ul class="space-y-2 border-t-2 border-black pt-4 mb-6">
+                <li v-for="(item, i) in s.items" :key="i" class="flex items-start text-xs font-extrabold text-slate-900">
+                  <span class="mr-2 text-black font-black">✓</span>
+                  <span>{{ item }}</span>
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="reveal mt-8 text-center sm:mt-10">
-            <NuxtLink to="/layanan" class="inline-flex items-center gap-2 rounded-full border-2 border-brand-600 px-6 py-3 text-sm font-bold text-brand-600 transition-all hover:-translate-y-0.5 hover:bg-brand-600 hover:text-white sm:px-7 sm:py-3.5 sm:text-base">
-              Lihat Semua Layanan
-              <AppIcon name="arrowRight" class="h-4 w-4 sm:h-5 sm:w-5" />
-            </NuxtLink>
-          </div>
-        </div>
-      </section>
 
-      <!-- Process -->
-      <section id="proses" class="scroll-mt-20 border-y border-slate-100 bg-slate-50 py-14 sm:py-16 lg:py-24">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal max-w-2xl">
-            <p class="text-xs font-bold tracking-wider text-brand-600 uppercase sm:text-sm">Cara Kami Bekerja</p>
-            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Transparan dari Awal sampai Launch
-            </h2>
-          </div>
-
-          <div class="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:mt-12">
-            <div v-for="(p, i) in process" :key="p.step"
-              class="reveal relative rounded-2xl border border-slate-200 bg-white p-6">
-              <span class="text-3xl font-extrabold text-brand-200">{{ p.step }}</span>
-              <h3 class="mt-3 text-lg font-bold text-slate-900">{{ p.title }}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ p.desc }}</p>
-              <span v-if="i < process.length - 1" class="absolute -right-4 top-1/2 hidden h-px w-8 bg-slate-300 lg:block" aria-hidden="true"></span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Pricing -->
-      <section id="harga" class="scroll-mt-20 py-14 sm:py-16 lg:py-24">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal mx-auto max-w-2xl text-center">
-            <p class="text-xs font-bold tracking-wider text-brand-600 uppercase sm:text-sm">Paket Harga</p>
-            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Harga Transparan, Tanpa Biaya Tersembunyi
-            </h2>
-            <p class="mt-3 text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg">Semua paket sudah termasuk domain, hosting, dan desain. Cukup isi konten.</p>
-          </div>
-
-          <div class="mt-8 grid items-start gap-4 sm:gap-6 lg:mt-12 lg:grid-cols-2 xl:grid-cols-4">
-            <div v-for="plan in plans" :key="plan.name"
-              :class="[
-                'reveal relative rounded-2xl border bg-white p-7',
-                plan.featured ? 'border-brand-600 shadow-2xl shadow-brand-600/15 lg:-mt-4' : 'border-slate-200',
-              ]">
-              <span v-if="plan.badge" class="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-brand-600 px-3.5 py-1 text-xs font-bold tracking-wider text-white uppercase shadow-md">
-                Paling Populer
-              </span>
-
-              <h3 class="text-lg font-bold text-slate-900 sm:text-xl">{{ plan.name }}</h3>
-              <p class="mt-1 text-sm text-slate-500">{{ plan.desc }}</p>
-
-              <div class="mt-4 sm:mt-5">
-                <p v-if="plan.original" class="text-xs font-bold text-slate-400 line-through sm:text-sm">{{ plan.original }}</p>
-                <p v-else class="text-xs font-bold text-transparent select-none sm:text-sm">&nbsp;</p>
-                <p class="mt-0.5 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{{ plan.price }}</p>
-                <p class="mt-1 text-xs font-medium text-slate-500">{{ plan.renewal }}</p>
-              </div>
-
-              <a :href="wa('Halo LampungMediaWeb, saya tertarik paket ' + plan.name)" target="_blank" rel="noopener"
-                :class="[
-                  'mt-6 block w-full rounded-full py-3.5 text-center font-bold transition-colors',
-                  plan.featured ? 'bg-brand-600 text-white hover:bg-brand-700' : 'bg-slate-100 text-slate-900 hover:bg-slate-200',
-                ]">
-                {{ plan.cta }}
-              </a>
-
-              <p class="mt-6 text-sm font-bold text-slate-900">Fitur Unggulan:</p>
-              <ul class="mt-3 space-y-2.5 text-sm font-medium text-slate-600">
-                <li v-for="perk in plan.perks" :key="perk" class="flex items-start gap-2.5">
-                  <span :class="['mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full', plan.featured ? 'bg-brand-600 text-white' : 'bg-brand-50 text-brand-600']">
-                    <AppIcon name="check" class="h-3.5 w-3.5" />
-                  </span>
-                  {{ perk }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Portfolio -->
-      <section id="proyek" class="scroll-mt-20 border-y border-slate-100 bg-slate-50 py-14 sm:py-16 lg:py-24">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal flex items-end justify-between gap-4">
-            <div class="max-w-2xl">
-              <p class="text-xs font-bold tracking-wider text-brand-600 uppercase sm:text-sm">Proyek Terpilih</p>
-              <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-                Karya yang Berdampak untuk Klien Kami
-              </h2>
-            </div>
-            <div class="hidden shrink-0 items-center gap-2 sm:flex">
-              <button type="button" aria-label="Geser ke sebelumnya" class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-brand-300 hover:text-brand-600 active:scale-95" @click="scrollCarousel(-1)">
-                <AppIcon name="arrowRight" class="h-4 w-4 rotate-180" />
-              </button>
-              <button type="button" aria-label="Geser ke selanjutnya" class="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-brand-300 hover:text-brand-600 active:scale-95" @click="scrollCarousel(1)">
-                <AppIcon name="arrowRight" class="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-
-          <div ref="carouselRef" role="region" aria-label="Daftar proyek terpilih" tabindex="0"
-            class="mt-8 flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 lg:mt-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            @mouseenter="isHovering = true" @mouseleave="isHovering = false" @touchstart.passive="pauseAuto" @mousedown="pauseAuto">
-            <a v-for="(p, i) in displayPortfolio" :key="`${p.title}-${i}`" :href="p.url" target="_blank" rel="noopener"
-              class="group w-[84%] shrink-0 snap-start overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all hover:-translate-y-1 hover:shadow-xl sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)]">
-              <div class="relative aspect-[4/3] overflow-hidden border-b border-slate-100" aria-hidden="true">
-                <div class="flex items-center gap-1.5 border-b border-slate-100 bg-white px-4 py-2.5">
-                  <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
-                  <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
-                  <span class="h-2.5 w-2.5 rounded-full bg-slate-200"></span>
-                  <span class="ml-2 truncate rounded-md border border-slate-100 bg-slate-50 px-2 py-0.5 font-mono text-[10px] text-slate-400">{{ p.domain }}</span>
-                </div>
-                <div class="absolute inset-x-0 top-9 bottom-0">
-                  <PortfolioThumb :item="p" />
-                </div>
-              </div>
-              <div class="p-6">
-                <div class="flex items-center justify-between gap-2">
-                  <span class="rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">{{ p.tag }}</span>
-                </div>
-                <h3 class="mt-3 text-lg font-bold text-slate-900">{{ p.title }}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ p.desc }}</p>
-              </div>
+            <a
+              :href="wa(`Halo BantuBuatWeb, saya tertarik dengan layanan ${s.title}`)"
+              target="_blank"
+              rel="noopener"
+              class="neo-btn bg-black text-white w-full py-2.5 text-sm font-black hover:bg-neo-pink hover:text-black"
+            >
+              Konsultasi Layanan
             </a>
           </div>
-
-          <p class="reveal -mt-1 text-xs font-medium text-slate-400 sm:hidden">← geser untuk lihat lainnya</p>
-
-          <div class="reveal mt-8 text-center lg:mt-10">
-            <NuxtLink to="/proyek"
-              class="inline-flex items-center gap-2 rounded-full border-2 border-brand-600 px-6 py-3 text-sm font-bold text-brand-600 transition-all hover:-translate-y-0.5 hover:bg-brand-600 hover:text-white sm:px-7 sm:py-3.5 sm:text-base">
-              Lihat lebih banyak portofolio
-              <AppIcon name="arrowRight" class="h-4 w-4 sm:h-5 sm:w-5" />
-            </NuxtLink>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Testimonials -->
-      <section class="py-14 sm:py-16 lg:py-24">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal mx-auto max-w-2xl text-center">
-            <p class="text-xs font-bold tracking-wider text-brand-600 uppercase sm:text-sm">Testimoni</p>
-            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Apa Kata Klien Kami
+    <!-- WHY CHOOSE US -->
+    <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-5 space-y-6">
+            <span class="neo-badge bg-neo-pink text-black">KEUNGGULAN KAMI</span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+              Kenapa Harus Buat Website di BantuBuatWeb?
             </h2>
-          </div>
+            <p class="text-base font-bold text-zinc-400 leading-relaxed">
+              Kami tidak cuma buat website yang cantik, tapi kami mendesain aset digital berkinerja tinggi yang siap mendatangkan calon pelanggan bagi bisnis Anda.
+            </p>
 
-          <div class="mt-8 grid gap-4 md:grid-cols-3 sm:gap-6 lg:mt-12">
-            <figure v-for="t in testimonials" :key="t.name"
-              class="reveal flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-7">
-              <div>
-                <div class="flex gap-0.5 text-amber-400">
-                  <AppIcon v-for="n in t.stars" :key="n" name="star" class="h-5 w-5" />
-                </div>
-                <blockquote class="mt-4 leading-relaxed text-slate-700 italic">"{{ t.quote }}"</blockquote>
-              </div>
-              <figcaption class="mt-6 flex items-center gap-3">
-                <span class="flex h-11 w-11 items-center justify-center rounded-full bg-brand-600 text-lg font-bold text-white">
-                  {{ t.initial }}
-                </span>
+            <div class="space-y-4 pt-2">
+              <div class="flex items-start gap-4 p-4 rounded-xl border-2 border-black bg-neo-yellow text-black shadow-[3px_3px_0px_0px_#fff]">
                 <div>
-                  <p class="font-bold text-slate-900">{{ t.name }}</p>
-                  <p class="text-sm text-slate-500">{{ t.role }}</p>
+                  <h4 class="font-black text-black">Load Super Cepat (High Performance)</h4>
+                  <p class="text-xs font-bold text-slate-900 mt-1">Dikembangkan dengan arsitektur modern untuk kecepatan tinggi.</p>
                 </div>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
+              </div>
 
-      <!-- FAQ -->
-      <section id="faq" class="scroll-mt-20 border-t border-slate-100 bg-slate-50 py-14 sm:py-16 lg:py-24">
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal text-center">
-            <p class="text-xs font-bold tracking-wider text-brand-600 uppercase sm:text-sm">Pertanyaan Umum</p>
-            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
-              Jasa Website Lampung: Tanya Jawab
-            </h2>
+              <div class="flex items-start gap-4 p-4 rounded-xl border-2 border-black bg-neo-pink text-black shadow-[3px_3px_0px_0px_#fff]">
+                <div>
+                  <h4 class="font-black text-black">Tampil Beda &amp; Memorable</h4>
+                  <p class="text-xs font-bold text-slate-900 mt-1">Tampil beda dan menonjol dari kompetitor dengan estetika modern.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-xl border-2 border-black bg-neo-cyan text-black shadow-[3px_3px_0px_0px_#fff]">
+                <div>
+                  <h4 class="font-black text-black">Garansi 30 Hari Maintenance</h4>
+                  <p class="text-xs font-bold text-slate-900 mt-1">Garansi penuh perbaikan bug dan pendampingan teknis setelah website rilis.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="mt-8 space-y-3 sm:space-y-4">
-            <details v-for="f in faq" :key="f.q" class="reveal group rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 open:border-brand-300 open:shadow-lg">
-              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-slate-900">
-                {{ f.q }}
-                <span class="shrink-0 text-brand-600 transition-transform group-open:rotate-45">
-                  <AppIcon name="x" class="h-5 w-5" />
+          <!-- PROCESS STEPPER -->
+          <div id="proses" class="lg:col-span-7 space-y-6">
+            <div class="text-center lg:text-left mb-8">
+              <span class="neo-badge bg-neo-green text-black">CARA BEKERJA</span>
+              <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">4 Langkah Mudah Website Anda Rilis</h3>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div v-for="(p, idx) in process" :key="idx" class="neo-box bg-white text-black p-6 relative overflow-hidden">
+                <span class="absolute -right-3 -top-3 flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black bg-neo-yellow font-black text-xl text-black shadow-[2px_2px_0px_0px_#000]">
+                  {{ p.step }}
                 </span>
-              </summary>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ f.a }}</p>
-            </details>
+                <h4 class="text-lg font-black text-black mb-2 pr-10">{{ p.title }}</h4>
+                <p class="text-xs font-bold text-slate-700 leading-relaxed">{{ p.desc }}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO SHOWCASE -->
+    <section class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+          <div>
+            <span class="neo-badge bg-neo-pink text-black">PORTOFOLIO KARYA</span>
+            <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white mt-2">Hasil Karya Terbaru Kami</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button
+              @click="scrollCarousel(-1)"
+              class="neo-btn bg-white text-black p-3 shadow-[3px_3px_0px_0px_#fff] hover:bg-neo-yellow"
+              aria-label="Portofolio sebelumnya"
+            >
+              ←
+            </button>
+            <button
+              @click="scrollCarousel(1)"
+              class="neo-btn bg-white text-black p-3 shadow-[3px_3px_0px_0px_#fff] hover:bg-neo-yellow"
+              aria-label="Portofolio berikutnya"
+            >
+              →
+            </button>
           </div>
         </div>
-      </section>
 
-      <!-- CTA -->
-      <section class="relative overflow-hidden bg-brand-900 py-14 sm:py-16 lg:py-24" aria-hidden="false">
-        <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-          <div class="absolute -right-16 -top-16 h-96 w-96 rounded-full bg-brand-600/40 blur-3xl"></div>
-          <div class="absolute -bottom-20 -left-16 h-80 w-80 rounded-full bg-accent-500/20 blur-3xl"></div>
+        <!-- Carousel Track -->
+        <div
+          ref="carouselRef"
+          class="flex gap-6 overflow-x-auto pb-8 scrollbar-none snap-x snap-mandatory"
+          @mouseenter="isHovering = true"
+          @mouseleave="isHovering = false"
+        >
+          <div
+            v-for="(item, idx) in displayPortfolio"
+            :key="idx"
+            class="neo-box-interactive min-w-[300px] sm:min-w-[360px] max-w-[360px] snap-start bg-white text-black p-5 shrink-0 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="neo-badge bg-neo-cyan text-black text-[10px]">{{ item.tag }}</span>
+                <span class="text-xs font-black text-green-700 bg-green-100 px-2 py-0.5 rounded border border-black">{{ item.result }}</span>
+              </div>
+              <h3 class="text-xl font-black text-black mb-2">{{ item.title }}</h3>
+              <p class="text-xs font-bold text-slate-700 leading-relaxed mb-4">{{ item.desc }}</p>
+            </div>
+            
+            <a
+              :href="item.url"
+              target="_blank"
+              rel="noopener"
+              class="neo-btn bg-neo-yellow text-black w-full py-2 text-xs font-black hover:bg-black hover:text-white"
+            >
+              Kunjungi Website ({{ item.domain }})
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="harga" class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="neo-badge bg-neo-green text-black">TRANSPARAN &amp; TANPA BIAYA TERSEBUNYI</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Pilihan Paket &amp; Harga Website</h2>
+          <p class="text-base font-bold text-zinc-400">Semua paket sudah termasuk gratis domain, hosting cepat &amp; garansi 30 hari.</p>
         </div>
 
-        <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl lg:text-4xl">
-            Siap Membesarkan Bisnis Anda?
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            v-for="(p, idx) in plans"
+            :key="idx"
+            :class="[
+              'neo-box p-6 flex flex-col justify-between relative border-2',
+              p.featured ? 'border-4 shadow-[8px_8px_0px_0px_#fff] ring-4 ring-white/20' : 'shadow-[4px_4px_0px_0px_#fff]',
+              p.color
+            ]"
+          >
+            <span v-if="p.badge" class="absolute -top-4 right-4 rounded-full border-2 border-black bg-neo-yellow px-3 py-1 font-black text-xs text-black shadow-[2px_2px_0px_0px_#000]">
+              {{ p.badge }}
+            </span>
+
+            <div>
+              <h3 class="text-2xl font-black">{{ p.name }}</h3>
+              <p class="text-xs font-bold opacity-80 mt-1 mb-4 h-10">{{ p.desc }}</p>
+
+              <div class="mb-6 border-b-2 border-current pb-4">
+                <div class="text-3xl sm:text-4xl font-black">{{ p.price }}</div>
+                <div v-if="p.original" class="text-xs font-extrabold opacity-60 line-through">{{ p.original }}</div>
+                <div class="text-[11px] font-extrabold opacity-90 mt-1">{{ p.renewal }}</div>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                <li v-for="(perk, i) in p.perks" :key="i" class="flex items-start text-xs font-extrabold">
+                  <span class="mr-2 font-black">✓</span>
+                  <span>{{ perk }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              :href="wa(`Halo BantuBuatWeb, saya mau pesan paket ${p.name}`)"
+              target="_blank"
+              rel="noopener"
+              :class="[
+                'neo-btn w-full py-3 text-sm font-black',
+                p.featured ? 'bg-black text-white hover:bg-neo-yellow hover:text-black' : 'bg-neo-yellow text-black hover:bg-black hover:text-white'
+              ]"
+            >
+              {{ p.cta }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="neo-badge bg-neo-yellow text-black">KATA KLIEN KAMI</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Apa Kata Mereka Tentang BantuBuatWeb?</h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <div v-for="(t, idx) in testimonials" :key="idx" class="neo-box bg-white text-black p-6 flex flex-col justify-between">
+            <div class="space-y-4">
+              <p class="text-sm font-bold text-slate-900 leading-relaxed italic">"{{ t.quote }}"</p>
+            </div>
+
+            <div class="flex items-center gap-3 pt-6 border-t-2 border-black mt-6">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-neo-pink font-black text-black">
+                {{ t.initial }}
+              </div>
+              <div>
+                <div class="font-black text-sm text-black leading-none">{{ t.name }}</div>
+                <div class="text-xs font-bold text-slate-700 mt-0.5">{{ t.role }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 space-y-4">
+          <span class="neo-badge bg-neo-pink text-black">FAQ &amp; PERTANYAAN</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Pertanyaan Yang Sering Diajukan</h2>
+        </div>
+
+        <div class="space-y-6">
+          <div v-for="(f, idx) in faq" :key="idx" class="neo-box bg-white text-black p-6">
+            <h3 class="text-lg font-black text-black mb-2 flex items-center gap-3">
+              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border-2 border-black bg-neo-yellow text-xs font-black">Q</span>
+              <span>{{ f.q }}</span>
+            </h3>
+            <p class="text-sm font-bold text-slate-700 leading-relaxed pl-10 border-l-2 border-black ml-3 pt-1">
+              {{ f.a }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="bg-zinc-950 py-16 sm:py-24">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="neo-box bg-neo-yellow text-black p-8 sm:p-14 text-center border-4 shadow-[10px_10px_0px_0px_#fff] relative overflow-hidden">
+          <h2 class="text-3xl sm:text-5xl font-black text-black tracking-tight leading-tight">
+            Siap Memiliki Website Professional Berkelas Indonesia?
           </h2>
-          <p class="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-brand-100 sm:mt-5 sm:text-lg">
-            Konsultasikan kebutuhan website Anda secara <strong class="text-white">gratis</strong>. Kami bantu pilih solusi terbaik sesuai budget.
+          <p class="text-base sm:text-lg font-bold text-black mt-4 max-w-2xl mx-auto">
+            Konsultasikan kebutuhan bisnis Anda secara gratis dengan tim ahli kami sekarang. Dapatkan penawaran terbaik hari ini!
           </p>
-          <a :href="wa('Halo LampungMediaWeb, saya ingin konsultasi gratis bikin website')" target="_blank" rel="noopener"
-            class="mt-7 inline-flex items-center gap-3 rounded-full bg-accent-500 px-7 py-3.5 text-base font-bold text-brand-900 shadow-xl shadow-accent-500/25 transition-all hover:-translate-y-1 hover:bg-accent-600 sm:mt-9 sm:px-10 sm:py-5 sm:text-lg">
-            Mulai Sekarang
-            <AppIcon name="arrowRight" class="h-5 w-5 sm:h-6 sm:w-6" />
-          </a>
-          <p class="mt-5 text-xs font-medium text-brand-200 sm:mt-6 sm:text-sm">
-            Garansi uang kembali 30 hari &bull; Layanan pelanggan 24/7
-          </p>
+          <div class="pt-8">
+            <a
+              :href="wa('Halo BantuBuatWeb, saya mau konsultasi buat website')"
+              target="_blank"
+              rel="noopener"
+              class="neo-btn bg-neo-pink text-black px-10 py-5 text-xl font-black shadow-[6px_6px_0px_0px_#000] hover:shadow-[8px_8px_0px_0px_#000]"
+            >
+              <AppIcon name="whatsapp" class="mr-3 h-7 w-7" />
+              Konsultasi WhatsApp Sekarang
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </div>
 </template>

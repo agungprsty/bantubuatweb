@@ -27,7 +27,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     domain: 'sipalingspill.vercel.app',
     url: 'https://sipalingspill.vercel.app/',
     image: '/images/portfolio/sipalingspill.png',
-    desc: 'Link hub affiliate aestetik: kurasi 20+ produk Shopee pilihan dengan card, harga, dan tombol spill ke marketplace — ringan dan cepat.',
+    desc: 'Link hub affiliate aestetik: kurasi 20+ produk Shopee pilihan dengan card, harga, dan tombol spill ke marketplace super ringan dan cepat.',
     result: 'CTR affiliate 12%',
   },
   {

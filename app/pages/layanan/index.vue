@@ -8,11 +8,11 @@ const filtered = computed(() =>
 )
 
 useHead({
-  title: 'Jasa Pembuatan Website Berdasarkan Jenis Bisnis | LampungMediaWeb',
+  title: 'Layanan Pembuatan Website | BantuBuatWeb',
   meta: [
-    { name: 'description', content: 'Jenis website yang dikerjakan LampungMediaWeb: landing page, company profile, toko online, sekolah, klinik, hotel, dan custom. Konsultasi dulu, gratis.' },
+    { name: 'description', content: 'Kategori & jenis layanan pembuatan website BantuBuatWeb: landing page, company profile, e-commerce, portal sekolah, klinik, hotel, dan sistem custom.' },
   ],
-  link: [{ rel: 'canonical', href: 'https://lampungmediaweb.com/layanan' }],
+  link: [{ rel: 'canonical', href: 'https://bantubuatweb.com/layanan' }],
   script: [
     {
       type: 'application/ld+json',
@@ -20,8 +20,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://lampungmediaweb.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://lampungmediaweb.com/layanan' },
+          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuatweb.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://bantubuatweb.com/layanan' },
         ],
       }),
     },
@@ -30,14 +30,14 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        name: 'Layanan Pembuatan Website LampungMediaWeb',
-        url: 'https://lampungmediaweb.com/layanan',
+        name: 'Layanan Pembuatan Website BantuBuatWeb',
+        url: 'https://bantubuatweb.com/layanan',
         numberOfItems: SERVICES.length,
         itemListElement: SERVICES.map((s, i) => ({
           '@type': 'ListItem',
           position: i + 1,
           name: s.title,
-          url: `https://lampungmediaweb.com/layanan/${s.slug}`,
+          url: `https://bantubuatweb.com/layanan/${s.slug}`,
         })),
       }),
     },
@@ -46,73 +46,89 @@ useHead({
 </script>
 
 <template>
-  <section id="jenis" class="pt-20 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <nav class="text-xs font-semibold text-slate-500 sm:text-sm" aria-label="Breadcrumb">
-          <NuxtLink to="/" class="hover:text-brand-600">Beranda</NuxtLink>
-          <span class="mx-2">/</span>
-          <span class="text-brand-600" aria-current="page">Layanan</span>
-        </nav>
-        <h1 class="mt-4 text-2xl font-extrabold tracking-tight text-slate-900 sm:mt-5 sm:text-3xl lg:text-4xl">
-          Jenis Website yang Kami Kerjakan
+  <div class="bg-black text-white min-h-screen pt-24 pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
+        <NuxtLink to="/" class="hover:underline">Beranda</NuxtLink>
+        <span>/</span>
+        <span class="bg-neo-cyan text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff]">Layanan</span>
+      </nav>
+
+      <!-- Page Header -->
+      <div class="mt-6 max-w-3xl space-y-4">
+        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+          Jenis Website yang Kami <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">Kerjakan</span>
         </h1>
-        <p class="mt-3 text-base leading-relaxed text-slate-600 sm:mt-4 sm:text-lg">
-          Cari yang paling sesuai dengan kebutuhan Anda, atau langsung tanya. Lebih cepat daripada menebak sendiri.
+        <p class="text-base sm:text-lg font-bold text-zinc-300 leading-relaxed">
+          Pilih kategori website yang sesuai dengan industri dan tujuan bisnis Anda.
         </p>
       </div>
 
-      <div class="mt-6 flex flex-wrap items-center gap-2 sm:mt-8" role="group" aria-label="Filter kategori layanan">
+      <!-- Filter Buttons -->
+      <div class="mt-8 flex flex-wrap items-center gap-3" role="group" aria-label="Filter kategori layanan">
         <button
-          :class="active === 'Semua'
-            ? 'bg-brand-600 text-white border-brand-600'
-            : 'border-slate-200 bg-white text-slate-600 hover:border-brand-300 hover:text-brand-600'"
-          class="rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors sm:px-4 sm:py-2 sm:text-sm"
-          @click="active = 'Semua'">
-          Semua
+          :class="[
+            'neo-btn text-xs sm:text-sm px-4 py-2 font-black',
+            active === 'Semua' ? 'bg-neo-pink text-black' : 'bg-white text-black hover:bg-neo-yellow'
+          ]"
+          @click="active = 'Semua'"
+        >
+          Semua Layanan
         </button>
         <button
-          v-for="g in serviceGroups" :key="g"
-          :class="active === g
-            ? 'bg-brand-600 text-white border-brand-600'
-            : 'border-slate-200 bg-white text-slate-600 hover:border-brand-300 hover:text-brand-600'"
-          class="rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors sm:px-4 sm:py-2 sm:text-sm"
-          @click="active = g">
+          v-for="g in serviceGroups"
+          :key="g"
+          :class="[
+            'neo-btn text-xs sm:text-sm px-4 py-2 font-black',
+            active === g ? 'bg-neo-pink text-black' : 'bg-white text-black hover:bg-neo-yellow'
+          ]"
+          @click="active = g"
+        >
           {{ g }}
         </button>
       </div>
 
-      <ul class="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <li v-for="s in filtered" :key="s.slug" class="group">
-          <NuxtLink :to="`/layanan/${s.slug}`"
-            class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-4 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-lg sm:rounded-2xl sm:p-6">
-            <div class="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-3">
-              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white sm:h-12 sm:w-12">
-                <AppIcon :name="s.icon" class="h-5 w-5 sm:h-6 sm:w-6" />
-              </span>
-              <h3 class="text-base font-bold leading-tight text-slate-900 sm:flex sm:min-h-12 sm:flex-1 sm:items-center sm:text-[17px] lg:text-lg">{{ s.title }}</h3>
+      <!-- Service Grid -->
+      <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <li v-for="s in filtered" :key="s.slug">
+          <NuxtLink
+            :to="`/layanan/${s.slug}`"
+            class="neo-box-interactive bg-white text-black p-6 flex flex-col justify-between h-full block"
+          >
+            <div>
+              <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
+                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 border-black bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#000]">
+                  <AppIcon :name="s.icon" class="h-6 w-6" />
+                </span>
+                <h3 class="text-lg font-black text-black leading-tight">{{ s.title }}</h3>
+              </div>
+              <p class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed mb-4">{{ s.tagline }}</p>
             </div>
-            <p class="mt-2.5 flex-1 text-xs leading-relaxed text-slate-600 sm:mt-3 sm:text-sm">{{ s.tagline }}</p>
-            <span class="mt-3 inline-flex items-center gap-1 text-xs font-bold text-brand-600 sm:mt-4 sm:gap-1.5 sm:text-sm">
-              Lihat Detail
-              <AppIcon name="arrowRight" class="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+
+            <span class="neo-btn bg-neo-pink text-black w-full py-2 text-xs font-black group-hover:bg-black group-hover:text-white mt-4">
+              Lihat Detail Layanan
             </span>
           </NuxtLink>
         </li>
       </ul>
 
-      <div class="mt-10 rounded-3xl bg-brand-900 p-6 text-center sm:mt-16 sm:p-8 lg:p-12">
-        <h2 class="text-xl font-extrabold text-white sm:text-2xl lg:text-3xl">Tidak ketemu yang pas?</h2>
-        <p class="mx-auto mt-3 max-w-xl leading-relaxed text-brand-100">
-          Kemungkinan besar kebutuhan Anda cuma butuh dijelaskan dulu di chat. Ceritakan bisnisnya,
-          kami kasih saran entah itu masuk kategori ini atau custom.
+      <!-- CTA Box -->
+      <div class="mt-16 neo-box bg-neo-green text-black p-8 sm:p-12 text-center border-4 shadow-[8px_8px_0px_0px_#fff]">
+        <h2 class="text-2xl sm:text-4xl font-black text-black">Bingung Memilih Kategori Website Yang Pas?</h2>
+        <p class="mx-auto mt-3 max-w-xl text-sm sm:text-base font-bold text-black">
+          Ceritakan alur &amp; tujuan bisnis Anda via WhatsApp. Tim BantuBuatWeb siap membantu memberikan solusi gratis!
         </p>
-        <a :href="wa('Halo LampungMediaWeb, saya mau konsultasi jenis website yang cocok untuk bisnis saya.')" target="_blank" rel="noopener"
-          class="mt-6 inline-flex items-center gap-2 rounded-full bg-accent-500 px-6 py-3 font-bold text-brand-900 transition-all hover:-translate-y-0.5 hover:bg-accent-600 sm:mt-7 sm:px-8 sm:py-4">
-          <AppIcon name="whatsapp" class="h-5 w-5" />
-          Tanya ke WhatsApp
+        <a
+          :href="wa('Halo BantuBuatWeb, saya mau tanya rekomendasi jenis website untuk bisnis saya')"
+          target="_blank"
+          rel="noopener"
+          class="neo-btn bg-black text-white px-8 py-4 text-base font-black shadow-[4px_4px_0px_0px_#fff] hover:bg-neo-yellow hover:text-black mt-6"
+        >
+          <AppIcon name="whatsapp" class="mr-2 h-5 w-5" />
+          Konsultasi Gratis via WhatsApp
         </a>
       </div>
     </div>
-  </section>
+  </div>
 </template>
