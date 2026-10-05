@@ -8,6 +8,13 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
+    vue: {
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag === 'lottie-player',
+        },
+      },
+    },
   },
   icon: {
     clientBundle: {
@@ -24,12 +31,9 @@ export default defineNuxtConfig({
     },
   },
   hooks: {
-    // ponytail: drop @nuxt/devtools' config-retriever plugin, which Vite 8 rejects
-    // (configResolved inside applyToEnvironment is ignored). Devtools still works;
-    // only the "show Vite config" inspector panel loses data.
     'vite:extendConfig'(config) {
       config.plugins = (config.plugins || []).filter(
-        (p: Plugin) => p?.name !== 'nuxt:devtools:config',
+        (p: Plugin) => p?.name !== 'nuxt:devtools:config' && p?.name !== 'nuxt:devtools:config-retriever',
       )
     },
   },

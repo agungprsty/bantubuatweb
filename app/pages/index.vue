@@ -8,6 +8,10 @@ useHead({
   link: [{ rel: 'canonical', href: 'https://bantubuatweb.com/' }],
   script: [
     {
+      src: 'https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js',
+      defer: true,
+    },
+    {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
@@ -35,37 +39,21 @@ useHead({
         ],
       }),
     },
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'Berapa lama proses pembuatan website di BantuBuatWeb?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Paket UMKM Starter dan Company Profile umumnya selesai dalam 5–10 hari kerja setelah materi disetujui. Toko online membutuhkan waktu sekitar 2–3 minggu.' },
-          },
-          {
-            '@type': 'Question',
-            name: 'Apakah domain dan hosting sudah gratis?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Ya! Semua paket kami sudah termasuk domain (.com / .id) dan hosting cepat SSD 1 tahun pertama gratis.' },
-          },
-          {
-            '@type': 'Question',
-            name: 'Apakah website dijamin muncul di Google (SEO)?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Setiap website buatan BantuBuatWeb sudah dioptimasi SEO On-Page dasar dan didaftarkan ke Google Search Console agar langsung di-index oleh Google.' },
-          },
-          {
-            '@type': 'Question',
-            name: 'Apakah ada garansi jika hasil tidak sesuai?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Tentu saja! Kami memberikan Garansi 30 Hari Maintenance & Dukungan Teknis serta garansi kepuasan penuh.' },
-          },
-        ],
-      }),
-    },
   ],
 })
+
+const categories = [
+  { name: 'Toko Online & E-Commerce', icon: '/images/gumroad/software.svg' },
+  { name: 'Company Profile Perusahaan', icon: '/images/gumroad/design.svg' },
+  { name: 'Landing Page High Converting', icon: '/images/gumroad/drawing.svg' },
+  { name: 'Aplikasi Web & Sistem Custom', icon: '/images/gumroad/writing.svg' },
+  { name: 'Portal Berita & Media', icon: '/images/gumroad/animation.svg' },
+  { name: 'Klinik & Layanan Kesehatan', icon: '/images/gumroad/audio.svg' },
+  { name: 'UMKM & Kuliner', icon: '/images/gumroad/crafts.svg' },
+  { name: 'Travel & Rental Mobil', icon: '/images/gumroad/film.svg' },
+  { name: 'Pendidikan & E-Learning', icon: '/images/gumroad/education.svg' },
+  { name: 'Portofolio Personal', icon: '/images/gumroad/games.svg' },
+]
 
 const services = [
   {
@@ -73,6 +61,7 @@ const services = [
     title: 'Website Company Profile',
     desc: 'Bangun kredibilitas perusahaan & bisnis Anda dengan website bonafit berstandar internasional.',
     color: 'bg-neo-pink text-black',
+    img: '/images/gumroad/side-project-1.svg',
     items: ['Hingga 10 Halaman Custom', 'Gratis Domain & Business Email', 'Optimasi SEO & Google Search'],
   },
   {
@@ -80,6 +69,7 @@ const services = [
     title: 'Toko Online (E-Commerce)',
     desc: 'Platform jualan modern lengkap dengan pembayaran QRIS/Transfer & hitung ongkir otomatis.',
     color: 'bg-neo-yellow text-black',
+    img: '/images/gumroad/sell-anywhere.png',
     items: ['Integrasi Payment Gateway', 'Hitung Ongkir JNE/J&T/Sicepat', 'Manajemen Stok & Kupon Diskon'],
   },
   {
@@ -87,6 +77,7 @@ const services = [
     title: 'Landing Page High-Converting',
     desc: 'Halaman iklan super cepat untuk Google Ads & Meta Ads yang mengubah pengunjung jadi pembeli.',
     color: 'bg-neo-cyan text-black',
+    img: '/images/gumroad/side-project-2.svg',
     items: ['Kecepatan Load di Bawah 2 Detik', 'Fokus Konversi & CTA WhatsApp', 'Tracking Meta Pixel & Google Analytics'],
   },
   {
@@ -94,15 +85,9 @@ const services = [
     title: 'Aplikasi Web & Sistem Custom',
     desc: 'Sistem operasional internal: CRM, booking online, absensi, hingga dashboard manajemen custom.',
     color: 'bg-neo-green text-black',
+    img: '/images/gumroad/new-sale.svg',
     items: ['Disesuaikan dengan Alur Bisnis', 'Dashboard Realtime & Laporan PDF', 'Multi-User Hak Akses Berlapis'],
   },
-]
-
-const process = [
-  { step: '01', title: 'Konsultasi & Strategi', desc: 'Diskusi gratis kebutuhan bisnis, target audience, dan fitur website yang dibutuhkan.' },
-  { step: '02', title: 'Desain Wireframe', desc: 'Penyusunan tata letak (UI/UX) modern dan menarik dengan revisi sampai sesuai keinginan.' },
-  { step: '03', title: 'Coding & Integrasi', desc: 'Pengembangan kode super cepat (Nuxt/Vue), responsif, dan terintegrasi sistem WhatsApp.' },
-  { step: '04', title: 'Launch & Support', desc: 'Website diluncurkan, terdaftar di Google, dan didampingi garansi 30 hari penuh.' },
 ]
 
 const plans = [
@@ -115,6 +100,7 @@ const plans = [
     cta: 'Pilih UMKM Starter',
     featured: false,
     color: 'bg-zinc-900 text-white border-zinc-700',
+    icon: '/images/gumroad/feature-receipt-1.svg',
     perks: ['Gratis Domain .com / .id (1 Thn)', 'Hosting SSD High Speed', '3-5 Halaman Desain Premium', 'Tombol WhatsApp Direct', 'Setup Google Indexing'],
   },
   {
@@ -127,6 +113,7 @@ const plans = [
     cta: 'Pilih Company Profile',
     featured: true,
     color: 'bg-neo-pink text-black border-black',
+    icon: '/images/gumroad/feature-receipt-2.svg',
     perks: ['Semua Fitur Starter', 'Unlimited Bandwidth & Storage', 'Hingga 10 Halaman Custom', 'Custom Email (@bisnisanda.com)', 'Garansi Maintenance 30 Hari'],
   },
   {
@@ -138,6 +125,7 @@ const plans = [
     cta: 'Pilih Toko Online',
     featured: false,
     color: 'bg-neo-yellow text-black border-black',
+    icon: '/images/gumroad/feature-receipt-3.svg',
     perks: ['Semua Fitur Pro', 'Keranjang Belanja Custom', 'Kalkulator Ongkir Otomatis', 'Payment Gateway (QRIS, VA, CC)', 'Manajemen Stok & Laporan'],
   },
   {
@@ -149,6 +137,7 @@ const plans = [
     cta: 'Konsultasi Enterprise',
     featured: false,
     color: 'bg-neo-cyan text-black border-black',
+    icon: '/images/gumroad/feature-receipt-4.svg',
     perks: ['Bebas Request Fitur Sesuai Keinginan', 'Integrasi API External & Database', 'Arsitektur High-Scalability', 'Prioritas Maintenance & SLA', 'Training Penggunaan Sistem'],
   },
 ]
@@ -182,18 +171,21 @@ const testimonials = [
   {
     name: 'Rian Hidayat',
     role: 'Founder E-Commerce, Jakarta',
+    avatar: '/images/gumroad/daniel-full.png',
     initial: 'R',
     quote: 'Desain website yang unik dari BantuBuatWeb membuat toko online saya tampil beda dan mencolok dibanding kompetitor! Konversi penjualan naik pesat.',
   },
   {
     name: 'Siti Aminah',
     role: 'Owner Skincare Brand, Bandung',
+    avatar: '/images/gumroad/steph-full.png',
     initial: 'S',
     quote: 'Landing page iklan super cepat! Pas pasang Google Ads, leads masuk ke WhatsApp jauh lebih banyak karena loading cuma 1.5 detik.',
   },
   {
     name: 'Budi Kurniawan',
     role: 'Direktur PT. Perkasa Mandiri, Surabaya',
+    avatar: '/images/gumroad/dru-full.png',
     initial: 'B',
     quote: 'Pengerjaan sangat profesional, pengerjaan cepat dan timnya komunikatif. Company profile baru kami membuat kami lebih percaya diri saat pitching ke klien besar.',
   },
@@ -286,19 +278,27 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="bg-black text-white selection:bg-neo-pink selection:text-black">
+    
     <!-- HERO SECTION -->
     <section class="relative overflow-hidden border-b-2 border-zinc-800 bg-black pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid items-center gap-12 lg:grid-cols-12">
           
           <!-- Hero Text -->
-          <div class="space-y-6 lg:col-span-7">
+          <div class="space-y-6 lg:col-span-7 relative z-10">
+            
+            <!-- Floating Decorative Scraped Coin -->
+            <div class="absolute -top-10 -left-6 hidden sm:block">
+              <img src="/images/gumroad/coin-1.svg" class="h-10 w-10 animate-bounce duration-1000" alt="Coin 1" />
+            </div>
+
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 rounded-full border-2 border-white bg-neo-yellow px-4 py-1.5 font-black text-xs uppercase tracking-wider text-black shadow-[3px_3px_0px_0px_#fff]">
+              <img src="/images/gumroad/thumbsup.svg" class="h-4 w-4" alt="Thumbsup" />
               Jasa Pembuatan Website #1 Indonesia
             </div>
 
-            <!-- Title with Fixed Highlight Line-Height Spacing -->
+            <!-- Title with High Impact Neo-Brutalist Highlighting -->
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.25] text-white">
               Website
               <span class="inline-block rounded-lg border-2 border-black bg-neo-pink px-3 py-1 text-black shadow-[4px_4px_0px_0px_#fff] align-baseline my-1">Cepat</span>
@@ -345,11 +345,17 @@ onBeforeUnmount(() => {
             </div>
           </div>
 
-          <!-- Hero Graphic Card -->
+          <!-- Hero Graphic Card with Scraped Gumroad Assets -->
           <div class="relative lg:col-span-5">
+            
+            <!-- Floating Make Your Road Sticker -->
+            <div class="absolute -top-12 -right-4 z-20 hidden sm:block">
+              <img src="/images/gumroad/make-your-road.svg" class="h-24 w-auto transform rotate-6 drop-shadow-[4px_4px_0px_#000]" alt="Make Your Road" />
+            </div>
+
             <div class="neo-box bg-white text-black p-6 sm:p-8 shadow-[8px_8px_0px_0px_#fff] border-2 border-white relative z-10">
               <div class="flex items-center justify-between border-b-2 border-black pb-4 mb-6">
-                <div class="flex gap-2">
+                <div class="flex items-center gap-2">
                   <span class="h-4 w-4 rounded-full bg-red-500 border border-black"></span>
                   <span class="h-4 w-4 rounded-full bg-yellow-400 border border-black"></span>
                   <span class="h-4 w-4 rounded-full bg-green-500 border border-black"></span>
@@ -357,19 +363,38 @@ onBeforeUnmount(() => {
                 <span class="text-xs font-black uppercase bg-black text-white px-3 py-1 rounded">bantubuatweb.com</span>
               </div>
 
+              <!-- Center Graphic: Lottie Animated Gumhead Character -->
+              <div class="relative mb-6 text-center bg-neo-yellow/20 p-4 rounded-xl border-2 border-black">
+                <div class="flex justify-center items-center">
+                  <lottie-player
+                    src="/images/gumroad/gumhead.json"
+                    speed="1"
+                    class="w-44 h-44 sm:w-52 sm:h-52"
+                    loop
+                    autoplay
+                  ></lottie-player>
+                </div>
+                <div class="absolute top-2 right-2">
+                  <span class="neo-badge bg-neo-green text-black text-[10px]">LIVE ANIMATION</span>
+                </div>
+              </div>
+
               <div class="space-y-4">
-                <div class="rounded-xl border-2 border-black bg-neo-pink p-5 shadow-[4px_4px_0px_0px_#000]">
-                  <div class="text-xs font-black uppercase">Statistik Hasil</div>
-                  <div class="text-3xl font-black text-black mt-1">+150% Konversi Sales</div>
-                  <div class="text-xs font-bold text-slate-900 mt-1">Struktur UI didesain khusus untuk pertumbuhan omzet.</div>
+                <div class="rounded-xl border-2 border-black bg-neo-pink p-4 shadow-[4px_4px_0px_0px_#000] flex items-center justify-between">
+                  <div>
+                    <div class="text-xs font-black uppercase">Statistik Hasil</div>
+                    <div class="text-2xl font-black text-black mt-0.5">+150% Konversi Sales</div>
+                    <div class="text-[11px] font-bold text-slate-900">Struktur UI didesain khusus untuk omzet.</div>
+                  </div>
+                  <img src="/images/gumroad/sales-graph.svg" class="h-12 w-auto border border-black rounded p-1 bg-white" alt="Sales Graph" />
                 </div>
 
                 <div class="grid grid-cols-2 gap-3">
-                  <div class="rounded-xl border-2 border-black bg-neo-yellow p-4 shadow-[3px_3px_0px_0px_#000]">
+                  <div class="rounded-xl border-2 border-black bg-neo-yellow p-4 shadow-[3px_3px_0px_0px_#000] relative overflow-hidden">
                     <div class="text-2xl font-black text-black">99.9%</div>
                     <div class="text-xs font-bold text-black">Performance Score</div>
                   </div>
-                  <div class="rounded-xl border-2 border-black bg-neo-cyan p-4 shadow-[3px_3px_0px_0px_#000]">
+                  <div class="rounded-xl border-2 border-black bg-neo-cyan p-4 shadow-[3px_3px_0px_0px_#000] relative overflow-hidden">
                     <div class="text-2xl font-black text-black">24/7</div>
                     <div class="text-xs font-bold text-black">Fast Support</div>
                   </div>
@@ -377,14 +402,29 @@ onBeforeUnmount(() => {
               </div>
             </div>
 
-            <!-- Decorative Elements -->
-            <div class="absolute -top-6 -right-6 h-20 w-20 rounded-2xl border-2 border-white bg-neo-green shadow-[4px_4px_0px_0px_#fff] z-0 hidden sm:block"></div>
-            <div class="absolute -bottom-6 -left-6 h-24 w-24 rounded-2xl border-2 border-white bg-neo-purple shadow-[4px_4px_0px_0px_#fff] z-0 hidden sm:block"></div>
+            <!-- Floating Scraped Coin 2 -->
+            <div class="absolute -bottom-6 -left-6 z-20 hidden sm:block">
+              <img src="/images/gumroad/coin-2.svg" class="h-14 w-14 animate-pulse" alt="Coin 2" />
+            </div>
+
           </div>
 
         </div>
       </div>
     </section>
+
+    <!-- MARQUEE CATEGORIES BANNER (SCRAPED GUMROAD ICONS) -->
+    <div class="border-y-2 border-black bg-neo-pink py-3 overflow-hidden text-black">
+      <div class="animate-marquee flex gap-8 items-center font-black text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap">
+        <template v-for="n in 3" :key="n">
+          <div v-for="(cat, i) in categories" :key="`${n}-${i}`" class="flex items-center gap-3">
+            <img :src="cat.icon" class="h-6 w-6 border border-black rounded p-0.5 bg-white shrink-0" :alt="cat.name" />
+            <span>{{ cat.name }}</span>
+            <span class="text-black font-black text-base">✦</span>
+          </div>
+        </template>
+      </div>
+    </div>
 
     <!-- SERVICES SECTION -->
     <section id="layanan" class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
@@ -406,9 +446,13 @@ onBeforeUnmount(() => {
             class="neo-box-interactive bg-white text-black p-6 flex flex-col justify-between"
           >
             <div>
-              <div :class="['flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] mb-6', s.color]">
-                <AppIcon :name="s.icon" class="h-7 w-7 text-black" />
+              <div class="flex items-center justify-between mb-4">
+                <div :class="['flex h-12 w-12 items-center justify-center rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000]', s.color]">
+                  <AppIcon :name="s.icon" class="h-6 w-6 text-black" />
+                </div>
+                <img :src="s.img" class="h-10 w-auto object-contain" :alt="s.title" />
               </div>
+
               <h3 class="text-xl font-black text-black mb-3">{{ s.title }}</h3>
               <p class="text-sm font-bold text-slate-700 leading-relaxed mb-6">{{ s.desc }}</p>
               
@@ -433,67 +477,54 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <!-- WHY CHOOSE US -->
-    <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
+    <!-- DEDICATED CARA BEKERJA (VIDEO ANIMATION SHOWCASE) -->
+    <section id="proses" class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24 relative overflow-hidden">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-5 space-y-6">
-            <span class="neo-badge bg-neo-pink text-black">KEUNGGULAN KAMI</span>
-            <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-              Kenapa Harus Buat Website di BantuBuatWeb?
-            </h2>
-            <p class="text-base font-bold text-zinc-400 leading-relaxed">
-              Kami tidak cuma buat website yang cantik, tapi kami mendesain aset digital berkinerja tinggi yang siap mendatangkan calon pelanggan bagi bisnis Anda.
-            </p>
-
-            <div class="space-y-4 pt-2">
-              <div class="flex items-start gap-4 p-4 rounded-xl border-2 border-black bg-neo-yellow text-black shadow-[3px_3px_0px_0px_#fff]">
-                <div>
-                  <h4 class="font-black text-black">Load Super Cepat (High Performance)</h4>
-                  <p class="text-xs font-bold text-slate-900 mt-1">Dikembangkan dengan arsitektur modern untuk kecepatan tinggi.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4 p-4 rounded-xl border-2 border-black bg-neo-pink text-black shadow-[3px_3px_0px_0px_#fff]">
-                <div>
-                  <h4 class="font-black text-black">Tampil Beda &amp; Memorable</h4>
-                  <p class="text-xs font-bold text-slate-900 mt-1">Tampil beda dan menonjol dari kompetitor dengan estetika modern.</p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4 p-4 rounded-xl border-2 border-black bg-neo-cyan text-black shadow-[3px_3px_0px_0px_#fff]">
-                <div>
-                  <h4 class="font-black text-black">Garansi 30 Hari Maintenance</h4>
-                  <p class="text-xs font-bold text-slate-900 mt-1">Garansi penuh perbaikan bug dan pendampingan teknis setelah website rilis.</p>
-                </div>
-              </div>
-            </div>
+        
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+          <div class="inline-flex items-center gap-2 rounded-full border-2 border-black bg-neo-green px-4 py-1 font-black text-xs uppercase text-black shadow-[3px_3px_0px_0px_#fff]">
+            <img src="/images/gumroad/clapping.svg" class="h-4 w-4" alt="Clapping" />
+            ANIMASI VIDEO PROSES
           </div>
-
-          <!-- PROCESS STEPPER -->
-          <div id="proses" class="lg:col-span-7 space-y-6">
-            <div class="text-center lg:text-left mb-8">
-              <span class="neo-badge bg-neo-green text-black">CARA BEKERJA</span>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mt-2">4 Langkah Mudah Website Anda Rilis</h3>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div v-for="(p, idx) in process" :key="idx" class="neo-box bg-white text-black p-6 relative overflow-hidden">
-                <span class="absolute -right-3 -top-3 flex h-14 w-14 items-center justify-center rounded-xl border-2 border-black bg-neo-yellow font-black text-xl text-black shadow-[2px_2px_0px_0px_#000]">
-                  {{ p.step }}
-                </span>
-                <h4 class="text-lg font-black text-black mb-2 pr-10">{{ p.title }}</h4>
-                <p class="text-xs font-bold text-slate-700 leading-relaxed">{{ p.desc }}</p>
-              </div>
-            </div>
-          </div>
-
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+            Cara Bekerja (How It Works)
+          </h2>
+          <p class="text-base sm:text-lg font-bold text-zinc-400">
+            Saksikan bagaimana alur pengerjaan cepat, modern &amp; bergaransi dari BantuBuatWeb dalam 4 langkah mudah.
+          </p>
         </div>
+
+        <!-- Interactive Animated Video Player Component -->
+        <HowItWorksVideo />
+
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US / KEUNGGULAN KAMI REDESIGN -->
+    <section id="keunggulan" class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div class="inline-flex items-center gap-2 rounded-full border-2 border-white bg-neo-pink px-4 py-1 font-black text-xs uppercase text-black shadow-[3px_3px_0px_0px_#fff]">
+            <img src="/images/gumroad/thumbsup.svg" class="h-4 w-4" alt="Thumbsup" />
+            KEUNGGULAN KAMI
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+            Kenapa Harus Buat Website di BantuBuatWeb?
+          </h2>
+          <p class="text-base sm:text-lg font-bold text-zinc-400 max-w-2xl mx-auto">
+            Kami tidak hanya membuat website yang cantik, tapi kami mendesain aset digital berkinerja tinggi, super cepat dan SEO-optimized yang siap mendatangkan pelanggan bagi bisnis Anda.
+          </p>
+        </div>
+
+        <!-- Bento Grid & Comparison Table Component -->
+        <KeunggulanGrid />
+
       </div>
     </section>
 
     <!-- PORTFOLIO SHOWCASE -->
-    <section class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+    <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
@@ -553,7 +584,7 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- PRICING SECTION -->
-    <section id="harga" class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
+    <section id="harga" class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span class="neo-badge bg-neo-green text-black">TRANSPARAN &amp; TANPA BIAYA TERSEBUNYI</span>
@@ -576,7 +607,11 @@ onBeforeUnmount(() => {
             </span>
 
             <div>
-              <h3 class="text-2xl font-black">{{ p.name }}</h3>
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="text-2xl font-black">{{ p.name }}</h3>
+                <img :src="p.icon" class="h-8 w-8 object-contain" :alt="p.name" />
+              </div>
+              
               <p class="text-xs font-bold opacity-80 mt-1 mb-4 h-10">{{ p.desc }}</p>
 
               <div class="mb-6 border-b-2 border-current pb-4">
@@ -609,8 +644,8 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+    <!-- TESTIMONIALS WITH SCRAPED CREATOR AVATARS -->
+    <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <span class="neo-badge bg-neo-yellow text-black">KATA KLIEN KAMI</span>
@@ -624,12 +659,10 @@ onBeforeUnmount(() => {
             </div>
 
             <div class="flex items-center gap-3 pt-6 border-t-2 border-black mt-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-black bg-neo-pink font-black text-black">
-                {{ t.initial }}
-              </div>
+              <img :src="t.avatar" class="h-12 w-12 rounded-full border-2 border-black object-cover bg-neo-yellow" :alt="t.name" />
               <div>
                 <div class="font-black text-sm text-black leading-none">{{ t.name }}</div>
-                <div class="text-xs font-bold text-slate-700 mt-0.5">{{ t.role }}</div>
+                <div class="text-xs font-bold text-slate-700 mt-1">{{ t.role }}</div>
               </div>
             </div>
           </div>
@@ -638,7 +671,7 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
+    <section class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 space-y-4">
           <span class="neo-badge bg-neo-pink text-black">FAQ &amp; PERTANYAAN</span>
@@ -660,9 +693,12 @@ onBeforeUnmount(() => {
     </section>
 
     <!-- FINAL CTA BANNER -->
-    <section class="bg-zinc-950 py-16 sm:py-24">
+    <section class="bg-black py-16 sm:py-24">
       <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div class="neo-box bg-neo-yellow text-black p-8 sm:p-14 text-center border-4 shadow-[10px_10px_0px_0px_#fff] relative overflow-hidden">
+          
+          <img src="/images/gumroad/new-sale.svg" class="h-20 w-auto mx-auto mb-4" alt="New Sale" />
+
           <h2 class="text-3xl sm:text-5xl font-black text-black tracking-tight leading-tight">
             Siap Memiliki Website Professional Berkelas Indonesia?
           </h2>
@@ -685,3 +721,4 @@ onBeforeUnmount(() => {
     </section>
   </div>
 </template>
+
