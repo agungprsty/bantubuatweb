@@ -6,27 +6,27 @@ const slug = route.params.slug
 const service = serviceBySlug(String(slug))
 
 useHead(() => ({
-  title: service ? `${service.title} Lampung | LampungMediaWeb` : 'Layanan Tidak Ditemukan | LampungMediaWeb',
+  title: service ? `${service.title} | Jasa Pembuatan Website BantuBuatWeb` : 'Layanan Tidak Ditemukan | BantuBuatWeb',
   meta: service ? [
     { name: 'description', content: service.desc },
   ] : [{ name: 'robots', content: 'noindex' }],
-  link: service ? [{ rel: 'canonical', href: `https://lampungmediaweb.com/layanan/${service.slug}` }] : [],
+  link: service ? [{ rel: 'canonical', href: `https://bantubuatweb.com/layanan/${service.slug}` }] : [],
   script: service ? [
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Service',
-        name: `${service.title} di Lampung`,
+        name: service.title,
         description: service.desc,
-        url: `https://lampungmediaweb.com/layanan/${service.slug}`,
+        url: `https://bantubuatweb.com/layanan/${service.slug}`,
         provider: {
-          '@type': 'LocalBusiness',
-          '@id': 'https://lampungmediaweb.com/#business',
-          name: 'LampungMediaWeb',
-          url: 'https://lampungmediaweb.com/',
+          '@type': 'ProfessionalService',
+          '@id': 'https://bantubuatweb.com/#business',
+          name: 'BantuBuatWeb',
+          url: 'https://bantubuatweb.com/',
         },
-        areaServed: { '@type': 'State', name: 'Lampung' },
+        areaServed: { '@type': 'Country', name: 'Indonesia' },
       }),
     },
   ] : [],
@@ -40,82 +40,134 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
 </script>
 
 <template>
-  <!-- Nuxt error boundary is not used; service is guaranteed above -->
-  <section v-if="service" class="pt-20 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <nav class="text-xs font-semibold text-slate-500 sm:text-sm" aria-label="Breadcrumb">
-        <NuxtLink to="/" class="hover:text-brand-600">Beranda</NuxtLink>
-        <span class="mx-2">/</span>
-        <NuxtLink to="/layanan" class="hover:text-brand-600">Layanan</NuxtLink>
-        <span class="mx-2">/</span>
-        <span class="text-brand-600">{{ service.title }}</span>
+  <div v-if="service" class="bg-black text-white min-h-screen pt-24 pb-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="flex flex-wrap items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
+        <NuxtLink to="/" class="hover:underline">Beranda</NuxtLink>
+        <span>/</span>
+        <NuxtLink to="/layanan" class="hover:underline">Layanan</NuxtLink>
+        <span>/</span>
+        <span class="bg-neo-cyan text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff]">
+          {{ service.title }}
+        </span>
       </nav>
 
-      <div class="mt-6 grid gap-8 sm:mt-8 sm:gap-12 lg:grid-cols-[1fr_360px] lg:items-start">
-        <div>
-          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-white sm:h-14 sm:w-14">
-            <AppIcon :name="service.icon" class="h-6 w-6 sm:h-7 sm:w-7" />
-          </span>
-          <h1 class="mt-5 text-2xl font-extrabold tracking-tight text-slate-900 sm:mt-6 sm:text-3xl">
-            {{ service.title }}
-          </h1>
-          <p class="mt-3 text-base font-semibold text-brand-600 sm:mt-4 sm:text-lg">{{ service.tagline }}</p>
-          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 sm:mt-4 sm:text-base">{{ service.desc }}</p>
+      <div class="mt-8 grid gap-8 lg:grid-cols-12 items-start">
+        
+        <!-- Main Content -->
+        <div class="lg:col-span-8 space-y-8">
+          <div class="neo-box bg-white text-black p-6 sm:p-10 border-4 border-white shadow-[8px_8px_0px_0px_#fff]">
+            
+            <div class="flex items-center gap-4 border-b-2 border-black pb-6 mb-6">
+              <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-black bg-neo-pink text-black shadow-[3px_3px_0px_0px_#000]">
+                <AppIcon :name="service.icon" class="h-7 w-7" />
+              </span>
+              <div>
+                <span class="neo-badge bg-neo-yellow text-black text-[10px] mb-1">{{ service.group }}</span>
+                <h1 class="text-2xl sm:text-4xl font-black text-black tracking-tight leading-tight">
+                  {{ service.title }}
+                </h1>
+              </div>
+            </div>
 
-          <h2 class="mt-8 text-lg font-extrabold text-slate-900 sm:mt-10 sm:text-xl">Yang Anda Dapatkan</h2>
-          <ul class="mt-4 grid max-w-2xl gap-3 sm:mt-5 sm:grid-cols-2">
-            <li v-for="b in service.benefits" :key="b" class="flex items-start gap-3 text-sm font-medium text-slate-700">
-              <AppIcon name="check" class="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
-              {{ b }}
-            </li>
-          </ul>
+            <p class="text-lg font-black text-slate-900 leading-snug mb-4">
+              "{{ service.tagline }}"
+            </p>
 
-          <div class="mt-6 max-w-2xl rounded-2xl border border-brand-200 bg-brand-50 p-4 text-sm leading-relaxed text-brand-900 sm:mt-8 sm:p-5">
-            <strong>Cocok untuk:</strong> {{ service.bonus }}
-          </div>
+            <p class="text-sm sm:text-base font-bold text-slate-700 leading-relaxed mb-8">
+              {{ service.desc }}
+            </p>
 
-          <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
-            <a :href="wa(`Halo LampungMediaWeb, saya tertarik layanan ${service.title}. Boleh info detail & biayanya?`)"
-              target="_blank" rel="noopener"
-              class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-brand-700 sm:px-7 sm:py-3.5 sm:text-base">
-              <AppIcon name="whatsapp" class="h-5 w-5" />
-              Konsultasi {{ service.title }}
-            </a>
-            <NuxtLink to="/layanan"
-              class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 transition-colors hover:border-brand-600 hover:text-brand-600 sm:px-7 sm:py-3.5 sm:text-base">
-              Lihat Semua Layanan
-            </NuxtLink>
+            <!-- Benefits -->
+            <div class="border-t-2 border-black pt-6 mb-8">
+              <h2 class="text-xl font-black text-black mb-4">Yang Anda Dapatkan:</h2>
+              <ul class="grid gap-3 sm:grid-cols-2">
+                <li v-for="b in service.benefits" :key="b" class="flex items-start gap-2.5 text-xs sm:text-sm font-extrabold text-slate-900 bg-zinc-50 p-3 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                  <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-neo-green font-black text-xs text-black border border-black">✓</span>
+                  <span>{{ b }}</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Suitable For Bonus Card -->
+            <div class="neo-box bg-neo-yellow text-black p-5 border-2 border-black shadow-[4px_4px_0px_0px_#000] mb-8">
+              <span class="font-black uppercase text-xs text-black block mb-1">Catatan:</span>
+              <p class="text-xs sm:text-sm font-bold text-slate-900 leading-relaxed">
+                {{ service.bonus }}
+              </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+              <a
+                :href="wa(`Halo BantuBuatWeb, saya tertarik dengan layanan ${service.title}. Boleh minta info detail & biayanya?`)"
+                target="_blank"
+                rel="noopener"
+                class="neo-btn bg-neo-pink text-black px-8 py-4 text-base font-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 inline-flex items-center justify-center"
+              >
+                <AppIcon name="whatsapp" class="mr-2.5 h-6 w-6" />
+                Konsultasi {{ service.title }}
+              </a>
+              <NuxtLink
+                to="/layanan"
+                class="neo-btn bg-black text-white px-8 py-4 text-base font-black shadow-[4px_4px_0px_0px_#000] hover:bg-neo-yellow hover:text-black inline-flex items-center justify-center"
+              >
+                Lihat Semua Layanan
+              </NuxtLink>
+            </div>
+
           </div>
         </div>
 
-        <aside class="rounded-3xl bg-brand-900 p-5 text-white sm:p-7 lg:sticky lg:top-20">
-          <h2 class="text-lg font-extrabold">Perkiraan &amp; Cara Kerja</h2>
-          <p class="mt-2 text-sm leading-relaxed text-brand-100">
-            Harga tiap proyek beda, tergantung jumlah halaman, fitur, dan konten yang disiapkan.
-            Pengerjaan juga tergantung antrean.
-          </p>
-          <div class="mt-6 space-y-3 text-sm font-semibold">
-            <p class="flex items-center justify-between border-b border-brand-800 pb-3">
-              <span class="text-brand-200">Pengerjaan</span>
-              <span>1–3 minggu</span>
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-6">
+          <div class="neo-box bg-zinc-900 text-white p-6 sm:p-8 border-2 border-white shadow-[6px_6px_0px_0px_#FF90E8] lg:sticky lg:top-24">
+            
+            <div class="flex items-center gap-2 border-b-2 border-zinc-700 pb-4 mb-4">
+              <h2 class="text-lg font-black uppercase">Estimasi &amp; Garansi</h2>
+            </div>
+
+            <p class="text-xs font-bold leading-relaxed mb-6">
+              Setiap proyek dikerjakan secara profesional sesuai alur bisnis Anda tanpa template pasaran.
             </p>
-            <p class="flex items-center justify-between">
-              <span class="text-brand-200">Garansi</span>
-              <span>30 hari</span>
-            </p>
+
+            <div class="space-y-3 border-y-2 border-zinc-800 py-4 mb-6 text-xs sm:text-sm font-bold">
+              <div class="flex justify-between items-center">
+                <span>Estimasi Waktu</span>
+                <span class="font-black">1–3 Minggu</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Garansi Maintenance</span>
+                <span class="font-black">30 Hari Full</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Teknologi</span>
+                <span class="font-black">Nuxt 3 &amp; Vite</span>
+              </div>
+            </div>
+
+            <a
+              :href="wa(`Halo BantuBuatWeb, saya tertarik dengan ${service.title}, boleh minta penawaran pasti?`)"
+              target="_blank"
+              rel="noopener"
+              class="neo-btn bg-neo-yellow text-black w-full py-3.5 text-sm font-black hover:bg-neo-pink hover:text-black shadow-[4px_4px_0px_0px_#fff] flex items-center justify-center mb-4"
+            >
+              <AppIcon name="whatsapp" class="mr-2 h-5 w-5" />
+              Minta Penawaran Resmi
+            </a>
+
+            <NuxtLink
+              :to="`/layanan/${next.slug}`"
+              class="block text-center text-xs font-black hover:text-neo-pink transition-colors mt-2"
+            >
+              Layanan Selanjutnya: {{ next.title }} →
+            </NuxtLink>
+
           </div>
-          <a :href="wa(`Halo LampungMediaWeb, saya tertarik ${service.title}, minta penawaran pasti.`)"
-            target="_blank" rel="noopener"
-            class="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent-500 px-6 py-3.5 font-bold text-brand-900 transition-colors hover:bg-accent-600">
-            <AppIcon name="whatsapp" class="h-5 w-5" />
-            Minta Penawaran
-          </a>
-          <NuxtLink :to="`/layanan/${next.slug}`"
-            class="mt-4 block text-center text-sm font-bold text-brand-200 underline-offset-4 hover:text-white hover:underline">
-            Selanjutnya: {{ next.title }}
-          </NuxtLink>
         </aside>
+
       </div>
     </div>
-  </section>
+  </div>
 </template>
