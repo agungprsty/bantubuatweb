@@ -22,7 +22,7 @@ useHead({
         description: 'BantuBuatWeb: Jasa pembuatan website professional, company profile, toko online, landing page & aplikasi web modern di Indonesia. Desain modern, super cepat, SEO optimized & bergaransi.',
         telephone: '+6289686804015',
         email: 'halo@bantubuatweb.com',
-        priceRange: 'Rp 1.500.000 - Rp 7.000.000',
+        priceRange: 'Rp 800.000 - Rp 7.000.000',
         openingHours: 'Mo-Sa 08:00-21:00',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '150' },
         sameAs: [

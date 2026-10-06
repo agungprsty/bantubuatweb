@@ -5,11 +5,12 @@ import { HOME_SERVICES } from '~/data/homeData'
 <template>
   <section id="layanan" class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
-          Layanan Utama Dari BantuBuatWeb
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+          Layanan Utama Dari <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">BantuBuatWeb?</span>
         </h2>
-        <p class="text-base sm:text-lg font-bold text-zinc-400">
+        <p class="text-base sm:text-lg font-bold text-zinc-400 max-w-2xl mx-auto">
           Pilih jenis website yang sesuai dengan kebutuhan dan target pertumbuhan bisnis Anda.
         </p>
       </div>

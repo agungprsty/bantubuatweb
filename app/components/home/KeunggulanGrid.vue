@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
 const features = [
   {
     id: 'speed',
-    badge: 'SUPER FAST PERFORMANCE',
+    badge: 'PERFORMA RINGAN',
     stat: '< 1.5 Detik',
-    statLabel: 'Average Load Time',
-    title: 'Kecepatan Loading Super Cepat',
-    desc: 'Dibangun dengan Nuxt 3 & Vite modern tanpa plugin WordPress yang berat. Website Anda terbuka secepat kilat, mencegah calon pelanggan kabur karena menunggu.',
+    statLabel: 'Rata-rata Loading',
+    title: 'Kecepatan Buka Super Cepat',
+    desc: 'Dibangun dengan kode khusus tanpa plugin yang memberatkan. Website Anda terbuka cepat saat diakses lewat HP, sehingga pengunjung tidak malas menunggu.',
     color: 'bg-neo-yellow text-black border-2 border-black shadow-[6px_6px_0px_0px_#fff]',
     img: '/images/gumroad/easy.svg',
     colSpan: 'lg:col-span-7',
@@ -16,11 +14,11 @@ const features = [
   },
   {
     id: 'design',
-    badge: 'HIGH CONVERTING UI/UX',
-    stat: '+150%',
-    statLabel: 'Potensi Omzet',
-    title: 'Desain Unik & Menonjol',
-    desc: 'Estetika Neo-Brutalism modern yang berani dan memorable. Membuang tampilan template biasa dan membuat bisnis Anda langsung mencuri perhatian.',
+    badge: 'TAMPILAN MENONJOL',
+    stat: 'Beda & Rapi',
+    statLabel: 'Desain Khas',
+    title: 'Desain Menonjol & Khas',
+    desc: 'Tampilan modern yang rapi dan mudah diingat. Membuang kesan template pasaran agar bisnis Anda tampil lebih terpercaya.',
     color: 'bg-neo-pink text-black border-2 border-black shadow-[6px_6px_0px_0px_#fff]',
     img: '/images/gumroad/price-tag.svg',
     colSpan: 'lg:col-span-5',
@@ -28,11 +26,11 @@ const features = [
   },
   {
     id: 'seo',
-    badge: 'GOOGLE SEARCH READY',
-    stat: 'Rank #1',
-    statLabel: 'SEO Optimized',
-    title: 'Struktur SEO On-Page Lengkap',
-    desc: 'Sudah dilengkapi Schema.org, Meta Tag, Sitemap XML, dan terdaftar di Google Search Console agar produk/jasa Anda mudah ditemukan di pencarian.',
+    badge: 'TERDAFTAR DI GOOGLE',
+    stat: 'Siap Cari',
+    statLabel: 'Pencarian Google',
+    title: 'Siap Ditemukan di Google',
+    desc: 'Sudah dilengkapi pengaturan judul, deskripsi, dan pendaftaran ke Google Search agar profil atau produk bisnis Anda bisa dicari di internet.',
     color: 'bg-white text-black border-2 border-black shadow-[6px_6px_0px_0px_#FF90E8]',
     img: '/images/gumroad/sales-graph.svg',
     colSpan: 'lg:col-span-4',
@@ -40,11 +38,11 @@ const features = [
   },
   {
     id: 'responsive',
-    badge: 'PIXEL PERFECT ALL DEVICE',
+    badge: 'RESPONSIF SEMUA LAYAR',
     stat: '100%',
-    statLabel: 'Mobile Friendly',
-    title: 'Responsif Layar HP & Laptop',
-    desc: 'Desain adaptif sempurna di layar iPhone, Android, Tablet, hingga Laptop monitor besar. Pengalaman pengguna terasa mulus di manapun.',
+    statLabel: 'HP & Laptop',
+    title: 'Rapi di HP, Tablet & Laptop',
+    desc: 'Tampilan otomatis menyesuaikan ukuran layar HP Android, iPhone, Tablet, maupun Komputer. Pengunjung nyaman membaca dari perangkat apa pun.',
     color: 'bg-neo-cyan text-black border-2 border-black shadow-[6px_6px_0px_0px_#fff]',
     img: '/images/gumroad/blog-post-circle-1.svg',
     colSpan: 'lg:col-span-4',
@@ -52,11 +50,11 @@ const features = [
   },
   {
     id: 'guarantee',
-    badge: 'GARANSI MAINTENANCE',
+    badge: 'GARANSI PEMELIHARAAN',
     stat: '30 Hari',
-    statLabel: 'Dukungan Gratis',
-    title: 'Garansi & Technical Support',
-    desc: 'Garansi 30 hari penuh pasca-launching untuk pembaruan minor, perbaikan bug, dan pendampingan pengelolaan hingga Anda mahir menggunakannya.',
+    statLabel: 'Bantuan Gratis',
+    title: 'Garansi & Bantuan Teknis',
+    desc: 'Garansi 30 hari penuh setelah website tayang. Jika ada masalah teknis atau ingin ubah tulisan ringan, kami bantu sampai Anda paham.',
     color: 'bg-neo-green text-black border-2 border-black shadow-[6px_6px_0px_0px_#fff]',
     img: '/images/gumroad/thumbsup.svg',
     colSpan: 'lg:col-span-4',
@@ -64,11 +62,11 @@ const features = [
   },
   {
     id: 'cta',
-    badge: 'DIRECT WHATSAPP CONVERSION',
-    stat: '1-Click',
-    statLabel: 'Fast Order CTA',
-    title: 'Terintegrasi Sistem WhatsApp Direct',
-    desc: 'Calon pembeli bisa langsung menghubungi atau memesan produk Anda melalui tombol WhatsApp otomatis yang telah terintegrasi di seluruh halaman.',
+    badge: 'PESAN LANGSUNG VIA WA',
+    stat: '1 Klik',
+    statLabel: 'Order WhatsApp',
+    title: 'Terhubung Langsung ke WhatsApp',
+    desc: 'Calon pembeli bisa langsung menghubungi atau bertanya mengenai produk Anda melalui tombol WhatsApp yang selalu tersedia.',
     color: 'bg-zinc-900 text-white border-2 border-white shadow-[6px_6px_0px_0px_#FFC901]',
     img: '/images/gumroad/new-sale.svg',
     colSpan: 'lg:col-span-12',
@@ -78,27 +76,27 @@ const features = [
 
 const comparison = [
   {
-    feature: 'Kecepatan Load (Speed)',
-    us: 'Under 1.5 Detik (Super Cepat)',
+    feature: 'Kecepatan',
+    us: '< 2 Detik (Sangat Cepat)',
     them: '4-8 Detik (Lambat & Berat)',
     isBetter: true,
   },
   {
-    feature: 'Estetika & Tampilan UI',
-    us: 'Custom Neo-Brutalism Unique',
-    them: 'Template Pasaran / Pasrah',
+    feature: 'Desain Tampilan',
+    us: 'Desain Khas & Rapi',
+    them: 'Template Pasaran',
     isBetter: true,
   },
   {
-    feature: 'Optimasi SEO & Google',
-    us: 'Complete Schema & Meta Ready',
-    them: 'Harus Beli Plugin Tambahan',
+    feature: 'Kemudahan Pencarian',
+    us: 'Siap Didaftarkan ke Google Search',
+    them: 'Harus Beli Tambahan Pengaturan',
     isBetter: true,
   },
   {
-    feature: 'Garansi Pasca Launching',
-    us: '30 Hari Garansi Maintenance',
-    them: 'Lepas Tangan Setelah Rilis',
+    feature: 'Garansi Pemeliharaan',
+    us: 'Garansi 30 Hari Pemeliharaan',
+    them: 'Selesai Buat Langsung Dilepas',
     isBetter: true,
   },
 ]
@@ -110,10 +108,10 @@ const comparison = [
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
         <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
-          Kenapa Harus Buat Website di BantuBuatWeb?
+          Kenapa Harus Buat Website di <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">BantuBuatWeb?</span>
         </h2>
         <p class="text-base sm:text-lg font-bold text-zinc-400 max-w-2xl mx-auto">
-          Kami tidak hanya membuat website yang cantik, tapi kami mendesain aset digital berkinerja tinggi, super cepat dan SEO-optimized yang siap mendatangkan pelanggan bagi bisnis Anda.
+          Kami membuatkan website yang ringan dan buka cepat di HP, rapi saat dilihat calon pembeli, serta mudah ditemukan di pencarian Google.
         </p>
       </div>
 
@@ -132,22 +130,6 @@ const comparison = [
           >
             <!-- Top Badge & Stat -->
             <div>
-              <div class="flex items-center justify-between gap-2 mb-6">
-                <span
-                  :class="[
-                    'text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full border border-black',
-                    f.id === 'cta' ? 'bg-neo-yellow text-black' : 'bg-black text-white'
-                  ]"
-                >
-                  {{ f.badge }}
-                </span>
-
-                <div class="text-right">
-                  <span class="block text-xl sm:text-2xl font-black leading-none">{{ f.stat }}</span>
-                  <span class="text-[10px] font-bold uppercase opacity-80 mt-0.5 block">{{ f.statLabel }}</span>
-                </div>
-              </div>
-
               <!-- Feature Image / Visual Illustration -->
               <div class="flex items-center justify-between gap-6 mb-6">
                 <div class="space-y-2 max-w-lg">
@@ -168,27 +150,17 @@ const comparison = [
                 </div>
               </div>
             </div>
-
-            <!-- Bottom Action / Highlights -->
-            <div class="pt-4 border-t-2 border-current/20 flex items-center justify-between">
-              <span class="text-xs font-black uppercase tracking-wide flex items-center gap-1.5">
-                <span class="h-2 w-2 rounded-full bg-current"></span>
-                Standar Kualitas BantuBuatWeb
-              </span>
-              <span class="text-xs font-mono font-bold">✓ VERIFIED</span>
-            </div>
-
           </div>
         </div>
 
-        <!-- COMPARISON TABLE: BANTUBUATWEB VS JASA KONVENSIONAL -->
+        <!-- COMPARISON TABLE -->
         <div class="neo-box bg-white text-black p-6 sm:p-10 border-4 border-black shadow-[8px_8px_0px_0px_#23C552]">
           <div class="text-center max-w-2xl mx-auto mb-8">
             <h3 class="text-2xl sm:text-4xl font-black text-black mt-2">
-              Mengapa BantuBuatWeb Jauh Lebih Unggul?
+              Perbandingan Hasil Pembuatan Website
             </h3>
             <p class="text-xs sm:text-sm font-bold text-slate-700 mt-1">
-              Bandingkan hasil pembuatan website kami dengan jasa konvensional biasa.
+              Bandingkan layanan BantuBuatWeb dengan pembuat website biasa.
             </p>
           </div>
 
@@ -196,12 +168,12 @@ const comparison = [
             <table class="w-full text-left border-collapse">
               <thead>
                 <tr class="border-b-2 border-black bg-zinc-100 text-black">
-                  <th class="p-3 text-xs sm:text-sm font-black uppercase">Fitur &amp; Standar</th>
+                  <th class="p-3 text-xs sm:text-sm font-black uppercase">Fitur Utama</th>
                   <th class="p-3 text-xs sm:text-sm font-black uppercase bg-neo-yellow text-black border-x-2 border-black">
                     BantuBuatWeb
                   </th>
                   <th class="p-3 text-xs sm:text-sm font-black uppercase text-slate-500">
-                    Jasa Konvensional
+                    Pembuat Biasa
                   </th>
                 </tr>
               </thead>

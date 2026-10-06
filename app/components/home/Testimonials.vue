@@ -5,8 +5,11 @@ import { HOME_TESTIMONIALS } from '~/data/homeData'
 <template>
   <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Apa Kata Mereka Tentang BantuBuatWeb?</h2>
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+          Apa Kata Mereka Tentang <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">BantuBuatWeb?</span>
+        </h2>
       </div>
 
       <div class="grid gap-8 md:grid-cols-3">
