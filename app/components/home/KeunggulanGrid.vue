@@ -14,10 +14,10 @@ const features = [
   },
   {
     id: 'design',
-    badge: 'TAMPILAN MENONJOL',
+    badge: 'TAMPILAN MENARIK',
     stat: 'Beda & Rapi',
     statLabel: 'Desain Khas',
-    title: 'Desain Menonjol & Khas',
+    title: 'Desain Menarik & Khas',
     desc: 'Tampilan modern yang rapi dan mudah diingat. Membuang kesan template pasaran agar bisnis Anda tampil lebih terpercaya.',
     color: 'bg-neo-pink text-black border-2 border-black shadow-[6px_6px_0px_0px_#fff]',
     img: '/images/gumroad/price-tag.svg',
@@ -27,9 +27,9 @@ const features = [
   {
     id: 'seo',
     badge: 'TERDAFTAR DI GOOGLE',
-    stat: 'Siap Cari',
+    stat: 'Mudah Cari',
     statLabel: 'Pencarian Google',
-    title: 'Siap Ditemukan di Google',
+    title: 'Mudah Ditemukan di Google',
     desc: 'Sudah dilengkapi pengaturan judul, deskripsi, dan pendaftaran ke Google Search agar profil atau produk bisnis Anda bisa dicari di internet.',
     color: 'bg-white text-black border-2 border-black shadow-[6px_6px_0px_0px_#FF90E8]',
     img: '/images/gumroad/sales-graph.svg',
@@ -154,7 +154,7 @@ const comparison = [
         </div>
 
         <!-- COMPARISON TABLE -->
-        <div class="neo-box bg-white text-black p-6 sm:p-10 border-4 border-black shadow-[8px_8px_0px_0px_#23C552]">
+        <div class="neo-box bg-white text-black p-6 sm:p-10 border-4 border-black shadow-[4px_4px_0px_0px_#23C552] sm:shadow-[8px_8px_0px_0px_#23C552]">
           <div class="text-center max-w-2xl mx-auto mb-8">
             <h3 class="text-2xl sm:text-4xl font-black text-black mt-2">
               Perbandingan Hasil Pembuatan Website
@@ -165,7 +165,7 @@ const comparison = [
           </div>
 
           <div class="overflow-x-auto">
-            <table class="w-full text-left border-collapse">
+            <table class="w-full min-w-[500px] text-left border-collapse">
               <thead>
                 <tr class="border-b-2 border-black bg-zinc-100 text-black">
                   <th class="p-3 text-xs sm:text-sm font-black uppercase">Fitur Utama</th>
@@ -173,7 +173,7 @@ const comparison = [
                     BantuBuatWeb
                   </th>
                   <th class="p-3 text-xs sm:text-sm font-black uppercase text-slate-500">
-                    Pembuat Biasa
+                    Vendor Lain
                   </th>
                 </tr>
               </thead>

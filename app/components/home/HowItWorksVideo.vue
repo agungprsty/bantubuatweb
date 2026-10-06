@@ -180,7 +180,7 @@ const formatTime = (p: number) => {
             </div>
 
             <!-- ANIMATED VIDEO VIEWPORT -->
-            <div class="relative min-h-[340px] sm:min-h-[400px] flex items-center justify-center p-6 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black overflow-hidden">
+            <div class="relative min-h-[260px] sm:min-h-[340px] lg:min-h-[400px] flex items-center justify-center p-6 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black overflow-hidden">
               
               <!-- BACKGROUND GRID DECORATION -->
               <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
@@ -298,18 +298,18 @@ const formatTime = (p: number) => {
                 <span class="text-xs font-mono font-bold text-zinc-400">00:20</span>
               </div>
 
-              <div class="flex items-center justify-between">
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <button
                     @click="togglePlay"
-                    class="neo-btn bg-neo-yellow text-black px-4 py-1.5 text-xs font-black hover:bg-white"
+                    class="neo-btn bg-neo-yellow text-black px-4 py-2 text-xs font-black hover:bg-white"
                     aria-label="Play or pause process video"
                   >
                     {{ isPlaying ? '❚❚ JEDA' : '▶ PUTAR' }}
                   </button>
                   <button
                     @click="toggleMute"
-                    class="neo-btn bg-zinc-800 text-white px-3 py-1.5 text-xs font-bold hover:bg-zinc-700 border-zinc-600"
+                    class="neo-btn bg-zinc-800 text-white px-3 py-2 text-xs font-bold hover:bg-zinc-700 border-zinc-600"
                     aria-label="Toggle video sound audio"
                   >
                     {{ isMuted ? '🔇 TANPA SUARA' : '🔊 SUARA AKTIF' }}

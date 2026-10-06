@@ -2,7 +2,7 @@
   <section class="border-b-2 border-zinc-800 bg-black py-16 sm:py-24 relative overflow-hidden">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
       <div
-        class="neo-box bg-neo-yellow text-black p-8 sm:p-14 text-center border-3 sm:border-4 border-black shadow-[8px_8px_0px_0px_#fff] relative overflow-hidden rounded-3xl"
+        class="neo-box bg-neo-yellow text-black p-6 sm:p-10 lg:p-14 text-center border-3 sm:border-4 border-black shadow-[8px_8px_0px_0px_#fff] relative overflow-hidden rounded-3xl"
       >
         <!-- Background SVG Blob Graphic -->
         <div class="absolute inset-0 pointer-events-none opacity-20 flex items-center justify-center overflow-hidden">

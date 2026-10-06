@@ -26,7 +26,7 @@ const toggleFaq = (idx: number) => {
           <button
             type="button"
             @click="toggleFaq(idx)"
-            class="w-full text-left p-6 flex items-center justify-between gap-4 select-none focus:outline-none cursor-pointer group"
+            class="w-full text-left p-4 sm:p-6 flex items-center justify-between gap-4 select-none focus:outline-none cursor-pointer group"
             :aria-expanded="openIndex === idx"
           >
             <div class="flex items-center gap-3">
@@ -61,8 +61,8 @@ const toggleFaq = (idx: number) => {
             leave-from-class="max-h-96 opacity-100"
             leave-to-class="max-h-0 opacity-0"
           >
-            <div v-show="openIndex === idx" class="px-6 pb-6 pt-1 border-t-2 border-dashed border-zinc-200">
-              <p class="text-sm sm:text-base font-bold text-slate-700 leading-relaxed pl-10 border-l-3 border-black ml-3 pt-2">
+            <div v-show="openIndex === idx" class="px-4 pb-4 sm:px-6 sm:pb-6 pt-1 border-t-2 border-dashed border-zinc-200">
+              <p class="text-sm sm:text-base font-bold text-slate-700 leading-relaxed pl-4 sm:pl-10 border-l-3 border-black ml-0 sm:ml-3 pt-2">
                 {{ f.a }}
               </p>
             </div>

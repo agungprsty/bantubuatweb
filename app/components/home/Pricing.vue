@@ -30,7 +30,7 @@ import { HOME_PLANS } from '~/data/homeData'
               <img :src="p.icon" class="h-8 w-8 object-contain" :alt="p.name" />
             </div>
             
-            <p class="text-xs font-bold opacity-80 mt-1 mb-4 h-10">{{ p.desc }}</p>
+            <p class="text-xs font-bold opacity-80 mt-1 mb-4 min-h-[2.5rem]">{{ p.desc }}</p>
 
             <div class="mb-6 border-b-2 border-current pb-4">
               <div class="text-3xl sm:text-4xl font-black">{{ p.price }}</div>
@@ -39,7 +39,7 @@ import { HOME_PLANS } from '~/data/homeData'
             </div>
 
             <ul class="space-y-3 mb-8">
-              <li v-for="(perk, i) in p.perks" :key="i" class="flex items-start text-xs font-extrabold">
+              <li v-for="(perk, i) in p.perks" :key="i" class="flex items-start text-sm font-extrabold">
                 <span class="mr-2 font-black">✓</span>
                 <span>{{ perk }}</span>
               </li>
