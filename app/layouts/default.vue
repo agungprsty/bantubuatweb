@@ -91,7 +91,7 @@ onMounted(() => {
     <!-- Mobile Navigation Drawer -->
     <div
       v-if="open"
-      class="fixed inset-x-0 top-[97px] z-40 border-b-4 border-white bg-zinc-900 p-5 shadow-[0_10px_0_0_#fff] md:hidden"
+      class="fixed inset-x-0 top-[97px] z-40 border-b-4 border-white bg-zinc-900 p-5 shadow-[0_10px_0_0_#fff] md:hidden max-h-[calc(100vh-97px)] overflow-y-auto"
     >
       <nav class="flex flex-col gap-2" aria-label="Menu mobile">
         <NuxtLink
@@ -186,7 +186,7 @@ onMounted(() => {
             <ul class="mt-5 space-y-3 text-sm font-bold text-zinc-300">
               <li class="flex items-start gap-3">
                 <AppIcon name="mapPin" class="mt-1 h-5 w-5 shrink-0 text-neo-yellow" />
-                <span>Jakarta &amp; Bandar Lampung (Melayani Seluruh Indonesia)</span>
+                <span>Yogyakarta &amp; Bandar Lampung (Melayani Seluruh Indonesia)</span>
               </li>
               <li class="flex items-center gap-3">
                 <AppIcon name="phone" class="h-5 w-5 shrink-0 text-neo-yellow" />

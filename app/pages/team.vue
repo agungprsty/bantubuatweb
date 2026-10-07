@@ -69,7 +69,7 @@ useHead({
           Orang di Balik <span class="bg-neo-yellow text-black px-2 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">BantuBuatWeb</span>
         </h1>
         <p class="text-base sm:text-lg font-bold text-zinc-300 leading-relaxed">
-          Tim fleksibel, tanpa hirarki berbelit. Kami fokus menghadirkan karya berstandar tinggi untuk seluruh klien Indonesia.
+          Kami fokus menghadirkan karya berstandar tinggi untuk seluruh klien Indonesia.
         </p>
       </div>
 

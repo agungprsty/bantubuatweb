@@ -1,50 +1,96 @@
-# LampungMediaWeb | Jasa Pembuatan Website Lampung
+# BantuBuatWeb | Jasa Pembuatan Website Professional
 
-Software house di Bandar Lampung: company profile, toko online, landing page, aplikasi web & SEO. Desain premium, super cepat, bergaransi 30 hari. Mobile-first.
+Platform & Layanan Jasa Pembuatan Website Professional di Indonesia: Company Profile, Toko Online (E-Commerce), Landing Page Iklan, dan Aplikasi Web Custom. Didesain dengan estetika **Neo-Brutalism**, responsif (mobile-first), super cepat, dan SEO optimized.
 
-**Stack:** Nuxt 4 · Vue 3 · Tailwind CSS 4 · @nuxt/icon
+**Stack:** Nuxt 4 · Vue 3 · Tailwind CSS v4 · @nuxt/icon · TypeScript
 
-**Live:** https://lampungmediaweb.com
+**Live URL:** https://bantubuatweb.com
 
-## Setup
+---
+
+## 🚀 Fitur & Keunggulan
+
+- **Neo-Brutalism Design System:** Tampilan modern, bold, dan eye-catching terinspirasi dari gaya desain kontemporer.
+- **Super Fast & Lightweight:** Dibangun menggunakan Nuxt 4 & Vite untuk waktu muat halaman ultra cepat.
+- **SEO Ready & Social Share:** Konfigurasi Meta Tags, Open Graph, Twitter Cards, JSON-LD Schema, serta sitemap otomatis.
+- **Mobile-First & Responsive:** Tampilan rapi dan teroptimasi di berbagai layar (smartphone, tablet, desktop).
+- **Integrasi WhatsApp Direct:** Kemudahan calon klien menghubungi langsung melalui aksi tombol WhatsApp.
+
+---
+
+## 🛠️ Cara Memulai (Development Setup)
+
+### Prasyarat
+- Node.js `v18.x` atau lebih baru
+- npm, pnpm, atau yarn
+
+### Perintah Utama
 
 ```bash
+# Install dependencies
 npm install
-npm run dev      # http://localhost:3000
+
+# Jalankan server pengembangan (http://localhost:3000)
+npm run dev
+
+# Build untuk produksi (SSR / Node.js)
 npm run build
+
+# Preview hasil build produksi
 npm run preview
-npm run generate # static
+
+# Generate situs statis (SSG)
+npm run generate
 ```
 
-## Struktur
+---
 
+## 📁 Struktur Direktori
+
+```text
+├── app/
+│   ├── assets/
+│   │   └── css/main.css         # Theme CSS, Neo-Brutalism styling & Tailwind setup
+│   ├── components/
+│   │   ├── home/                # Komponen Beranda (Hero, Keunggulan, Pricing, FAQ, Video, dll.)
+│   │   ├── AppIcon.vue          # Wrapper icon serbaguna
+│   │   ├── AppLogo.vue          # Komponen Logo BantuBuatWeb
+│   │   └── LegalPage.vue        # Layout reusable untuk dokumen legal
+│   ├── data/
+│   │   ├── homeData.ts          # Data konten Beranda (FAQ, Keunggulan, Testimonial, dll.)
+│   │   ├── portfolio.ts         # Data karya & proyek portofolio
+│   │   └── services.ts          # Catalog daftar layanan & detailnya
+│   ├── layouts/
+│   │   └── default.vue          # Main Layout (Header, Footer, Floating CTA)
+│   ├── pages/
+│   │   ├── index.vue            # Halaman utama (Landing page)
+│   │   ├── layanan/             # Daftar & detail layanan (/layanan & /layanan/[slug])
+│   │   ├── proyek.vue           # Showroom portofolio proyek
+│   │   ├── team.vue             # Profile tim & tentang kami
+│   │   ├── terms.vue / privacy  # Halaman Syarat, Ketentuan & Privasi
+│   │   └── [...slug].vue        # Halaman 404 Custom
+│   └── utils/
+│       └── wa.ts                # Generator URL WhatsApp & konfigurasi nomor
+├── public/                      # Asset publik (favicon, og-cover.svg, robots.txt)
+├── nuxt.config.ts               # Konfigurasi Nuxt 4, Meta SEO, Icon set & Vite
+└── package.json                 # Dependency & npm scripts
 ```
-app/
-  assets/css/main.css   # Tailwind theme (brand/accent)
-  components/           # AppIcon, AppLogo, LegalPage
-  data/services.ts      # 15 layanan + groups
-  layouts/default.vue   # header, footer, reveal-on-scroll
-  pages/
-    index.vue           # landing (hero, pricing, portfolio, FAQ)
-    layanan/index.vue   # filter kategori
-    layanan/[slug].vue  # detail layanan + JSON-LD Service
-    terms.vue / privacy.vue / cookie.vue
-    [...slug].vue       # 404
-public/                 # favicon, og-cover.svg, robots.txt, sitemap.xml
-nuxt.config.ts          # SEO head, Vite + Tailwind, icon bundle
-```
 
-## Kustomisasi Cepat
+---
 
-- **WA:** `app/utils/wa.ts` → `WA_NUMBER`
-- **Layanan:** `app/data/services.ts` → `SERVICES`
-- **Harga:** `app/pages/index.vue` → `plans`
-- **Portofolio/Testimoni/FAQ:** `app/pages/index.vue`
+## ⚙️ Kustomisasi Cepat
 
-## Mobile-first
+1. **Nomor WhatsApp:** Ubah nomor tujuan pada [`app/utils/wa.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/utils/wa.ts) (`WA_NUMBER`).
+2. **Daftar Layanan:** Tambahkan atau perbarui data layanan di [`app/data/services.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/data/services.ts).
+3. **Portofolio & Testimoni:** Sesuaikan daftar proyek di [`app/data/portfolio.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/data/portfolio.ts) & [`app/data/homeData.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/data/homeData.ts).
+4. **Meta SEO & Head:** Perbarui judul default, deskripsi, dan Open Graph pada [`nuxt.config.ts`](file:///home/farghani/freelance/bantubuatweb.com/nuxt.config.ts).
 
-Semua section pakai base kecil (`text-2xl`, `py-10`, `px-4`, `gap-4`) lalu membesar di `sm:`/`lg:` (`sm:text-3xl`, `lg:py-24`). Hero `h1` base `text-[28px]`, button `py-3 text-base` . Cek di Chrome DevTools 360px.
+---
 
-## Deploy
+## 🚢 Deployment
 
-`npm run build` → `.output/` (Node) atau `npm run generate` → `.output/public/` untuk static hosting. Pastikan `sitemap.xml` & `robots.txt` ter-copy.
+Proyek ini dapat di-deploy ke server Node.js maupun platform Jamstack/SSG (Vercel, Netlify, Cloudflare Pages):
+
+- **SSR / Node Server:** Jalankan `npm run build`, lalu jalankan output via `node .output/server/index.mjs`.
+- **Static Hosting (SSG):** Jalankan `npm run generate`, lalu upload folder `.output/public/`.
+

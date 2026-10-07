@@ -1,10 +1,10 @@
 {
-  "name": "lampungmediaweb-com",
+  "name": "bantubuatweb-com",
   "type": "module",
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "NODE_OPTIONS=--no-warnings nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

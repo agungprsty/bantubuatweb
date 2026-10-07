@@ -31,7 +31,7 @@ withDefaults(defineProps<{
       </span>
       <span
         :class="[
-          'mt-1 text-[9px] font-extrabold uppercase tracking-wider',
+          'mt-1 text-[10px] font-extrabold uppercase tracking-wider',
           light ? 'text-neo-pink' : 'text-slate-700'
         ]"
       >

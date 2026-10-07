@@ -74,17 +74,11 @@ useHead({
             <!-- Header bar -->
             <div class="flex items-center justify-between border-b-2 border-black pb-3 mb-4">
               <span class="neo-badge bg-neo-yellow text-black text-[10px]">{{ p.tag }}</span>
-              <span class="font-mono text-[11px] font-black text-slate-800 bg-slate-100 px-2 py-0.5 rounded border border-black">{{ p.domain }}</span>
             </div>
 
             <!-- Content -->
             <h3 class="text-xl font-black text-black mb-2">{{ p.title }}</h3>
             <p class="text-xs font-bold text-slate-700 leading-relaxed mb-4">{{ p.desc }}</p>
-
-            <div class="mb-6 rounded-lg border-2 border-black bg-neo-green/20 p-2.5 text-xs font-black text-green-950 flex items-center gap-2">
-              <span>Hasil:</span>
-              <span>{{ p.result }}</span>
-            </div>
           </div>
 
           <a
