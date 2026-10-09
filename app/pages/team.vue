@@ -21,7 +21,7 @@ useHead({
   meta: [
     { name: 'description', content: 'Kenalan dengan tim profesional di balik BantuBuatWeb: engineer, desainer UI/UX, dan spesialis digital yang siap membantu bisnis Anda tumbuh.' },
   ],
-  link: [{ rel: 'canonical', href: 'https://bantubuatweb.com/team' }],
+  link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/team' }],
   script: [
     {
       type: 'application/ld+json',
@@ -29,8 +29,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuatweb.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Tim Kami', item: 'https://bantubuatweb.com/team' },
+          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuat.web.id/' },
+          { '@type': 'ListItem', position: 2, name: 'Tim Kami', item: 'https://bantubuat.web.id/team' },
         ],
       }),
     },
@@ -40,11 +40,11 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'AboutPage',
         name: 'Tim BantuBuatWeb',
-        url: 'https://bantubuatweb.com/team',
+        url: 'https://bantubuat.web.id/team',
         mainEntity: {
           '@type': 'Organization',
           name: 'BantuBuatWeb',
-          url: 'https://bantubuatweb.com/',
+          url: 'https://bantubuat.web.id/',
           member: team.map((m) => ({ '@type': 'Person', name: m.name, jobTitle: m.role })),
         },
       }),

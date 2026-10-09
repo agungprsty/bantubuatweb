@@ -64,7 +64,7 @@ const props = withDefaults(defineProps<{
         <h3 class="text-xl sm:text-2xl font-black text-black">Ada Pertanyaan Seputar Dokumen Ini?</h3>
         <p class="mt-2 text-sm sm:text-base font-bold text-black leading-relaxed">
           Tim BantuBuatWeb siap membantu menjawab pertanyaan Anda melalui WhatsApp atau email di
-          <a href="mailto:halo@bantubuatweb.com" class="underline font-black">halo@bantubuatweb.com</a>.
+          <a href="mailto:halo@bantubuat.web.id" class="underline font-black">halo@bantubuat.web.id</a>.
         </p>
         <div class="mt-6">
           <a

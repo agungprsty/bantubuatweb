@@ -45,7 +45,7 @@
                 <span class="h-4 w-4 rounded-full bg-yellow-400 border border-black"></span>
                 <span class="h-4 w-4 rounded-full bg-green-500 border border-black"></span>
               </div>
-              <span class="text-xs font-black uppercase bg-black text-white px-3 py-1 rounded">bantubuatweb.com</span>
+              <span class="text-xs font-black uppercase bg-black text-white px-3 py-1 rounded">bantubuat.web.id</span>
             </div>
 
             <!-- Center Graphic: Lottie Animated Character -->

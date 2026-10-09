@@ -6,7 +6,7 @@ useHead({
   meta: [
     { name: 'description', content: 'Lihat galeri proyek hasil karya BantuBuatWeb: company profile, toko online, sistem booking, landing page, hingga aplikasi web modern di Indonesia.' },
   ],
-  link: [{ rel: 'canonical', href: 'https://bantubuatweb.com/proyek' }],
+  link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/proyek' }],
   script: [
     {
       type: 'application/ld+json',
@@ -14,8 +14,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuatweb.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Proyek', item: 'https://bantubuatweb.com/proyek' },
+          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuat.web.id/' },
+          { '@type': 'ListItem', position: 2, name: 'Proyek', item: 'https://bantubuat.web.id/proyek' },
         ],
       }),
     },
@@ -25,7 +25,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Portofolio BantuBuatWeb',
-        url: 'https://bantubuatweb.com/proyek',
+        url: 'https://bantubuat.web.id/proyek',
         description: 'Kumpulan proyek website profesional buatan BantuBuatWeb.',
         mainEntity: {
           '@type': 'ItemList',
@@ -34,7 +34,7 @@ useHead({
             '@type': 'ListItem',
             position: i + 1,
             name: p.title,
-            url: `https://bantubuatweb.com/proyek#${p.domain}`,
+            url: `https://bantubuat.web.id/proyek#${p.domain}`,
           })),
         },
       }),
