@@ -40,30 +40,30 @@ onMounted(() => {
 <template>
   <div class="min-h-screen bg-black font-sans text-white antialiased selection:bg-neo-pink selection:text-black">
     <!-- Top Announcement Marquee Ticker -->
-    <div class="sticky top-0 z-50 border-b-2 border-black bg-neo-pink py-1.5 font-black text-xs uppercase tracking-wider text-black overflow-hidden">
+    <div class="sticky top-0 z-50 border-b-2 border-black bg-neo-pink py-1 font-black text-[10px] sm:text-xs uppercase tracking-wider text-black overflow-hidden">
       <div class="animate-marquee whitespace-nowrap">
-        <span v-for="i in 3" :key="i" class="inline-flex items-center gap-6 pr-6">
-          <span v-for="(item, idx) in marqueeItems" :key="idx" class="inline-flex items-center gap-6">
+        <span v-for="i in 3" :key="i" class="inline-flex items-center gap-4 sm:gap-6 pr-4 sm:pr-6">
+          <span v-for="(item, idx) in marqueeItems" :key="idx" class="inline-flex items-center gap-4 sm:gap-6">
             <span>{{ item }}</span>
-            <span class="text-sm font-black">•</span>
+            <span class="text-xs sm:text-sm font-black">•</span>
           </span>
         </span>
       </div>
     </div>
 
     <!-- Header Navigation -->
-    <header class="sticky top-[33px] z-40 border-b-2 border-zinc-800 bg-black/90 backdrop-blur-md">
-      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header class="sticky top-[26px] sm:top-[32px] z-40 border-b-2 border-zinc-800 bg-black/95 backdrop-blur-md">
+      <div class="mx-auto flex h-14 sm:h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <NuxtLink to="/" class="group flex items-center" aria-label="BantuBuatWeb, Jasa Pembuatan Website Indonesia">
           <AppLogo light />
         </NuxtLink>
 
-        <nav class="hidden items-center gap-3 md:flex" aria-label="Navigasi utama">
+        <nav class="hidden items-center gap-2 lg:gap-3 md:flex" aria-label="Navigasi utama">
           <NuxtLink
             v-for="item in nav"
             :key="item.href"
             :to="item.href"
-            class="rounded-lg border-2 border-transparent px-3 py-1.5 text-sm font-extrabold text-white transition-all hover:border-black hover:bg-neo-yellow hover:text-black hover:shadow-[2px_2px_0px_0px_#fff]"
+            class="rounded-lg border-2 border-transparent px-2.5 lg:px-3 py-1.5 text-xs lg:text-sm font-extrabold text-white transition-all hover:border-black hover:bg-neo-yellow hover:text-black hover:shadow-[2px_2px_0px_0px_#fff]"
           >
             {{ item.label }}
           </NuxtLink>
@@ -72,19 +72,19 @@ onMounted(() => {
             :href="wa('Halo BantuBuatWeb, saya ingin konsultasi pembuatan website untuk bisnis saya')"
             target="_blank"
             rel="noopener"
-            class="neo-btn bg-neo-pink px-5 py-2 text-sm font-extrabold text-black ml-2 shadow-[3px_3px_0px_0px_#fff] hover:shadow-[5px_5px_0px_0px_#fff]"
+            class="neo-btn bg-neo-pink px-4 lg:px-5 py-2 text-xs lg:text-sm font-extrabold text-black ml-1 lg:ml-2 shadow-[3px_3px_0px_0px_#fff] hover:shadow-[5px_5px_0px_0px_#fff]"
           >
-            <AppIcon name="whatsapp" class="mr-2 h-4 w-4" />
+            <AppIcon name="whatsapp" class="mr-1.5 h-4 w-4" />
             Konsultasi Gratis
           </a>
         </nav>
 
         <button
-          class="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#fff] md:hidden"
-          aria-label="Buka menu"
+          class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border-2 border-white bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#fff] md:hidden cursor-pointer"
+          aria-label="Buka menu navigasi"
           @click="open = !open"
         >
-          <AppIcon :name="open ? 'x' : 'menu'" class="h-6 w-6" />
+          <AppIcon :name="open ? 'x' : 'menu'" class="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
       </div>
     </header>
@@ -92,14 +92,14 @@ onMounted(() => {
     <!-- Mobile Navigation Drawer -->
     <div
       v-if="open"
-      class="fixed inset-x-0 top-[97px] z-40 border-b-4 border-white bg-zinc-900 p-5 shadow-[0_10px_0_0_#fff] md:hidden max-h-[calc(100vh-97px)] overflow-y-auto"
+      class="fixed inset-x-0 top-[82px] sm:top-[96px] z-40 border-b-4 border-white bg-zinc-950 p-4 sm:p-5 shadow-[0_10px_0_0_#fff] md:hidden max-h-[calc(100vh-82px)] overflow-y-auto"
     >
       <nav class="flex flex-col gap-2" aria-label="Menu mobile">
         <NuxtLink
           v-for="item in nav"
           :key="item.href"
           :to="item.href"
-          class="rounded-xl border-2 border-black bg-white px-4 py-3 text-base font-black text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5"
+          class="rounded-xl border-2 border-black bg-white px-4 py-2.5 text-sm font-black text-black shadow-[2px_2px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5"
           @click="open = false"
         >
           {{ item.label }}
@@ -108,10 +108,10 @@ onMounted(() => {
           :href="wa('Halo BantuBuatWeb, saya ingin konsultasi pembuatan website')"
           target="_blank"
           rel="noopener"
-          class="neo-btn mt-2 bg-neo-pink py-3.5 text-center text-base font-black text-black shadow-[4px_4px_0px_0px_#fff]"
+          class="neo-btn mt-2 bg-neo-pink py-3 text-center text-sm font-black text-black shadow-[3px_3px_0px_0px_#fff] w-full"
           @click="open = false"
         >
-          <AppIcon name="whatsapp" class="mr-2 h-5 w-5" />
+          <AppIcon name="whatsapp" class="mr-2 h-4 w-4" />
           Hubungi via WhatsApp
         </a>
       </nav>
@@ -123,9 +123,9 @@ onMounted(() => {
     </main>
 
     <!-- Footer -->
-    <footer class="border-t-4 border-zinc-800 bg-black text-white pt-14 pb-10">
+    <footer class="border-t-4 border-zinc-800 bg-black text-white pt-12 sm:pt-16 pb-10">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+        <div class="grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <!-- Brand Info -->
           <div class="space-y-4">
             <NuxtLink to="/" class="inline-flex items-center" aria-label="BantuBuatWeb">

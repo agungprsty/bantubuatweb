@@ -73,7 +73,7 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
 </script>
 
 <template>
-  <div v-if="service" class="bg-black text-white min-h-screen pt-24 pb-20">
+  <div v-if="service" class="bg-black text-white min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumb -->
       <nav class="flex flex-wrap items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
@@ -86,37 +86,37 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
         </span>
       </nav>
 
-      <div class="mt-8 grid gap-8 lg:grid-cols-12 items-start">
+      <div class="mt-6 sm:mt-8 grid gap-6 sm:gap-8 lg:grid-cols-12 items-start">
         
         <!-- Main Content -->
-        <div class="lg:col-span-8 space-y-8">
-          <div class="neo-box bg-white text-black p-6 sm:p-10 border-4 border-white shadow-[8px_8px_0px_0px_#fff]">
+        <div class="lg:col-span-8 space-y-6 sm:space-y-8">
+          <div class="neo-box bg-white text-black p-4 sm:p-8 lg:p-10 border-3 sm:border-4 border-white shadow-[6px_6px_0px_0px_#fff] sm:shadow-[8px_8px_0px_0px_#fff]">
             
-            <div class="flex items-center gap-4 border-b-2 border-black pb-6 mb-6">
-              <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-black bg-neo-pink text-black shadow-[3px_3px_0px_0px_#000]">
-                <AppIcon :name="service.icon" class="h-7 w-7" />
+            <div class="flex items-center gap-3 sm:gap-4 border-b-2 border-black pb-4 sm:pb-6 mb-4 sm:mb-6">
+              <span class="flex h-11 w-11 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl border-2 border-black bg-neo-pink text-black shadow-[2px_2px_0px_0px_#000] sm:shadow-[3px_3px_0px_0px_#000]">
+                <AppIcon :name="service.icon" class="h-6 w-6 sm:h-7 sm:w-7" />
               </span>
               <div>
-                <span class="neo-badge bg-neo-yellow text-black text-[10px] mb-1">{{ service.group }}</span>
-                <h1 class="text-2xl sm:text-4xl font-black text-black tracking-tight leading-tight">
+                <span class="neo-badge bg-neo-yellow text-black text-[9px] sm:text-[10px] mb-1">{{ service.group }}</span>
+                <h1 class="text-xl sm:text-3xl lg:text-4xl font-black text-black tracking-tight leading-tight">
                   {{ service.title }}
                 </h1>
               </div>
             </div>
 
-            <p class="text-lg font-black text-slate-900 leading-snug mb-4">
+            <p class="text-base sm:text-lg font-black text-slate-900 leading-snug mb-3 sm:mb-4">
               "{{ service.tagline }}"
             </p>
 
-            <p class="text-sm sm:text-base font-bold text-slate-700 leading-relaxed mb-8">
+            <p class="text-xs sm:text-sm lg:text-base font-bold text-slate-700 leading-relaxed mb-6 sm:mb-8">
               {{ service.desc }}
             </p>
 
             <!-- Benefits -->
-            <div class="border-t-2 border-black pt-6 mb-8">
-              <h2 class="text-xl font-black text-black mb-4">Yang Anda Dapatkan:</h2>
-              <ul class="grid gap-3 sm:grid-cols-2">
-                <li v-for="b in service.benefits" :key="b" class="flex items-start gap-2.5 text-xs sm:text-sm font-extrabold text-slate-900 bg-zinc-50 p-3 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+            <div class="border-t-2 border-black pt-5 sm:pt-6 mb-6 sm:mb-8">
+              <h2 class="text-lg sm:text-xl font-black text-black mb-3 sm:mb-4">Yang Anda Dapatkan:</h2>
+              <ul class="grid gap-2.5 sm:gap-3 sm:grid-cols-2">
+                <li v-for="b in service.benefits" :key="b" class="flex items-start gap-2.5 text-xs sm:text-sm font-extrabold text-slate-900 bg-zinc-50 p-2.5 sm:p-3 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
                   <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-neo-green font-black text-xs text-black border border-black">✓</span>
                   <span>{{ b }}</span>
                 </li>
@@ -124,18 +124,18 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
             </div>
 
             <!-- Local Specific Section for Wilayah & Kota -->
-            <div v-if="service.group === 'Wilayah & Kota'" class="border-t-2 border-black pt-6 mb-8">
-              <h2 class="text-xl font-black text-black mb-4">Keunggulan Khusus untuk Bisnis &amp; UMKM Wilayah:</h2>
-              <div class="grid gap-4 sm:grid-cols-3">
-                <div class="p-4 bg-neo-cyan/20 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
+            <div v-if="service.group === 'Wilayah & Kota'" class="border-t-2 border-black pt-5 sm:pt-6 mb-6 sm:mb-8">
+              <h2 class="text-lg sm:text-xl font-black text-black mb-3 sm:mb-4">Keunggulan Khusus untuk Bisnis &amp; UMKM Wilayah:</h2>
+              <div class="grid gap-3 sm:gap-4 sm:grid-cols-3">
+                <div class="p-3 sm:p-4 bg-neo-cyan/20 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
                   <span class="text-xs font-black uppercase text-black block mb-1">📍 Google Maps &amp; Local SEO</span>
                   <p class="text-xs font-bold text-slate-800">Website disetup agar langsung terindeks di pencarian lokal Google dan siap dihubungkan ke Google Business Profile.</p>
                 </div>
-                <div class="p-4 bg-neo-yellow/30 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
+                <div class="p-3 sm:p-4 bg-neo-yellow/30 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
                   <span class="text-xs font-black uppercase text-black block mb-1">⚡ Super Cepat di Smartphone</span>
                   <p class="text-xs font-bold text-slate-800">Optimasi mobile-first untuk kenyamanan calon pelanggan yang mengakses via smartphone tanpa buffer.</p>
                 </div>
-                <div class="p-4 bg-neo-pink/20 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
+                <div class="p-3 sm:p-4 bg-neo-pink/20 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
                   <span class="text-xs font-black uppercase text-black block mb-1">🤝 Pendampingan &amp; Garansi</span>
                   <p class="text-xs font-bold text-slate-800">Bebas konsultasi via WhatsApp atau meeting online untuk memahami karakter target pasar Anda.</p>
                 </div>
@@ -143,27 +143,27 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
             </div>
 
             <!-- Suitable For Bonus Card -->
-            <div class="neo-box bg-neo-yellow text-black p-5 border-2 border-black shadow-[4px_4px_0px_0px_#000] mb-8">
-              <span class="font-black uppercase text-xs text-black block mb-1">Catatan:</span>
+            <div class="neo-box bg-neo-yellow text-black p-4 sm:p-5 border-2 border-black shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] mb-6 sm:mb-8">
+              <span class="font-black uppercase text-[11px] sm:text-xs text-black block mb-1">Catatan:</span>
               <p class="text-xs sm:text-sm font-bold text-slate-900 leading-relaxed">
                 {{ service.bonus }}
               </p>
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
               <a
                 :href="wa(`Halo BantuBuatWeb, saya tertarik dengan layanan ${service.title}. Boleh minta info detail & biayanya?`)"
                 target="_blank"
                 rel="noopener"
-                class="neo-btn bg-neo-pink text-black px-8 py-4 text-base font-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 inline-flex items-center justify-center"
+                class="neo-btn bg-neo-pink text-black px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-black shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 inline-flex items-center justify-center w-full sm:w-auto"
               >
-                <AppIcon name="whatsapp" class="mr-2.5 h-6 w-6" />
+                <AppIcon name="whatsapp" class="mr-2 sm:mr-2.5 h-5 w-5 sm:h-6 sm:w-6 shrink-0" />
                 Konsultasi {{ service.title }}
               </a>
               <NuxtLink
                 to="/layanan"
-                class="neo-btn bg-black text-white px-8 py-4 text-base font-black shadow-[4px_4px_0px_0px_#000] hover:bg-neo-yellow hover:text-black inline-flex items-center justify-center"
+                class="neo-btn bg-black text-white px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-black shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] hover:bg-neo-yellow hover:text-black inline-flex items-center justify-center w-full sm:w-auto"
               >
                 Lihat Semua Layanan
               </NuxtLink>
@@ -174,28 +174,28 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
 
         <!-- Sidebar -->
         <aside class="lg:col-span-4 space-y-6">
-          <div class="neo-box bg-zinc-900 text-white p-6 sm:p-8 border-2 border-white shadow-[6px_6px_0px_0px_#FF90E8] lg:sticky lg:top-24">
+          <div class="neo-box bg-zinc-900 text-white p-5 sm:p-6 lg:p-8 border-2 border-white shadow-[6px_6px_0px_0px_#FF90E8] lg:sticky lg:top-24">
             
-            <div class="flex items-center gap-2 border-b-2 border-zinc-700 pb-4 mb-4">
-              <h2 class="text-lg font-black uppercase">Estimasi &amp; Garansi</h2>
+            <div class="flex items-center gap-2 border-b-2 border-zinc-700 pb-3 sm:pb-4 mb-3 sm:mb-4">
+              <h3 class="text-base sm:text-lg font-black uppercase">Estimasi &amp; Garansi</h3>
             </div>
 
-            <p class="text-xs font-bold leading-relaxed mb-6">
+            <p class="text-xs font-bold leading-relaxed mb-5 sm:mb-6 text-zinc-300">
               Setiap proyek dikerjakan secara profesional sesuai alur bisnis Anda tanpa template pasaran.
             </p>
 
-            <div class="space-y-3 border-y-2 border-zinc-800 py-4 mb-6 text-xs sm:text-sm font-bold">
+            <div class="space-y-2.5 sm:space-y-3 border-y-2 border-zinc-800 py-3 sm:py-4 mb-5 sm:mb-6 text-xs sm:text-sm font-bold">
               <div class="flex justify-between items-center">
-                <span>Estimasi Waktu</span>
-                <span class="font-black">1–3 Minggu</span>
+                <span class="text-zinc-400">Estimasi Waktu</span>
+                <span class="font-black text-white">1–3 Minggu</span>
               </div>
               <div class="flex justify-between items-center">
-                <span>Garansi Maintenance</span>
-                <span class="font-black">30 Hari Full</span>
+                <span class="text-zinc-400">Garansi Maintenance</span>
+                <span class="font-black text-white">30 Hari Full</span>
               </div>
               <div class="flex justify-between items-center">
-                <span>Teknologi</span>
-                <span class="font-black">Nuxt 3 &amp; Vite</span>
+                <span class="text-zinc-400">Teknologi</span>
+                <span class="font-black text-white">Nuxt 3 &amp; Vite</span>
               </div>
             </div>
 
@@ -203,9 +203,9 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
               :href="wa(`Halo BantuBuatWeb, saya tertarik dengan ${service.title}, boleh minta penawaran pasti?`)"
               target="_blank"
               rel="noopener"
-              class="neo-btn bg-neo-yellow text-black w-full py-3.5 text-sm font-black hover:bg-neo-pink hover:text-black shadow-[4px_4px_0px_0px_#fff] flex items-center justify-center mb-4"
+              class="neo-btn bg-neo-yellow text-black w-full py-3 sm:py-3.5 text-xs sm:text-sm font-black hover:bg-neo-pink hover:text-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff] flex items-center justify-center mb-3 sm:mb-4"
             >
-              <AppIcon name="whatsapp" class="mr-2 h-5 w-5" />
+              <AppIcon name="whatsapp" class="mr-2 h-4 w-4 sm:h-5 sm:w-5 shrink-0" />
               Minta Penawaran Resmi
             </a>
 

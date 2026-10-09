@@ -46,7 +46,7 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-black text-white min-h-screen pt-24 pb-20">
+  <div class="bg-black text-white min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
@@ -56,20 +56,20 @@ useHead({
       </nav>
 
       <!-- Page Header -->
-      <div class="mt-6 max-w-3xl space-y-4">
-        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white">
+      <div class="mt-6 max-w-3xl space-y-3 sm:space-y-4">
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
           Jenis Website yang Kami <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">Kerjakan</span>
         </h1>
-        <p class="text-base sm:text-lg font-bold text-zinc-300 leading-relaxed">
+        <p class="text-sm sm:text-base lg:text-lg font-bold text-zinc-300 leading-relaxed">
           Pilih kategori website yang sesuai dengan industri dan tujuan bisnis Anda.
         </p>
       </div>
 
       <!-- Filter Buttons -->
-      <div class="mt-8 flex flex-wrap items-center gap-3" role="group" aria-label="Filter kategori layanan">
+      <div class="mt-6 sm:mt-8 flex flex-wrap items-center gap-2 sm:gap-3" role="group" aria-label="Filter kategori layanan">
         <button
           :class="[
-            'neo-btn text-xs sm:text-sm px-4 py-2 font-black',
+            'neo-btn text-xs sm:text-sm px-3.5 py-2 font-black',
             active === 'Semua' ? 'bg-neo-pink text-black' : 'bg-white text-black hover:bg-neo-yellow'
           ]"
           @click="active = 'Semua'"
@@ -80,7 +80,7 @@ useHead({
           v-for="g in serviceGroups"
           :key="g"
           :class="[
-            'neo-btn text-xs sm:text-sm px-4 py-2 font-black',
+            'neo-btn text-xs sm:text-sm px-3.5 py-2 font-black',
             active === g ? 'bg-neo-pink text-black' : 'bg-white text-black hover:bg-neo-yellow'
           ]"
           @click="active = g"
@@ -90,23 +90,23 @@ useHead({
       </div>
 
       <!-- Service Grid -->
-      <ul class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul class="mt-8 sm:mt-10 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <li v-for="s in filtered" :key="s.slug">
           <NuxtLink
             :to="`/layanan/${s.slug}`"
-            class="neo-box-interactive bg-white text-black p-6 flex flex-col justify-between h-full block"
+            class="neo-box-interactive bg-white text-black p-4 sm:p-6 flex flex-col justify-between h-full block"
           >
             <div>
-              <div class="flex items-center gap-4 border-b-2 border-black pb-4 mb-4">
-                <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border-2 border-black bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#000]">
-                  <AppIcon :name="s.icon" class="h-6 w-6" />
+              <div class="flex items-center gap-3 sm:gap-4 border-b-2 border-black pb-3 sm:pb-4 mb-3 sm:mb-4">
+                <span class="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border-2 border-black bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#000]">
+                  <AppIcon :name="s.icon" class="h-5 w-5 sm:h-6 sm:w-6" />
                 </span>
-                <h3 class="text-lg font-black text-black leading-tight">{{ s.title }}</h3>
+                <h2 class="text-base sm:text-lg font-black text-black leading-tight">{{ s.title }}</h2>
               </div>
               <p class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed mb-4">{{ s.tagline }}</p>
             </div>
 
-            <span class="neo-btn bg-neo-pink text-black w-full py-2 text-xs font-black group-hover:bg-black group-hover:text-white mt-4">
+            <span class="neo-btn bg-neo-pink text-black w-full py-2 sm:py-2.5 text-xs font-black group-hover:bg-black group-hover:text-white mt-4">
               Lihat Detail Layanan
             </span>
           </NuxtLink>
@@ -114,18 +114,18 @@ useHead({
       </ul>
 
       <!-- CTA Box -->
-      <div class="mt-16 neo-box bg-neo-green text-black p-8 sm:p-12 text-center border-4 shadow-[8px_8px_0px_0px_#fff]">
-        <h2 class="text-2xl sm:text-4xl font-black text-black">Bingung Memilih Kategori Website Yang Pas?</h2>
-        <p class="mx-auto mt-3 max-w-xl text-sm sm:text-base font-bold text-black">
-          Ceritakan alur &amp; tujuan bisnis Anda via WhatsApp. Tim BantuBuatWeb siap membantu memberikan solusi gratis!
+      <div class="mt-12 sm:mt-16 neo-box bg-neo-green text-black p-5 sm:p-8 lg:p-12 text-center border-3 sm:border-4 shadow-[6px_6px_0px_0px_#fff] sm:shadow-[8px_8px_0px_0px_#fff]">
+        <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-black">Bingung Memilih Kategori Website Yang Pas?</h2>
+        <p class="mx-auto mt-2 sm:mt-3 max-w-xl text-xs sm:text-sm lg:text-base font-bold text-black leading-relaxed">
+          Ceritakan alur &amp; tujuan bisnis Anda via WhatsApp. Tim BantuBuatWeb siap membantu memberikan solusi terbaik!
         </p>
         <a
           :href="wa('Halo BantuBuatWeb, saya mau tanya rekomendasi jenis website untuk bisnis saya')"
           target="_blank"
           rel="noopener"
-          class="neo-btn bg-black text-white px-8 py-4 text-base font-black shadow-[4px_4px_0px_0px_#fff] hover:bg-neo-yellow hover:text-black mt-6"
+          class="neo-btn bg-black text-white px-6 py-3.5 sm:px-8 sm:py-4 text-sm sm:text-base font-black shadow-[4px_4px_0px_0px_#fff] hover:bg-neo-yellow hover:text-black mt-5 sm:mt-6 w-full sm:w-auto inline-flex items-center justify-center"
         >
-          <AppIcon name="whatsapp" class="mr-2 h-5 w-5" />
+          <AppIcon name="whatsapp" class="mr-2 h-5 w-5 shrink-0" />
           Konsultasi Gratis via WhatsApp
         </a>
       </div>

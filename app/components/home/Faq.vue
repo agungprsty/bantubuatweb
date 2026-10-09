@@ -11,13 +11,13 @@ const toggleFaq = (idx: number) => {
 </script>
 
 <template>
-  <section class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+  <section class="border-b-2 border-zinc-800 bg-zinc-950 py-12 sm:py-20 lg:py-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 space-y-4">
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Pertanyaan Yang Sering Diajukan</h2>
+      <div class="text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Pertanyaan Yang Sering Diajukan</h2>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-3 sm:space-y-4">
         <div
           v-for="(f, idx) in HOME_FAQ"
           :key="idx"
@@ -26,24 +26,24 @@ const toggleFaq = (idx: number) => {
           <button
             type="button"
             @click="toggleFaq(idx)"
-            class="w-full text-left p-4 sm:p-6 flex items-center justify-between gap-4 select-none focus:outline-none cursor-pointer group"
+            class="w-full text-left p-3.5 sm:p-5 lg:p-6 flex items-center justify-between gap-3 sm:gap-4 select-none focus:outline-none cursor-pointer group"
             :aria-expanded="openIndex === idx"
           >
-            <div class="flex items-center gap-3">
-              <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-md border-2 border-black bg-neo-yellow text-xs font-black shadow-[2px_2px_0px_0px_#000]">
+            <div class="flex items-center gap-2.5 sm:gap-3">
+              <span class="flex h-6 w-6 sm:h-7 sm:w-7 shrink-0 items-center justify-center rounded-md border-2 border-black bg-neo-yellow text-[11px] sm:text-xs font-black shadow-[2px_2px_0px_0px_#000]">
                 Q
               </span>
-              <h3 class="text-base sm:text-lg font-black text-black group-hover:text-amber-900 transition-colors">
+              <h3 class="text-sm sm:text-base font-black text-black group-hover:text-amber-900 transition-colors">
                 {{ f.q }}
               </h3>
             </div>
             <span
-              class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-2 border-black font-bold text-sm transition-all duration-200 shadow-[2px_2px_0px_0px_#000]"
+              class="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg border-2 border-black font-bold text-xs sm:text-sm transition-all duration-200 shadow-[2px_2px_0px_0px_#000]"
               :class="openIndex === idx ? 'bg-neo-pink rotate-180' : 'bg-zinc-100 group-hover:bg-zinc-200'"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4 stroke-[3]"
+                class="h-3.5 w-3.5 sm:h-4 sm:w-4 stroke-[3]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -61,8 +61,8 @@ const toggleFaq = (idx: number) => {
             leave-from-class="max-h-96 opacity-100"
             leave-to-class="max-h-0 opacity-0"
           >
-            <div v-show="openIndex === idx" class="px-4 pb-4 sm:px-6 sm:pb-6 pt-1 border-t-2 border-dashed border-zinc-200">
-              <p class="text-sm sm:text-base font-bold text-slate-700 leading-relaxed pl-4 sm:pl-10 border-l-3 border-black ml-0 sm:ml-3 pt-2">
+            <div v-show="openIndex === idx" class="px-3.5 pb-3.5 sm:px-6 sm:pb-6 pt-1 border-t-2 border-dashed border-zinc-200">
+              <p class="text-xs sm:text-sm lg:text-base font-bold text-slate-700 leading-relaxed pl-3 sm:pl-10 border-l-2 sm:border-l-3 border-black ml-0 sm:ml-3 pt-2">
                 {{ f.a }}
               </p>
             </div>

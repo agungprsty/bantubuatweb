@@ -103,27 +103,27 @@ const comparison = [
 </script>
 
 <template>
-  <section id="keunggulan" class="border-b-2 border-zinc-800 bg-zinc-950 py-16 sm:py-24">
+  <section id="keunggulan" class="border-b-2 border-zinc-800 bg-zinc-950 py-12 sm:py-20 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3 sm:space-y-4">
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
           Kenapa Harus Buat Website di <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">BantuBuatWeb?</span>
         </h2>
-        <p class="text-base sm:text-lg font-bold text-zinc-400 max-w-2xl mx-auto">
+        <p class="text-sm sm:text-base lg:text-lg font-bold text-zinc-400 max-w-2xl mx-auto">
           Kami membuatkan website yang ringan dan buka cepat di HP, rapi saat dilihat calon pembeli, serta mudah ditemukan di pencarian Google.
         </p>
       </div>
 
-      <div class="space-y-12">
+      <div class="space-y-8 sm:space-y-12">
         
         <!-- FEATURE BENTO GRID -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
           <div
             v-for="f in features"
             :key="f.id"
             :class="[
-              'neo-box-interactive p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden',
+              'neo-box-interactive p-4 sm:p-6 lg:p-8 flex flex-col justify-between relative overflow-hidden',
               f.colSpan,
               f.color
             ]"
@@ -131,20 +131,21 @@ const comparison = [
             <!-- Top Badge & Stat -->
             <div>
               <!-- Feature Image / Visual Illustration -->
-              <div class="flex items-center justify-between gap-6 mb-6">
-                <div class="space-y-2 max-w-lg">
-                  <h3 class="text-2xl sm:text-3xl font-black tracking-tight leading-snug">
+              <div class="flex items-center justify-between gap-4 sm:gap-6 mb-4 sm:mb-6">
+                <div class="space-y-1.5 sm:space-y-2 max-w-lg">
+                  <span class="neo-badge bg-black text-white text-[9px] sm:text-[10px] mb-1 inline-block">{{ f.badge }}</span>
+                  <h3 class="text-lg sm:text-2xl lg:text-3xl font-black tracking-tight leading-snug">
                     {{ f.title }}
                   </h3>
-                  <p class="text-sm font-bold leading-relaxed opacity-90">
+                  <p class="text-xs sm:text-sm font-bold leading-relaxed opacity-90">
                     {{ f.desc }}
                   </p>
                 </div>
                 
-                <div class="shrink-0 hidden sm:block">
+                <div class="shrink-0 hidden md:block">
                   <img
                     :src="f.img"
-                    class="h-24 sm:h-28 w-auto object-contain drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]"
+                    class="h-20 sm:h-24 lg:h-28 w-auto object-contain drop-shadow-[4px_4px_0px_rgba(0,0,0,0.5)]"
                     :alt="f.title"
                   />
                 </div>
@@ -154,36 +155,36 @@ const comparison = [
         </div>
 
         <!-- COMPARISON TABLE -->
-        <div class="neo-box bg-white text-black p-6 sm:p-10 border-4 border-black shadow-[4px_4px_0px_0px_#23C552] sm:shadow-[8px_8px_0px_0px_#23C552]">
-          <div class="text-center max-w-2xl mx-auto mb-8">
-            <h3 class="text-2xl sm:text-4xl font-black text-black mt-2">
+        <div class="neo-box bg-white text-black p-4 sm:p-8 lg:p-10 border-3 sm:border-4 border-black shadow-[4px_4px_0px_0px_#23C552] sm:shadow-[8px_8px_0px_0px_#23C552]">
+          <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+            <h3 class="text-xl sm:text-3xl lg:text-4xl font-black text-black">
               Perbandingan Hasil Pembuatan Website
             </h3>
-            <p class="text-xs sm:text-sm font-bold text-slate-700 mt-1">
+            <p class="text-xs sm:text-sm font-bold text-slate-700 mt-1 sm:mt-2">
               Bandingkan layanan BantuBuatWeb dengan pembuat website biasa.
             </p>
           </div>
 
-          <div class="overflow-x-auto">
-            <table class="w-full min-w-[500px] text-left border-collapse">
+          <div class="overflow-x-auto -mx-2 px-2 sm:mx-0 sm:px-0">
+            <table class="w-full min-w-[460px] text-left border-collapse">
               <thead>
                 <tr class="border-b-2 border-black bg-zinc-100 text-black">
-                  <th class="p-3 text-xs sm:text-sm font-black uppercase">Fitur Utama</th>
-                  <th class="p-3 text-xs sm:text-sm font-black uppercase bg-neo-yellow text-black border-x-2 border-black">
+                  <th class="p-2.5 sm:p-3 text-[11px] sm:text-xs font-black uppercase">Fitur Utama</th>
+                  <th class="p-2.5 sm:p-3 text-[11px] sm:text-xs font-black uppercase bg-neo-yellow text-black border-x-2 border-black">
                     BantuBuatWeb
                   </th>
-                  <th class="p-3 text-xs sm:text-sm font-black uppercase text-slate-500">
+                  <th class="p-2.5 sm:p-3 text-[11px] sm:text-xs font-black uppercase text-slate-500">
                     Vendor Lain
                   </th>
                 </tr>
               </thead>
               <tbody class="divide-y-2 divide-black text-xs sm:text-sm font-bold">
                 <tr v-for="(c, idx) in comparison" :key="idx" class="hover:bg-zinc-50">
-                  <td class="p-3 font-black text-slate-900">{{ c.feature }}</td>
-                  <td class="p-3 font-black bg-neo-yellow/30 text-black border-x-2 border-black">
+                  <td class="p-2.5 sm:p-3 font-black text-slate-900">{{ c.feature }}</td>
+                  <td class="p-2.5 sm:p-3 font-black bg-neo-yellow/30 text-black border-x-2 border-black">
                     {{ c.us }}
                   </td>
-                  <td class="p-3 text-slate-600 opacity-80">
+                  <td class="p-2.5 sm:p-3 text-slate-600 opacity-80">
                     {{ c.them }}
                   </td>
                 </tr>
