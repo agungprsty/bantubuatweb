@@ -5,13 +5,44 @@ const route = useRoute()
 const slug = route.params.slug
 const service = serviceBySlug(String(slug))
 
+const getPageTitle = (s: typeof service) => {
+  if (!s) return 'Layanan Tidak Ditemukan | BantuBuatWeb'
+  if (s.slug === 'jasa-pembuatan-website-jogja') return 'Jasa Pembuatan Website Jogja & Yogyakarta (Murah & Cepat) | BantuBuatWeb'
+  if (s.slug === 'jasa-pembuatan-website-lampung') return 'Jasa Pembuatan Website Lampung Professional & Cepat | BantuBuatWeb'
+  if (s.slug === 'jasa-pembuatan-website-jakarta') return 'Jasa Pembuatan Website Jakarta & Jabodetabek Terbaik | BantuBuatWeb'
+  return `${s.title} | Jasa Pembuatan Website BantuBuatWeb`
+}
+
+const getAreaServed = (s: typeof service) => {
+  if (!s) return { '@type': 'Country', name: 'Indonesia' }
+  if (s.slug === 'jasa-pembuatan-website-jogja') return { '@type': 'AdministrativeArea', name: 'Daerah Istimewa Yogyakarta' }
+  if (s.slug === 'jasa-pembuatan-website-lampung') return { '@type': 'AdministrativeArea', name: 'Lampung' }
+  if (s.slug === 'jasa-pembuatan-website-jakarta') return { '@type': 'AdministrativeArea', name: 'DKI Jakarta' }
+  return { '@type': 'Country', name: 'Indonesia' }
+}
+
 useHead(() => ({
-  title: service ? `${service.title} | Jasa Pembuatan Website BantuBuatWeb` : 'Layanan Tidak Ditemukan | BantuBuatWeb',
+  title: getPageTitle(service),
   meta: service ? [
     { name: 'description', content: service.desc },
+    { property: 'og:title', content: getPageTitle(service) },
+    { property: 'og:description', content: service.desc },
+    { property: 'og:url', content: `https://bantubuat.web.id/layanan/${service.slug}` },
   ] : [{ name: 'robots', content: 'noindex' }],
   link: service ? [{ rel: 'canonical', href: `https://bantubuat.web.id/layanan/${service.slug}` }] : [],
   script: service ? [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuat.web.id/' },
+          { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://bantubuat.web.id/layanan' },
+          { '@type': 'ListItem', position: 3, name: service.title, item: `https://bantubuat.web.id/layanan/${service.slug}` },
+        ],
+      }),
+    },
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
@@ -25,8 +56,10 @@ useHead(() => ({
           '@id': 'https://bantubuat.web.id/#business',
           name: 'BantuBuatWeb',
           url: 'https://bantubuat.web.id/',
+          telephone: '+6289686804015',
+          email: 'halo@bantubuat.web.id',
         },
-        areaServed: { '@type': 'Country', name: 'Indonesia' },
+        areaServed: getAreaServed(service),
       }),
     },
   ] : [],
@@ -88,6 +121,25 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
                   <span>{{ b }}</span>
                 </li>
               </ul>
+            </div>
+
+            <!-- Local Specific Section for Wilayah & Kota -->
+            <div v-if="service.group === 'Wilayah & Kota'" class="border-t-2 border-black pt-6 mb-8">
+              <h2 class="text-xl font-black text-black mb-4">Keunggulan Khusus untuk Bisnis &amp; UMKM Wilayah:</h2>
+              <div class="grid gap-4 sm:grid-cols-3">
+                <div class="p-4 bg-neo-cyan/20 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
+                  <span class="text-xs font-black uppercase text-black block mb-1">📍 Google Maps &amp; Local SEO</span>
+                  <p class="text-xs font-bold text-slate-800">Website disetup agar langsung terindeks di pencarian lokal Google dan siap dihubungkan ke Google Business Profile.</p>
+                </div>
+                <div class="p-4 bg-neo-yellow/30 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
+                  <span class="text-xs font-black uppercase text-black block mb-1">⚡ Super Cepat di Smartphone</span>
+                  <p class="text-xs font-bold text-slate-800">Optimasi mobile-first untuk kenyamanan calon pelanggan yang mengakses via smartphone tanpa buffer.</p>
+                </div>
+                <div class="p-4 bg-neo-pink/20 border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_#000]">
+                  <span class="text-xs font-black uppercase text-black block mb-1">🤝 Pendampingan &amp; Garansi</span>
+                  <p class="text-xs font-bold text-slate-800">Bebas konsultasi via WhatsApp atau meeting online untuk memahami karakter target pasar Anda.</p>
+                </div>
+              </div>
             </div>
 
             <!-- Suitable For Bonus Card -->

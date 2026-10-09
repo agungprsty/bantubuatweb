@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
   <url>
     <loc>https://bantubuat.web.id/</loc>
     <lastmod>2026-10-09</lastmod>
@@ -24,6 +25,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Local Landing Pages (Target Wilayah) -->
+  <url>
+    <loc>https://bantubuat.web.id/layanan/jasa-pembuatan-website-jogja</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bantubuat.web.id/layanan/jasa-pembuatan-website-lampung</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://bantubuat.web.id/layanan/jasa-pembuatan-website-jakarta</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Service Detail Pages -->
   <url>
     <loc>https://bantubuat.web.id/layanan/website-landing-page</loc>
     <lastmod>2026-10-09</lastmod>
@@ -114,6 +137,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Legal Pages -->
   <url>
     <loc>https://bantubuat.web.id/terms</loc>
     <lastmod>2026-10-09</lastmod>

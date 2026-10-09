@@ -1,24 +1,23 @@
 <script setup lang="ts">
 definePageMeta({ layout: false })
-useHead({ title: 'Halaman Tidak Ditemukan | LampungMediaWeb' })
+useHead({ title: 'Halaman Tidak Ditemukan | BantuBuatWeb' })
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col items-center justify-center bg-brand-900 px-4 text-center text-white">
+  <div class="flex min-h-screen flex-col items-center justify-center bg-black px-4 text-center text-white">
     <div class="relative">
-      <span class="absolute inset-0 -z-10 rounded-full bg-brand-600/40 blur-3xl"></span>
-      <p class="text-6xl font-extrabold tracking-tight sm:text-7xl lg:text-9xl">404</p>
+      <p class="text-6xl font-extrabold tracking-tight sm:text-7xl lg:text-9xl text-neo-pink">404</p>
     </div>
     <h1 class="mt-4 text-xl font-bold sm:mt-6 sm:text-2xl lg:text-3xl">Halaman tidak ditemukan</h1>
-    <p class="mt-3 max-w-md text-brand-200">
-      Halaman yang Anda cari mungkin sudah dipindahkan atau penghubungnya salah. Mari kembali atau hubungi kami.
+    <p class="mt-3 max-w-md text-zinc-300">
+      Halaman yang Anda cari mungkin sudah dipindahkan atau URL salah. Mari kembali ke beranda atau hubungi kami.
     </p>
     <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-      <a href="/" class="rounded-full bg-accent-500 px-7 py-3 font-bold text-brand-900 transition-colors hover:bg-accent-600">
+      <NuxtLink to="/" class="neo-btn bg-neo-yellow text-black px-7 py-3 font-black">
         Kembali ke Beranda
-      </a>
-      <a :href="wa('Halo LampungMediaWeb, saya menemukan halaman error di situs Anda')" target="_blank" rel="noopener"
-        class="rounded-full border-2 border-white/25 px-7 py-3 font-bold transition-colors hover:border-white hover:bg-white/10">
+      </NuxtLink>
+      <a :href="wa('Halo BantuBuatWeb, saya menemukan halaman error di situs Anda')" target="_blank" rel="noopener"
+        class="neo-btn bg-white text-black px-7 py-3 font-black">
         Hubungi Kami
       </a>
     </div>
