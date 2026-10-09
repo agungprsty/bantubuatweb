@@ -1,71 +1,66 @@
 ---
 title: "WordPress vs Custom Code: Mana yang Lebih Menguntungkan untuk Website Bisnis Anda?"
-description: "Perbandingan lengkap WordPress vs Custom Web (Nuxt/Vue/React) dari segi kecepatan (Core Web Vitals), keamanan, kemudahan update, dan biaya jangka panjang."
-date: "2026-10-09"
+description: "Perbandingan objektif WordPress vs Custom Web modern dari segi performa, keamanan, pemeliharaan jangka panjang, dan efisiensi biaya server."
+date: "9 Oktober 2026"
 author: "Agung Prasetyo"
 authorRole: "Founder & Tech Lead BantuBuatWeb"
 category: "Teknologi & Web"
 tags: ["WordPress", "Custom Web", "Nuxt", "Kecepatan Website"]
-readTime: "7 min baca"
+readTime: "7 menit baca"
 image: "/og-cover.svg"
 ---
 
-Ketika hendak membuat website bisnis, salah satu perdebatan paling klasik adalah: **"Sebaiknya menggunakan WordPress atau Custom Code (Nuxt / Vue / React)?"**
+Salah satu pertanyaan mendasar yang sering dihadapi calon pemilik website adalah: apakah sebaiknya menggunakan platform WordPress atau membangun website kustom dengan teknologi modern (seperti Nuxt, Vue, atau React)?
 
-Keduanya memiliki keunggulan dan kelemahan masing-masing. Memilih platform yang salah bisa berakibat pada website yang lambat, rentan dibobol hacker, atau biaya operasional bulanan yang membengkak.
-
-Mari kita komparasikan kedua pendekatan ini secara objektif.
+Kedua solusi ini memiliki kelebihan dan konsekuensi masing-masing terhadap operasional bisnis jangka panjang. Berikut adalah perbandingan objektif untuk membantu Anda menentukan keputusan yang tepat.
 
 ---
 
-## 1. Perbandingan Head-to-Head
+## Perbandingan Parameter Kunci
 
-| Parameter | WordPress (CMS Tradisional) | Custom Code Modern (Nuxt 4 / Jamstack) |
+| Parameter | WordPress (CMS Konvensional) | Custom Web Modern (Nuxt / Jamstack) |
 | :--- | :--- | :--- |
-| **Kecepatan Loading** | Sedang – Lambat (Tergantung plugin & tema) | **Sangat Cepat (< 1 Detik, Skor PageSpeed 95+)** |
-| **Kebutuhan Server** | Butuh database MySQL + PHP runtime | Ringan (Bisa di Node.js / Serverless Edge) |
-| **Keamanan** | Rentan malware jika plugin terlambat update | **Sangat Aman (Tanpa database vulnerable)** |
-| **Kemudahan Edit Konten** | Sangat mudah via dashboard wp-admin | Mudah dengan Markdown / Headless CMS |
-| **Kebutuhan Maintenance** | Rutin update plugin mingguan | **Zero-maintenance / Jarang rusak** |
-| **Biaya Hosting** | Makin besar traffic, makin mahal server | Sangat hemat resource server |
+| **Kecepatan Akses (PageSpeed)** | Bergantung pada beban plugin & tema | Konsisten kencang (< 1 detik) |
+| **Beban Server & Hosting** | Membutuhkan resource PHP & MySQL | Ringan, hemat konsumsi resource |
+| **Tingkat Keamanan** | Rentan jika plugin tidak diperbarui rutin | Sangat aman (tanpa database rentan injeksi) |
+| **Kemudahan Manajemen Konten** | Sangat fleksibel via dashboard bawaan | Terstruktur rapi via data & markdown |
+| **Risiko Kerusakan (Maintenance)** | Update plugin rentan memicu konflik | Sangat minim risiko kerusakan mendadak |
 
 ---
 
-## 2. Mengapa Kecepatan Website Sangat Berdampak pada Omset?
+## Mengapa Kecepatan Website Mempengaruhi Hasil Penjualan?
 
-Berdasarkan studi dari Google Research:
-- **53% pengunjung mobile akan meninggalkan website** jika halaman membutuhkan waktu loading lebih dari 3 detik.
-- Setiap peningkatan kecepatan 0.1 detik meningkatkan konversi penjualan rata-rata sebesar 8.4%.
+Data riset performa web menunjukkan bahwa lebih dari 50% pengguna internet di Indonesia akan langsung menutup halaman website yang membutuhkan waktu muat lebih dari 3 detik.
 
-WordPress yang dipasangi 20+ plugin (Elementor, WooCommerce, Yoast, Slider, Pop-up) cenderung menghasilkan kode HTML yang berat (*DOM bloat*), sehingga skor Google Core Web Vitals sering berada di zona merah.
+WordPress yang dipasangi belasan plugin pembangun halaman (page builder, slider, pop-up, multi-tracker) seringkali menghasilkan file kode yang sangat berat. Hal ini membuat halaman terasa lambat dibuka di perangkat smartphone dengan jaringan seluler.
 
-Sebaliknya, website modern dengan stack **Nuxt 4 + Vite** mengkompilasi halaman menjadi kode minimalis, menghasilkan waktu muat secepat kilat bahkan di koneksi 4G seluler.
+Sebaliknya, website yang dibangun dengan framework modern seperti Nuxt 4 hanya memuat kode yang benar-benar dibutuhkan oleh halaman tersebut. Hasilnya, halaman terbuka instan dan meningkatkan peluang konversi pengunjung menjadi pembeli.
 
 ---
 
-## 3. Faktor Keamanan: Ancaman Malware & Plugin
+## Faktor Keamanan dan Beban Perawatan Rutin
 
-Lebih dari **90% website yang diretas di seluruh dunia adalah situs berbasis WordPress** yang menggunakan tema bajakan atau plugin yang lupa diperbarui.
+Sebagian besar serangan peretasan dan malware pada website bisnis bersumber dari plugin WordPress pihak ketiga yang memiliki celah keamanan atau telat diperbarui.
 
-Ketika plugin memiliki celah keamanan (*vulnerability*), bot otomatis hacker bisa menyisipkan script judi online atau mengarahkan (*redirect*) pengunjung bisnis Anda ke situs berbahaya.
+Ketika pemilik bisnis disibukkan dengan operasional harian, pemeliharaan rutin seperti update plugin seringkali terlewat. Hal ini dapat menimbulkan risiko website dialihkan ke situs lain yang merugikan nama baik brand.
 
-Pada website **Custom Code / Static**, tidak ada celah database yang bisa disuntikkan SQL Injection, sehingga bisnis Anda jauh lebih tenang dan terbebas dari serangan malware.
+Pada website kustom dengan arsitektur modern, sistem bekerja secara statis dan independen tanpa database terbuka, sehingga risiko peretasan otomatis dapat ditekan hingga titik terendah.
 
 ---
 
-## 4. Kapan Anda Harus Memilih WordPress?
-Pilihlah WordPress jika:
-- Anda mengelola portal berita besar dengan puluhan jurnalis yang harus login bersamaan.
-- Anda ingin menginstall ribuan template siap pakai sendiri tanpa bantuan programmer.
+## Panduan Memilih Sesuai Kebutuhan
 
-## 5. Kapan Anda Harus Memilih Custom Code (BantuBuatWeb)?
-Pilihlah Custom Code Modern jika:
-- Anda ingin website **Company Profile, Landing Page, atau Toko Online** yang tampil unik, tidak pasaran, dan cepat dibuka.
-- Anda mengandalkan **iklan berbayar (Meta/Google Ads)** dan butuh skor kualitas iklan (*Quality Score*) yang tinggi.
-- Anda tidak ingin pusing memikirkan update plugin yang sering membuat tampilan web rusak tiba-tiba.
+### Kapan Sebaiknya Memilih WordPress?
+- Anda mengelola portal media atau blog berita dengan puluhan penulis harian yang memerlukan hak akses terpisah.
+- Anda ingin mengutak-atik ribuan pilihan template instan secara mandiri tanpa bantuan developer.
+
+### Kapan Sebaiknya Memilih Custom Web (BantuBuatWeb)?
+- Anda membutuhkan **Company Profile, Landing Page Iklan, atau Katalog Bisnis** yang tampil elegan, unik, dan tidak pasaran.
+- Anda menjalankan iklan berbayar dan memerlukan skor kualitas kecepatan tinggi agar biaya per klik (CPC) lebih efisien.
+- Anda menginginkan website yang andal dan minim kebutuhan maintenance teknis berkala.
 
 ---
 
 ## Kesimpulan
 
-Untuk kebutuhan website profil bisnis, katalog produk, dan landing page konversi tinggi di era 2026, **Custom Web berkecepatan tinggi** adalah investasi jangka panjang terbaik. Tim **BantuBuatWeb** siap membantu Anda membangun website kustom dengan standar performa modern.
+Untuk kebutuhan profil bisnis modern dan landing page berkonversi tinggi, custom web berkecepatan tinggi merupakan investasi yang lebih efisien dan bebas dari kerumitan teknis jangka panjang.
