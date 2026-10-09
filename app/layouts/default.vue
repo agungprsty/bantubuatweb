@@ -8,6 +8,7 @@ const nav = [
   { label: 'Proses', href: '/#proses' },
   { label: 'Harga', href: '/#harga' },
   { label: 'Proyek', href: '/proyek' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Tim', href: '/team' },
 ]
 
@@ -172,6 +173,7 @@ onMounted(() => {
             </h4>
             <ul class="mt-5 space-y-2.5 text-sm font-bold text-zinc-300">
               <li><NuxtLink to="/team" class="transition-colors hover:text-neo-cyan">Tim &amp; Expert</NuxtLink></li>
+              <li><NuxtLink to="/blog" class="transition-colors hover:text-neo-cyan">Blog &amp; Panduan</NuxtLink></li>
               <li><a href="/#proses" class="transition-colors hover:text-neo-cyan">Cara Bekerja</a></li>
               <li><a href="/#harga" class="transition-colors hover:text-neo-cyan">Paket &amp; Harga</a></li>
               <li><NuxtLink to="/proyek" class="transition-colors hover:text-neo-cyan">Portofolio Karya</NuxtLink></li>

@@ -16,6 +16,6 @@ Minggu 3: Google Business Profile & Local Off-Page
 └── [x] Pasang credit link "Website by BantuBuatWeb" pada web klien aktif
 
 Minggu 4: Content Authority & Review
-├── [ ] Setup @nuxt/content untuk modul artikel/blog edukasi bisnis & website
-├── [ ] Publikasikan 3 artikel cluster pertama (Topik biaya, perbandingan CMS, dan tips landing page)
-└── [ ] Lakukan evaluasi indeksasi pertama di Google Search Console
+├── [x] Setup @nuxt/content untuk modul artikel/blog edukasi bisnis & website
+├── [x] Publikasikan 3 artikel cluster pertama (Topik biaya, perbandingan CMS, dan tips landing page)
+└── [x] Lakukan evaluasi indeksasi pertama di Google Search Console
