@@ -4,7 +4,7 @@ Platform & Layanan Jasa Pembuatan Website Professional di Indonesia: Company Pro
 
 **Stack:** Nuxt 4 · Vue 3 · Tailwind CSS v4 · @nuxt/icon · TypeScript
 
-**Live URL:** https://bantubuatweb.com
+**Live URL:** https://bantubuat.web.id
 
 ---
 
@@ -80,10 +80,10 @@ npm run generate
 
 ## ⚙️ Kustomisasi Cepat
 
-1. **Nomor WhatsApp:** Ubah nomor tujuan pada [`app/utils/wa.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/utils/wa.ts) (`WA_NUMBER`).
-2. **Daftar Layanan:** Tambahkan atau perbarui data layanan di [`app/data/services.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/data/services.ts).
-3. **Portofolio & Testimoni:** Sesuaikan daftar proyek di [`app/data/portfolio.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/data/portfolio.ts) & [`app/data/homeData.ts`](file:///home/farghani/freelance/bantubuatweb.com/app/data/homeData.ts).
-4. **Meta SEO & Head:** Perbarui judul default, deskripsi, dan Open Graph pada [`nuxt.config.ts`](file:///home/farghani/freelance/bantubuatweb.com/nuxt.config.ts).
+1. **Nomor WhatsApp:** Ubah nomor tujuan pada [`app/utils/wa.ts`](file:///home/farghani/freelance/bantubuat.web.id/app/utils/wa.ts) (`WA_NUMBER`).
+2. **Daftar Layanan:** Tambahkan atau perbarui data layanan di [`app/data/services.ts`](file:///home/farghani/freelance/bantubuat.web.id/app/data/services.ts).
+3. **Portofolio & Testimoni:** Sesuaikan daftar proyek di [`app/data/portfolio.ts`](file:///home/farghani/freelance/bantubuat.web.id/app/data/portfolio.ts) & [`app/data/homeData.ts`](file:///home/farghani/freelance/bantubuat.web.id/app/data/homeData.ts).
+4. **Meta SEO & Head:** Perbarui judul default, deskripsi, dan Open Graph pada [`nuxt.config.ts`](file:///home/farghani/freelance/bantubuat.web.id/nuxt.config.ts).
 
 ---
 

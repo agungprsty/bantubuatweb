@@ -30,7 +30,7 @@ useHead({ title: 'Kebijakan Cookie | BantuBuatWeb' })
       {
         heading: '4. Kontak',
         body: [
-          'Jika ada pertanyaan seputar kebijakan cookie ini, silakan hubungi kami di halo@bantubuatweb.com.',
+          'Jika ada pertanyaan seputar kebijakan cookie ini, silakan hubungi kami di halo@bantubuat.web.id.',
         ],
       },
     ]"

@@ -10,7 +10,7 @@ useHead(() => ({
   meta: service ? [
     { name: 'description', content: service.desc },
   ] : [{ name: 'robots', content: 'noindex' }],
-  link: service ? [{ rel: 'canonical', href: `https://bantubuatweb.com/layanan/${service.slug}` }] : [],
+  link: service ? [{ rel: 'canonical', href: `https://bantubuat.web.id/layanan/${service.slug}` }] : [],
   script: service ? [
     {
       type: 'application/ld+json',
@@ -19,12 +19,12 @@ useHead(() => ({
         '@type': 'Service',
         name: service.title,
         description: service.desc,
-        url: `https://bantubuatweb.com/layanan/${service.slug}`,
+        url: `https://bantubuat.web.id/layanan/${service.slug}`,
         provider: {
           '@type': 'ProfessionalService',
-          '@id': 'https://bantubuatweb.com/#business',
+          '@id': 'https://bantubuat.web.id/#business',
           name: 'BantuBuatWeb',
-          url: 'https://bantubuatweb.com/',
+          url: 'https://bantubuat.web.id/',
         },
         areaServed: { '@type': 'Country', name: 'Indonesia' },
       }),

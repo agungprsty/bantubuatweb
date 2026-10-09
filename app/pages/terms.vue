@@ -6,7 +6,7 @@ useHead({ title: 'Syarat & Ketentuan | BantuBuatWeb' })
   <LegalPage
     title="Syarat & Ketentuan"
     updated="1 Oktober 2026"
-    intro="Dengan mengakses atau menggunakan situs web bantubuatweb.com dan layanan BantuBuatWeb, Anda dianggap telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan berikut."
+    intro="Dengan mengakses atau menggunakan situs web bantubuat.web.id dan layanan BantuBuatWeb, Anda dianggap telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan berikut."
     :sections="[
       {
         heading: '1. Layanan',

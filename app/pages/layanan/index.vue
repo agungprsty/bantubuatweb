@@ -12,7 +12,7 @@ useHead({
   meta: [
     { name: 'description', content: 'Kategori & jenis layanan pembuatan website BantuBuatWeb: landing page, company profile, e-commerce, portal sekolah, klinik, hotel, dan sistem custom.' },
   ],
-  link: [{ rel: 'canonical', href: 'https://bantubuatweb.com/layanan' }],
+  link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/layanan' }],
   script: [
     {
       type: 'application/ld+json',
@@ -20,8 +20,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuatweb.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://bantubuatweb.com/layanan' },
+          { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuat.web.id/' },
+          { '@type': 'ListItem', position: 2, name: 'Layanan', item: 'https://bantubuat.web.id/layanan' },
         ],
       }),
     },
@@ -31,13 +31,13 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: 'Layanan Pembuatan Website BantuBuatWeb',
-        url: 'https://bantubuatweb.com/layanan',
+        url: 'https://bantubuat.web.id/layanan',
         numberOfItems: SERVICES.length,
         itemListElement: SERVICES.map((s, i) => ({
           '@type': 'ListItem',
           position: i + 1,
           name: s.title,
-          url: `https://bantubuatweb.com/layanan/${s.slug}`,
+          url: `https://bantubuat.web.id/layanan/${s.slug}`,
         })),
       }),
     },

@@ -194,7 +194,7 @@ onMounted(() => {
               </li>
               <li class="flex items-center gap-3">
                 <AppIcon name="mail" class="h-5 w-5 shrink-0 text-neo-yellow" />
-                <span>halo@bantubuatweb.com</span>
+                <span>halo@bantubuat.web.id</span>
               </li>
             </ul>
           </div>
