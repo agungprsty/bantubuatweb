@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lampungmediaweb.com/sitemap.xml
+Sitemap: https://bantubuat.web.id/sitemap.xml
