@@ -57,9 +57,9 @@ useHead({
 
       <!-- Page Header -->
       <div class="mt-6 max-w-3xl space-y-3 sm:space-y-4">
-        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
           Jenis Website yang Kami <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">Kerjakan</span>
-        </h1>
+        </h2>
         <p class="text-sm sm:text-base lg:text-lg font-bold text-zinc-300 leading-relaxed">
           Pilih kategori website yang sesuai dengan industri dan tujuan bisnis Anda.
         </p>

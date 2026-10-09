@@ -75,9 +75,6 @@ useHead({
 
       <!-- Header Section -->
       <div class="mt-6 sm:mt-8 mb-8 sm:mb-12">
-        <div class="inline-block bg-neo-yellow text-black text-[10px] sm:text-xs font-black px-2.5 py-0.5 sm:px-3 sm:py-1 rounded border-2 border-black shadow-[2px_2px_0px_0px_#fff] sm:shadow-[3px_3px_0px_0px_#fff] mb-3 sm:mb-4 uppercase">
-          Pusat Edukasi &amp; Insight Bisnis
-        </div>
         <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
           Panduan &amp; Artikel <span class="bg-neo-pink text-black px-2.5 py-0.5 sm:px-3 sm:py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff] inline-block">BantuBuatWeb</span>
         </h1>
