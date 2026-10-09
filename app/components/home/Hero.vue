@@ -7,13 +7,13 @@
         <div class="space-y-4 sm:space-y-6 lg:col-span-7 relative z-10">
           <!-- Title -->
           <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight sm:leading-tight text-white">
-            Jasa Konsultasi dan Pengembangan Website
-            <span class="inline-block rounded-lg border-2 border-black bg-neo-pink px-2.5 py-0.5 sm:px-3 sm:py-1 text-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff] align-baseline my-1">Profesional</span>
-            untuk Akselerasi Bisnis Anda.
+            Jasa Website & Transformasi Digital
+            <span class="inline-block rounded-lg border-2 border-black bg-neo-pink px-2.5 py-0.5 sm:px-3 sm:py-1 text-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff] align-baseline my-1">Terpercaya</span>
+            untuk Bisnis yang Siap Naik Kelas.
           </h1>
 
           <p class="text-sm sm:text-base lg:text-lg font-bold leading-relaxed text-zinc-300 max-w-2xl">
-            BantuBuatWeb membangun website profesional untuk UMKM, brand, dan perusahaan. Dirancang khusus agar cepat dibuka, terstruktur rapi, dan siap ditemukan di pencarian Google.
+            Tingkatkan kredibilitas dan omzet bisnis Anda melalui ekosistem digital dan website modern yang dirancang khusus untuk mengonversi pengunjung jadi pelanggan secara optimal, siap SEO, serta terima beres tanpa ribet urusan teknis.
           </p>
 
           <!-- Action Buttons -->
