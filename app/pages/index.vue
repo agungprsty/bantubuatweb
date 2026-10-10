@@ -2,7 +2,12 @@
 import { useHead } from '#imports'
 
 useHead({
-  title: 'BantuBuatWeb | Jasa Pembuatan Website Professional & Digital Solution #1 Indonesia',
+  title: 'BantuBuatWeb | Solusi Transformasi Digital & Jasa Pembuatan Website #1 Indonesia',
+  meta: [
+    { name: 'description', content: 'Solusi transformasi digital & pembuatan website berkecepatan tinggi: company profile, e-commerce, chatbot AI, integrasi LLM, payment gateway, dan advance SEO untuk meningkatkan omzet bisnis.' },
+    { property: 'og:title', content: 'BantuBuatWeb | Solusi Transformasi Digital & Jasa Pembuatan Website #1 Indonesia' },
+    { property: 'og:description', content: 'Solusi transformasi digital & pembuatan website berkecepatan tinggi: company profile, e-commerce, chatbot AI, integrasi LLM, payment gateway, dan advance SEO.' },
+  ],
   link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/' }],
   script: [
     {
@@ -19,10 +24,10 @@ useHead({
         url: 'https://bantubuat.web.id/',
         image: 'https://bantubuat.web.id/og-cover.svg',
         logo: 'https://bantubuat.web.id/favicon.svg',
-        description: 'BantuBuatWeb: Jasa pembuatan website professional, company profile, toko online, landing page & aplikasi web modern di Indonesia. Desain modern, super cepat, SEO optimized & bergaransi.',
+        description: 'BantuBuatWeb: Solusi transformasi digital dan jasa pembuatan website profesional untuk meningkatkan omzet bisnis. Layanan company profile, e-commerce, advance SEO, chatbot AI, integrasi LLM, payment gateway & sistem otomasi bergaransi.',
         telephone: '+6289686804015',
         email: 'halo@bantubuat.web.id',
-        priceRange: 'Rp 800.000 - Rp 7.000.000',
+        priceRange: 'Rp 2.500.000 - Rp 25.000.000+',
         openingHours: 'Mo-Sa 08:00-21:00',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '150' },
         sameAs: [
@@ -31,9 +36,10 @@ useHead({
           'https://www.linkedin.com/company/bantubuatweb',
         ],
         makesOffer: [
-          { '@type': 'Offer', name: 'UMKM Starter', price: '1500000', priceCurrency: 'IDR' },
-          { '@type': 'Offer', name: 'Company Profile', price: '3500000', priceCurrency: 'IDR' },
-          { '@type': 'Offer', name: 'Toko Online E-Commerce', price: '7000000', priceCurrency: 'IDR' },
+          { '@type': 'Offer', name: 'Starter Bisnis', price: '2500000', priceCurrency: 'IDR' },
+          { '@type': 'Offer', name: 'Company Profile', price: '4900000', priceCurrency: 'IDR' },
+          { '@type': 'Offer', name: 'Toko Online', price: '10000000', priceCurrency: 'IDR' },
+          { '@type': 'Offer', name: 'Custom System / Integrasi AI', price: '15000000', priceCurrency: 'IDR' },
         ],
       }),
     },

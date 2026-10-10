@@ -167,19 +167,12 @@ const comparison = [
                 </div>
               </div>
             </div>
-
-            <!-- Bottom Stat Label -->
-            <div class="mt-2 pt-3 border-t-2 border-current/20 flex items-center justify-between text-[11px] sm:text-xs font-black">
-              <span class="opacity-80">Nilai Tambah:</span>
-              <span class="font-extrabold uppercase">{{ f.statLabel }}</span>
-            </div>
           </div>
         </div>
 
         <!-- COMPARISON TABLE -->
         <div class="neo-box bg-white text-black p-4 sm:p-8 lg:p-10 border-3 sm:border-4 border-black shadow-[4px_4px_0px_0px_#23C552] sm:shadow-[8px_8px_0px_0px_#23C552]">
           <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-            <span class="neo-badge bg-neo-pink text-black text-[10px] sm:text-xs mb-2">STANDAR KUALITAS TINGGI</span>
             <h3 class="text-xl sm:text-3xl lg:text-4xl font-black text-black">
               Perbandingan Solusi Kami vs Vendor Lain
             </h3>

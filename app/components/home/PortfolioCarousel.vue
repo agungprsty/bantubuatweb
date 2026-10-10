@@ -92,20 +92,30 @@ onBeforeUnmount(() => {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
         <div>
-          <span class="neo-badge bg-neo-pink text-black text-[10px] mb-2 inline-block">HASIL KERJA</span>
-          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mt-1">Portofolio Pilihan Kami</h2>
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mt-1">
+            Portofolio &amp; Hasil Klien
+          </h2>
+          <p class="text-xs sm:text-sm lg:text-base font-bold text-zinc-400 mt-2 max-w-2xl">
+            Lihat bagaimana solusi website modern dan ekosistem digital kami membantu berbagai bisnis melipatgandakan prospek dan omzet penjualan.
+          </p>
         </div>
-        <div class="flex items-center gap-2.5 sm:gap-3">
+        <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <NuxtLink
+            to="/proyek"
+            class="neo-btn bg-neo-yellow text-black text-xs sm:text-sm font-black px-3.5 py-2 sm:px-4 sm:py-2.5 hover:bg-white shadow-[2px_2px_0px_0px_#fff]"
+          >
+            Lihat Semua Proyek →
+          </NuxtLink>
           <button
             @click="scrollCarousel(-1)"
-            class="neo-btn bg-white text-black p-2.5 sm:p-3 shadow-[2px_2px_0px_0px_#fff] sm:shadow-[3px_3px_0px_0px_#fff] hover:bg-neo-yellow"
+            class="neo-btn bg-white text-black p-2 sm:p-2.5 shadow-[2px_2px_0px_0px_#fff] hover:bg-neo-pink"
             aria-label="Portofolio sebelumnya"
           >
             ←
           </button>
           <button
             @click="scrollCarousel(1)"
-            class="neo-btn bg-white text-black p-2.5 sm:p-3 shadow-[2px_2px_0px_0px_#fff] sm:shadow-[3px_3px_0px_0px_#fff] hover:bg-neo-yellow"
+            class="neo-btn bg-white text-black p-2 sm:p-2.5 shadow-[2px_2px_0px_0px_#fff] hover:bg-neo-pink"
             aria-label="Portofolio berikutnya"
           >
             →
@@ -123,17 +133,28 @@ onBeforeUnmount(() => {
         <div
           v-for="(item, idx) in displayPortfolio"
           :key="idx"
-          class="neo-box-interactive min-w-[270px] sm:min-w-[340px] max-w-[340px] snap-start bg-white text-black p-4 sm:p-5 shrink-0 flex flex-col justify-between"
+          class="neo-box-interactive min-w-[280px] sm:min-w-[350px] max-w-[350px] snap-start bg-white text-black p-4 sm:p-5 shrink-0 flex flex-col justify-between"
         >
           <div>
-            <div class="flex items-center justify-between mb-3">
-              <span class="neo-badge bg-neo-cyan text-black text-[9px] sm:text-[10px]">{{ item.tag }}</span>
+            <!-- Thumbnail Preview if available -->
+            <div v-if="item.image" class="mb-3 rounded-lg overflow-hidden border-2 border-black aspect-video bg-zinc-100 relative group">
+              <img :src="item.image" :alt="item.title" class="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105" />
             </div>
-            <h3 class="text-base sm:text-lg lg:text-xl font-black text-black mb-1.5">{{ item.title }}</h3>
-            <p class="text-xs font-bold text-slate-700 leading-relaxed mb-4">{{ item.desc }}</p>
+            <div v-else :class="['mb-3 rounded-lg border-2 border-black aspect-video bg-gradient-to-br flex items-center justify-center p-4 relative', item.grad]">
+              <span class="text-xs sm:text-sm font-black text-black bg-white/95 px-3 py-1 rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000] text-center">
+                {{ item.title }}
+              </span>
+            </div>
+
+            <h3 class="text-base sm:text-lg font-black text-black mb-1.5 leading-snug">{{ item.title }}</h3>
+            <p class="text-xs font-bold text-slate-700 leading-relaxed mb-4 line-clamp-2 sm:line-clamp-3">{{ item.desc }}</p>
           </div>
           
-          <span class="text-[11px] sm:text-xs font-black text-green-700 bg-green-100 px-2 py-1 rounded border border-black mt-2 inline-block">{{ item.result }}</span>
+          <div class="pt-3 border-t-2 border-black/10">
+            <span class="text-[11px] sm:text-xs font-black text-green-900 bg-green-200 px-2.5 py-1.5 rounded-lg border-2 border-black shadow-[1.5px_1.5px_0px_0px_#000] inline-flex items-center gap-1.5 w-full justify-center">
+              <span>{{ item.result }}</span>
+            </span>
+          </div>
         </div>
       </div>
     </div>

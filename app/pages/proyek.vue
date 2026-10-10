@@ -2,9 +2,12 @@
 import { PORTFOLIO } from '~/data/portfolio'
 
 useHead({
-  title: 'Portofolio & Hasil Karya Website | BantuBuatWeb',
+  title: 'Portofolio Solusi Digital & Hasil Karya Website | BantuBuatWeb',
   meta: [
-    { name: 'description', content: 'Lihat galeri proyek hasil karya BantuBuatWeb: company profile, toko online, sistem booking, landing page, hingga aplikasi web modern di Indonesia.' },
+    { name: 'description', content: 'Lihat galeri proyek & studi kasus digital transformasi BantuBuatWeb: e-commerce payment gateway, company profile tender, sistem reservasi, dan platform digital berkecepatan tinggi.' },
+    { property: 'og:title', content: 'Portofolio Solusi Digital & Hasil Karya Website | BantuBuatWeb' },
+    { property: 'og:description', content: 'Studi kasus nyata hasil karya website berkecepatan tinggi, sistem payment gateway, dan solusi transformasi digital untuk akselerasi omzet bisnis.' },
+    { property: 'og:url', content: 'https://bantubuat.web.id/proyek' },
   ],
   link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/proyek' }],
   script: [

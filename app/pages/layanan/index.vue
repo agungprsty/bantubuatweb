@@ -11,6 +11,9 @@ useHead({
   title: 'Layanan Website & Transformasi Digital | BantuBuatWeb',
   meta: [
     { name: 'description', content: 'Katalog layanan website & solusi transformasi digital BantuBuatWeb: company profile, e-commerce, advance SEO, chatbot AI, integrasi LLM, payment gateway, logistik, dan sistem kustom.' },
+    { property: 'og:title', content: 'Layanan Website & Transformasi Digital | BantuBuatWeb' },
+    { property: 'og:description', content: 'Katalog layanan website & solusi transformasi digital BantuBuatWeb: company profile, e-commerce, advance SEO, chatbot AI, integrasi LLM, payment gateway, logistik, dan sistem kustom.' },
+    { property: 'og:url', content: 'https://bantubuat.web.id/layanan' },
   ],
   link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/layanan' }],
   script: [

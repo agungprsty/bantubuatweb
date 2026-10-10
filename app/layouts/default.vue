@@ -195,7 +195,7 @@ onMounted(() => {
             <ul class="mt-5 space-y-3 text-sm font-bold text-zinc-300">
               <li class="flex items-start gap-3">
                 <AppIcon name="mapPin" class="mt-1 h-5 w-5 shrink-0 text-neo-yellow" />
-                <span>Yogyakarta &amp; Bandar Lampung (Melayani Seluruh Indonesia)</span>
+                <span>Yogyakarta &amp; Bandar Lampung</span>
               </li>
               <li class="flex items-center gap-3">
                 <AppIcon name="phone" class="h-5 w-5 shrink-0 text-neo-yellow" />
