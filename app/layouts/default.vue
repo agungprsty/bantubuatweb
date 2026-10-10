@@ -158,9 +158,16 @@ onMounted(() => {
                   Semua Layanan Kami
                 </NuxtLink>
               </li>
-              <li v-for="l in ['Website Company Profile', 'Toko Online (E-Commerce)', 'Landing Page High-Converting', 'Aplikasi Web &amp; Sistem Custom']" :key="l">
-                <NuxtLink to="/layanan" class="transition-colors hover:text-neo-yellow">
-                  {{ l }}
+              <li v-for="l in [
+                { name: 'Website Company Profile', path: '/layanan/website-company-profile' },
+                { name: 'Toko Online & Payment Gateway', path: '/layanan/integrasi-payment-gateway' },
+                { name: 'Chatbot AI & Integrasi LLM', path: '/layanan/chatbot-ai-customer-service' },
+                { name: 'Implementasi Advance SEO', path: '/layanan/implementasi-advance-seo' },
+                { name: 'Integrasi API Ongkir & Logistik', path: '/layanan/integrasi-api-ongkir-logistik' },
+                { name: 'Otomasi Alur Kerja & CRM', path: '/layanan/otomasi-crm-workflow' },
+              ]" :key="l.name">
+                <NuxtLink :to="l.path" class="transition-colors hover:text-neo-yellow">
+                  {{ l.name }}
                 </NuxtLink>
               </li>
             </ul>

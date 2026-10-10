@@ -36,6 +36,17 @@ const icons = {
   instagram: 'lucide:instagram',
   facebook: 'lucide:facebook',
   linkedin: 'lucide:linkedin',
+  bot: 'lucide:bot',
+  sparkles: 'lucide:sparkles',
+  search: 'lucide:search',
+  creditCard: 'lucide:credit-card',
+  truck: 'lucide:truck',
+  cpu: 'lucide:cpu',
+  zap: 'lucide:zap',
+  database: 'lucide:database',
+  workflow: 'lucide:workflow',
+  shieldCheck: 'lucide:shield-check',
+  trendingUp: 'lucide:trending-up',
 }
 
 const iconId = computed(() => icons[props.name] || `lucide:${props.name}`)

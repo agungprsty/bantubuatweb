@@ -10,7 +10,7 @@ const getPageTitle = (s: typeof service) => {
   if (s.slug === 'jasa-pembuatan-website-jogja') return 'Jasa Pembuatan Website Jogja & Yogyakarta (Murah & Cepat) | BantuBuatWeb'
   if (s.slug === 'jasa-pembuatan-website-lampung') return 'Jasa Pembuatan Website Lampung Professional & Cepat | BantuBuatWeb'
   if (s.slug === 'jasa-pembuatan-website-jakarta') return 'Jasa Pembuatan Website Jakarta & Jabodetabek Terbaik | BantuBuatWeb'
-  return `${s.title} | Jasa Pembuatan Website BantuBuatWeb`
+  return `${s.title} | BantuBuatWeb`
 }
 
 const getAreaServed = (s: typeof service) => {
@@ -195,7 +195,7 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-zinc-400">Teknologi</span>
-                <span class="font-black text-white">Nuxt 3 &amp; Vite</span>
+                <span class="font-black text-white">Nuxt 4 &amp; Modern Stack</span>
               </div>
             </div>
 

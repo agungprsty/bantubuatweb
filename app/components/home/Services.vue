@@ -11,7 +11,7 @@ import { HOME_SERVICES } from '~/data/homeData'
           Layanan Utama Dari <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">BantuBuatWeb?</span>
         </h2>
         <p class="text-sm sm:text-base lg:text-lg font-bold text-zinc-400 max-w-2xl mx-auto">
-          Pilih jenis website yang sesuai dengan kebutuhan dan target pertumbuhan bisnis Anda.
+          Solusi website modern, integrasi AI cerdas, dan transformasi digital yang dirancang untuk mendongkrak performa &amp; omzet bisnis Anda.
         </p>
       </div>
 

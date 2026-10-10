@@ -11,11 +11,31 @@ Platform & Layanan Jasa Pembuatan Website Professional dan Solusi Transformasi D
 ## 🚀 Solusi & Keunggulan Utama
 
 - **Transformasi Digital & Peningkatan Omzet:** Ekosistem digital end-to-end yang dirancang strategis untuk mengonversi pengunjung menjadi pelanggan setia dan mendongkrak penjualan bisnis.
+- **Implementasi Advance SEO:** Optimasi arsitektur teknis mendalam, Core Web Vitals (skor 90+), Schema JSON-LD terstruktur, dan Local SEO untuk mendominasi peringkat teratas Google.
+- **Chatbot AI & Integrasi LLM:** Otomatisasi CS 24/7 dan asisten cerdas berbasis OpenAI GPT / Claude / Gemini yang dilatih khusus dengan knowledge base bisnis Anda.
+- **Integrasi Payment Gateway & 3rd Party API:** Pembayaran otomatis instan via QRIS, Virtual Account, E-Wallet (Midtrans, Xendit, Doku) serta API logistik & cek ongkir otomatis multi-ekspedisi.
+- **Otomasi Alur Kerja & CRM:** Integrasi WhatsApp Business API, CRM, dan sistem operasional bisnis (n8n/Zapier) untuk alur kerja otomatis tanpa celah.
 - **Neo-Brutalism Design System:** Identitas visual modern, berani (bold), dan berkarakter kuat terinspirasi dari standar desain global untuk membangun impresi profesional dan kredibel.
 - **Super Fast & Lightweight Performa:** Dibangun dengan arsitektur Nuxt 4 & Vite untuk load time ultra cepat (< 2 detik) guna memaksimalkan retensi pengunjung dan konversi.
-- **SEO Ready & Social Share:** Konfigurasi lengkap Meta Tags, Open Graph, Twitter Cards, JSON-LD Schema, serta optimasi pencarian lokal Google untuk mendatangkan traffic organik tertarget.
 - **Mobile-First & High Conversion:** Antarmuka responsif dan teroptimasi penuh untuk smartphone, tablet, hingga desktop dengan alur navigasi intuitif.
-- **Otomasi & Integrasi WhatsApp Direct:** Memudahkan prospek dan calon pembeli langsung terhubung dan bertransaksi dalam 1 klik tanpa hambatan teknis.
+
+---
+
+## 💼 Katalog Layanan
+
+1. **Website Development:**
+   - Website Company Profile (Profil Usaha, Portfolio Proyek & Legalitas)
+   - Toko Online / E-Commerce (Katalog Produk, Keranjang Belanja & Manajemen Stok)
+   - Landing Page Iklan (High-Converting Page untuk Google & Meta Ads)
+   - Portal Berita, Lembaga, Komunitas, Sekolah & Rumah Sakit
+   - Jasa Pembuatan Website Wilayah (Jogja, Lampung, Jakarta & Seluruh Indonesia)
+2. **AI & Transformasi Digital:**
+   - **Implementasi Advance SEO:** Technical SEO, Schema Markup, Semantic HTML, Sitemap Dinamis & Local SEO
+   - **Chatbot AI & Otomasi CS:** Asisten AI 24/7 untuk menjawab pertanyaan pelanggan & filter leads
+   - **Integrasi LLM & AI Generatif:** Integrasi API OpenAI / Claude / Gemini, RAG Dokumen Bisnis & Smart Recommender
+   - **Integrasi Payment Gateway:** Midtrans, Xendit, QRIS, Virtual Account & Webhook Verifikasi Otomatis
+   - **Integrasi API Ongkir & Logistik:** Multi-kurir JNE, J&T, SiCepat, RajaOngkir, Biteship & Auto-AWB Resi
+   - **Otomasi Alur Kerja & CRM:** Sinkronisasi WhatsApp API, Google Sheets/Notion, Email & Notifikasi Tim Sales
 
 ---
 

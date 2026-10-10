@@ -45,27 +45,27 @@ export const HOME_SERVICES: HomeService[] = [
   },
   {
     icon: 'shoppingBag',
-    title: 'Toko Online & Katalog',
-    desc: 'Katalog produk lengkap dengan tombol order WhatsApp atau fitur keranjang belanja dan hitung ongkir otomatis.',
+    title: 'Toko Online & Payment Gateway',
+    desc: 'Katalog produk modern dengan integrasi pembayaran otomatis (Midtrans/Xendit/QRIS) serta cek ongkir otomatis multi-ekspedisi.',
     color: 'bg-neo-yellow text-black',
     img: '/images/gumroad/sell-anywhere.png',
-    items: ['Terima Pembayaran QRIS & Transfer', 'Cek Ongkir Otomatis (JNE/J&T/Sicepat)', 'Kelola Produk & Stok Tanpa Ribet'],
+    items: ['Payment Gateway (QRIS, VA, E-Wallet)', 'Hitung Ongkir Otomatis (JNE/J&T/Sicepat)', 'Order via Web & Notifikasi WhatsApp'],
   },
   {
-    icon: 'rocket',
-    title: 'Landing Page Khusus Iklan',
-    desc: 'Halaman ringkas yang fokus untuk iklan Google Ads & Meta Ads. Buka secepat kilat agar calon pembeli langsung pesan ke WhatsApp.',
+    icon: 'bot',
+    title: 'Chatbot AI & Integrasi LLM',
+    desc: 'Otomatisasi customer service dan sistem cerdas 24/7 menggunakan kecerdasan buatan (OpenAI/Claude) berbasis data bisnis Anda.',
     color: 'bg-neo-cyan text-black',
     img: '/images/gumroad/side-project-2.svg',
-    items: ['Loading Cepat di Bawah 2 Detik', 'Tombol WhatsApp Terbuka Langsung', 'Siap Dipasang Pixel & Analytics'],
+    items: ['Customer Service AI Responsif 24/7', 'Integrasi LLM & AI Generatif Cerdas', 'Auto Follow-up Prospek ke WhatsApp'],
   },
   {
-    icon: 'smartphone',
-    title: 'Aplikasi Web & Sistem Custom',
-    desc: 'Buat sistem web internal sesuai alur kerja bisnis Anda: booking online, pencatatan transaksi, hingga laporan PDF.',
+    icon: 'layers',
+    title: 'Transformasi Digital & Advance SEO',
+    desc: 'Bangun ekosistem digital kustom sesuai alur bisnis: ranking Google nomor satu, CRM, dashboard analitik, dan integrasi API pihak ke-3.',
     color: 'bg-neo-green text-black',
     img: '/images/gumroad/new-sale.svg',
-    items: ['Fitur Disesuaikan Kebutuhan Bisnis', 'Dashboard Ringkas & Laporan PDF', 'Hak Akses Multi-User / Karyawan'],
+    items: ['Advance SEO & Schema Terstruktur', 'Integrasi API & Payment 3rd Party', 'Dashboard Real-Time & Otomasi Alur'],
   },
 ]
 
@@ -93,7 +93,7 @@ export const HOME_PLANS: HomePlan[] = [
     featured: true,
     color: 'bg-neo-pink text-black border-black',
     icon: '/images/gumroad/feature-receipt-2.svg',
-    perks: ['Semua Fitur Starter', 'Kapasitas Penyimpanan Bebas', 'Hingga 10 Halaman Informasi', 'Email Resmi (@namausaha.com)', 'Garansi Pemeliharaan 30 Hari'],
+    perks: ['Semua Fitur Starter', 'Kapasitas Penyimpanan Bebas', 'Hingga 10 Halaman Informasi', 'Email Resmi (@namausaha.com)', 'Setup Advance SEO & Schema', 'Garansi Pemeliharaan 30 Hari'],
   },
   {
     name: 'Toko Online E-Commerce',
@@ -105,7 +105,7 @@ export const HOME_PLANS: HomePlan[] = [
     featured: false,
     color: 'bg-neo-yellow text-black border-black',
     icon: '/images/gumroad/feature-receipt-3.svg',
-    perks: ['Semua Fitur Pro', 'Keranjang Belanja Custom', 'Hitung Ongkir Otomatis', 'Pembayaran QRIS, Bank & E-Wallet', 'Kelola Stok & Laporan Penjualan'],
+    perks: ['Semua Fitur Pro', 'Keranjang Belanja Custom', 'Integrasi Payment Midtrans/Xendit', 'API Ongkir Otomatis (JNE/J&T/Sicepat)', 'Kelola Stok & Laporan Penjualan'],
   },
   {
     name: 'Custom System / Enterprise',
@@ -117,7 +117,7 @@ export const HOME_PLANS: HomePlan[] = [
     featured: false,
     color: 'bg-neo-cyan text-black border-black',
     icon: '/images/gumroad/feature-receipt-4.svg',
-    perks: ['Fitur Bebas Request Sesuai Alur', 'Bisa Hubungkan Sistem yang Ada', 'Daya Tampung Akses Besar', 'Pendampingan Teknis Prioritas', 'Panduan Penggunaan Lengkap'],
+    perks: ['Fitur Bebas Request Sesuai Alur', 'Chatbot AI & Integrasi LLM Cerdas', 'Integrasi API & Payment 3rd Party', 'Otomasi Workflow CRM & WhatsApp API', 'Pendampingan Teknis Prioritas'],
   },
 ]
 
