@@ -5,33 +5,33 @@ const steps = [
   {
     id: 1,
     time: '00:00 - 00:05',
-    title: 'Konsultasi & Diskusi',
-    desc: 'Diskusi gratis seputar bidang bisnis Anda, konten yang disiapkan, serta fitur utama yang dibutuhkan.',
-    badge: 'FASE 1: PERENCANAAN',
+    title: 'Audit & Temukan Masalah',
+    desc: 'Identifikasi bottleneck bisnis Anda: kebocoran leads, proses manual yang lambat, hingga penyebab rendahnya konversi penjualan.',
+    badge: 'FASE 1: DIAGNOSIS & AUDIT',
     color: 'bg-neo-pink text-black',
   },
   {
     id: 2,
     time: '00:05 - 00:10',
-    title: 'Desain & Tata Letak',
-    desc: 'Penyusunan desain visual yang rapi, modern, dan mudah dibaca oleh calon pembeli.',
-    badge: 'FASE 2: DESAIN TAMPILAN',
+    title: 'Pemetaan Blueprint Solusi',
+    desc: 'Merancang arsitektur ekosistem digital: alur sales funnel, website modern, integrasi AI, payment, dan otomatisasi alur kerja.',
+    badge: 'FASE 2: BLUEPRINT SOLUSI',
     color: 'bg-neo-yellow text-black',
   },
   {
     id: 3,
     time: '00:10 - 00:15',
-    title: 'Pembuatan & Optimasi',
-    desc: 'Pengodean website agar cepat dibuka di HP, pemasangan WhatsApp, dan optimasi Google Search.',
-    badge: 'FASE 3: PEMBUATAN & KODE',
+    title: 'Pembangunan & Integrasi Sistem',
+    desc: 'Pengembangan website super cepat, pemasangan Advance SEO, integrasi payment gateway, API kurir, chatbot AI, dan CRM.',
+    badge: 'FASE 3: EKSEKUSI & INTEGRASI',
     color: 'bg-neo-cyan text-black',
   },
   {
     id: 4,
     time: '00:15 - 00:20',
-    title: 'Uji Coba & Garansi',
-    desc: 'Uji coba di HP & laptop, pendaftaran ke Google, peluncuran domain, dan garansi 30 hari.',
-    badge: 'FASE 4: TAYANG & GARANSI',
+    title: 'Peluncuran & Scale-Up Omzet',
+    desc: 'Sistem live dan beroperasi penuh, pendampingan & panduan tim, garansi maintenance 30 hari, serta bisnis siap naik kelas.',
+    badge: 'FASE 4: TAYANG & SCALE-UP',
     color: 'bg-neo-green text-black',
   },
 ]
@@ -89,10 +89,10 @@ const formatTime = (p: number) => {
       
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3 sm:space-y-4">
         <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
-          Cara Bekerja
+          Alur Transformasi Digital
         </h2>
         <p class="text-sm sm:text-base lg:text-lg font-bold text-zinc-400">
-          Saksikan alur pembuatan website di BantuBuatWeb dalam 4 langkah praktis.
+          Dari diagnosis masalah hingga ekosistem digital siap pakai yang melipatgandakan omzet bisnis Anda.
         </p>
       </div>
 
@@ -168,7 +168,7 @@ const formatTime = (p: number) => {
                 <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-red-500 border border-black"></span>
                 <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-yellow-400 border border-black"></span>
                 <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-green-500 border border-black"></span>
-                <span class="text-[11px] sm:text-xs font-mono text-zinc-400 ml-1.5 sm:ml-2 hidden sm:inline">bantubuatweb_proses_animasi.mp4</span>
+                <span class="text-[11px] sm:text-xs font-mono text-zinc-400 ml-1.5 sm:ml-2 hidden sm:inline">bantubuatweb_transformasi_digital.mp4</span>
               </div>
               <div class="flex items-center gap-1.5 sm:gap-2">
                 <span class="neo-badge bg-neo-pink text-black text-[9px] sm:text-[10px]">ALUR KERJA</span>
@@ -185,87 +185,98 @@ const formatTime = (p: number) => {
               <!-- BACKGROUND GRID DECORATION -->
               <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
-              <!-- STEP 1 ANIMATED SCENE -->
+              <!-- STEP 1 ANIMATED SCENE: AUDIT & TEMUKAN MASALAH -->
               <div v-if="currentStep === 1" class="relative z-10 w-full max-w-md space-y-3 sm:space-y-4">
                 <div class="neo-box bg-white text-black p-4 sm:p-5 border-2 border-black shadow-[3px_3px_0px_0px_#FF90E8] sm:shadow-[4px_4px_0px_0px_#FF90E8] relative">
                   <div class="flex items-center gap-2.5 sm:gap-3 border-b-2 border-black pb-2.5 sm:pb-3 mb-2.5 sm:mb-3">
-                    <img src="/images/gumroad/blog-post-circle-1.svg" class="h-8 w-8 sm:h-10 sm:w-10 animate-bounce" alt="Konsultasi" />
+                    <img src="/images/gumroad/blog-post-circle-1.svg" class="h-8 w-8 sm:h-10 sm:w-10 animate-bounce" alt="Diagnosis Masalah" />
                     <div>
-                      <div class="text-[10px] sm:text-xs font-black text-black uppercase">Langkah 01: Diskusi Awal</div>
-                      <div class="text-xs sm:text-sm font-black text-black">Analisis Kebutuhan Bisnis</div>
+                      <div class="text-[10px] sm:text-xs font-black text-black uppercase">Langkah 01: Diagnosis &amp; Audit</div>
+                      <div class="text-xs sm:text-sm font-black text-black">Identifikasi Bottleneck Bisnis</div>
                     </div>
                   </div>
                   <div class="space-y-2 text-[11px] sm:text-xs font-bold text-slate-800">
+                    <div class="flex items-center justify-between p-2 rounded bg-red-100 border border-black">
+                      <span class="flex items-center gap-1.5"><span class="text-red-600 font-black">!</span> Kebocoran Leads</span>
+                      <span class="font-black text-[10px] sm:text-xs text-red-700 bg-white px-1.5 sm:px-2 py-0.5 rounded border border-black">Follow-up Lambat</span>
+                    </div>
                     <div class="flex items-center justify-between p-2 rounded bg-neo-yellow/30 border border-black">
-                      <span>Jenis Usaha</span>
-                      <span class="font-black text-black bg-neo-yellow px-1.5 sm:px-2 py-0.5 rounded border border-black">UMKM / Bisnis</span>
+                      <span class="flex items-center gap-1.5"><span class="text-yellow-700 font-black">!</span> Alur Order &amp; CS</span>
+                      <span class="font-black text-[10px] sm:text-xs text-black bg-neo-yellow px-1.5 sm:px-2 py-0.5 rounded border border-black">Proses Masih Manual</span>
                     </div>
                     <div class="flex items-center justify-between p-2 rounded bg-neo-cyan/30 border border-black">
-                      <span>Tujuan Utama</span>
-                      <span class="font-black text-black bg-neo-cyan px-1.5 sm:px-2 py-0.5 rounded border border-black">Kontak WhatsApp</span>
+                      <span class="flex items-center gap-1.5"><span class="text-blue-700 font-black">!</span> Target Bisnis</span>
+                      <span class="font-black text-[10px] sm:text-xs text-black bg-neo-cyan px-1.5 sm:px-2 py-0.5 rounded border border-black">Otomasi &amp; Scale Omzet</span>
                     </div>
                   </div>
                 </div>
-                <div class="flex justify-center">
-                  <img src="/images/gumroad/arrowhead-right.svg" class="h-6 w-6 sm:h-8 sm:w-8 rotate-90 animate-pulse" alt="Arrow" />
+                <div class="flex justify-center items-center gap-2">
+                  <span class="text-[10px] sm:text-xs font-black uppercase bg-neo-green text-black px-2.5 py-1 rounded border border-black shadow-[2px_2px_0px_0px_#000]">
+                    ✓ Status: 100% Masalah &amp; Kebutuhan Terpetakan
+                  </span>
                 </div>
               </div>
 
-              <!-- STEP 2 ANIMATED SCENE -->
+              <!-- STEP 2 ANIMATED SCENE: PEMETAAN BLUEPRINT SOLUSI -->
               <div v-if="currentStep === 2" class="relative z-10 w-full max-w-md space-y-3 sm:space-y-4">
                 <div class="neo-box bg-neo-yellow text-black p-4 sm:p-5 border-2 border-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff]">
                   <div class="flex items-center justify-between border-b-2 border-black pb-2.5 sm:pb-3 mb-2.5 sm:mb-3">
                     <div class="flex items-center gap-2">
-                      <img src="/images/gumroad/design.svg" class="h-6 w-6 sm:h-7 sm:w-7" alt="Design Icon" />
-                      <span class="text-[10px] sm:text-xs font-black uppercase">Langkah 02: Desain Visual</span>
+                      <img src="/images/gumroad/design.svg" class="h-6 w-6 sm:h-7 sm:w-7" alt="Blueprint Icon" />
+                      <span class="text-[10px] sm:text-xs font-black uppercase">Langkah 02: Blueprint Solusi</span>
                     </div>
-                    <span class="text-[10px] sm:text-xs font-bold bg-black text-white px-2 py-0.5 rounded">Rapi &amp; Khas</span>
+                    <span class="text-[10px] sm:text-xs font-black bg-black text-white px-2 py-0.5 rounded">Rencana Ekosistem</span>
                   </div>
-                  <div class="grid grid-cols-2 gap-2.5 sm:gap-3 text-center">
-                    <div class="p-2.5 sm:p-3 bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
-                      <div class="text-[11px] sm:text-xs font-black">Warna Khas</div>
-                      <div class="flex justify-center gap-1 mt-1.5 sm:mt-2">
-                        <span class="h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-[#FF90E8] border border-black"></span>
-                        <span class="h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-[#FFC901] border border-black"></span>
-                        <span class="h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-[#23A6F0] border border-black"></span>
-                        <span class="h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-[#23C552] border border-black"></span>
-                      </div>
+                  <div class="grid grid-cols-2 gap-2 sm:gap-2.5 text-left">
+                    <div class="p-2 sm:p-2.5 bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                      <div class="text-[10px] sm:text-[11px] font-black text-black uppercase">1. Web &amp; Funnel</div>
+                      <div class="text-[10px] font-bold text-slate-700 mt-0.5">High-Converting UX</div>
                     </div>
-                    <div class="p-2.5 sm:p-3 bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
-                      <div class="text-[11px] sm:text-xs font-black">Tata Letak</div>
-                      <div class="text-[10px] font-mono font-bold mt-1 bg-zinc-100 p-1 rounded border border-black">Mobile-First</div>
+                    <div class="p-2 sm:p-2.5 bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                      <div class="text-[10px] sm:text-[11px] font-black text-black uppercase">2. Otomasi &amp; AI</div>
+                      <div class="text-[10px] font-bold text-slate-700 mt-0.5">Chatbot 24/7 + LLM</div>
+                    </div>
+                    <div class="p-2 sm:p-2.5 bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                      <div class="text-[10px] sm:text-[11px] font-black text-black uppercase">3. Payment &amp; Kurir</div>
+                      <div class="text-[10px] font-bold text-slate-700 mt-0.5">Midtrans + Auto Ongkir</div>
+                    </div>
+                    <div class="p-2 sm:p-2.5 bg-white rounded-lg border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                      <div class="text-[10px] sm:text-[11px] font-black text-black uppercase">4. Advance SEO</div>
+                      <div class="text-[10px] font-bold text-slate-700 mt-0.5">Dominasi #1 Google</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- STEP 3 ANIMATED SCENE -->
+              <!-- STEP 3 ANIMATED SCENE: EKSEKUSI & INTEGRASI SISTEM -->
               <div v-if="currentStep === 3" class="relative z-10 w-full max-w-md space-y-3 sm:space-y-4">
                 <div class="neo-box bg-zinc-900 text-white p-4 sm:p-5 border-2 border-white shadow-[3px_3px_0px_0px_#23A6F0] sm:shadow-[4px_4px_0px_0px_#23A6F0]">
                   <div class="flex items-center justify-between border-b border-zinc-700 pb-2.5 sm:pb-3 mb-2.5 sm:mb-3">
                     <div class="flex items-center gap-2">
                       <img src="/images/gumroad/software.svg" class="h-6 w-6 sm:h-7 sm:w-7" alt="Software Icon" />
-                      <span class="text-[10px] sm:text-xs font-black text-neo-cyan uppercase">Langkah 03: Pengodean</span>
+                      <span class="text-[10px] sm:text-xs font-black text-neo-cyan uppercase">Langkah 03: Integrasi Sistem</span>
                     </div>
-                    <span class="text-[9px] sm:text-[10px] font-mono bg-neo-green text-black font-black px-2 py-0.5 rounded border border-black">BERHASIL</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono bg-neo-green text-black font-black px-2 py-0.5 rounded border border-black">LIVE INTEGRATION</span>
                   </div>
                   
-                  <div class="space-y-2 font-mono text-[11px] sm:text-xs text-zinc-300">
+                  <div class="space-y-1.5 font-mono text-[10px] sm:text-[11px] text-zinc-300">
                     <div class="bg-black p-2.5 sm:p-3 rounded border border-zinc-800 space-y-1">
-                      <div class="text-green-400">✓ Kecepatan buka HP: Cepat &amp; Ringan</div>
-                      <div class="text-yellow-400">✓ Integrasi Tombol WhatsApp: Siap</div>
-                      <div class="text-cyan-400">✓ Pendaftaran Google Search: Siap</div>
+                      <div class="text-green-400">✓ Web Modern (Speed &lt; 2s): Ready</div>
+                      <div class="text-yellow-400">✓ Payment Midtrans &amp; QRIS: Connected</div>
+                      <div class="text-cyan-400">✓ AI Chatbot &amp; WhatsApp: Active 24/7</div>
+                      <div class="text-pink-400">✓ Advance SEO &amp; Schema: Verified</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- STEP 4 ANIMATED SCENE -->
+              <!-- STEP 4 ANIMATED SCENE: PELUNCURAN & SCALE-UP OMZET -->
               <div v-if="currentStep === 4" class="relative z-10 w-full max-w-md space-y-3 sm:space-y-4 text-center">
                 <div class="neo-box bg-white text-black p-5 sm:p-6 border-2 border-black shadow-[4px_4px_0px_0px_#23C552] sm:shadow-[6px_6px_0px_0px_#23C552] relative overflow-hidden">
-                  <img src="/images/gumroad/new-sale.svg" class="h-12 w-auto sm:h-16 mx-auto mb-2 animate-bounce" alt="New Sale" />
-                  <h4 class="text-lg sm:text-xl font-black text-black">Website Siap &amp; Online!</h4>
-                  <p class="text-[11px] sm:text-xs font-bold text-slate-700 mt-1">Website Anda siap diakses pelanggan 24 jam nonstop.</p>
+                  <img src="/images/gumroad/new-sale.svg" class="h-12 w-auto sm:h-16 mx-auto mb-2 animate-bounce" alt="Scale Up Omzet" />
+                  <span class="neo-badge bg-neo-green text-black text-[9px] sm:text-[10px] mb-1">EKOSISTEM DIGITAL AKTIF</span>
+                  <h4 class="text-base sm:text-lg font-black text-black">Mesin Penjualan Siap Beroperasi!</h4>
+                  <p class="text-[11px] sm:text-xs font-bold text-slate-700 mt-1">Ekosistem digital berjalan otomatis 24/7, siap melipatgandakan omzet bisnis Anda.</p>
 
                   <div class="flex justify-center gap-1.5 sm:gap-2 mt-3 sm:mt-4">
                     <img src="/images/gumroad/coin-1.svg" class="h-6 w-6 sm:h-8 sm:w-8 animate-bounce delay-100" alt="Coin" />
