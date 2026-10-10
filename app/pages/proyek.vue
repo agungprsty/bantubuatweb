@@ -90,7 +90,7 @@ useHead({
             rel="noopener"
             class="neo-btn bg-black text-white w-full py-2.5 text-xs sm:text-sm font-black hover:bg-neo-pink hover:text-black mt-2"
           >
-            Kunjungi Website Demo
+            Kunjungi Website
           </a>
         </li>
       </ul>

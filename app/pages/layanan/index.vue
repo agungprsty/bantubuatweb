@@ -61,11 +61,28 @@ useHead({
       <!-- Page Header -->
       <div class="mt-6 max-w-3xl space-y-3 sm:space-y-4">
         <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-          Layanan Website &amp; <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">Transformasi Digital</span>
+          Layanan <span class="bg-neo-yellow text-black px-2.5 py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff]">Transformasi Digital</span>
         </h2>
         <p class="text-sm sm:text-base lg:text-lg font-bold text-zinc-300 leading-relaxed">
           Pilih solusi digital, integrasi AI, atau jenis website yang sesuai dengan skala dan target pertumbuhan bisnis Anda.
         </p>
+      </div>
+
+      <!-- Caution: Tidak Terima Proyek Pemerintah -->
+      <div class="mt-6 sm:mt-8 p-4 sm:p-5 bg-neo-yellow text-black border-2 sm:border-3 border-black rounded-xl shadow-[4px_4px_0px_0px_#fff] flex items-start gap-3 sm:gap-4">
+        <span class="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg border-2 border-black bg-black text-neo-yellow shadow-[2px_2px_0px_0px_#000]">
+          <AppIcon name="triangleAlert" class="h-5 w-5 sm:h-6 sm:w-6" />
+        </span>
+        <div class="min-w-0 flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-1.5">
+            <span class="text-[10px] sm:text-xs font-black uppercase tracking-wider text-black bg-white px-2 py-0.5 border border-black rounded shadow-[1.5px_1.5px_0px_0px_#000]">
+              Pemberitahuan Penting
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm font-bold text-black leading-relaxed">
+            BantuBuatWeb <strong>tidak menerima</strong> pengerjaan proyek instansi pemerintah, lelang/tender pengadaan, maupun LPSE/APBN/APBD. Kami berfokus 100% melayani UMKM, bisnis mandiri, personal brand, startup, dan korporasi swasta dengan proses agile, transparan, dan tanpa birokrasi berbelit.
+          </p>
+        </div>
       </div>
 
       <!-- Filter Buttons -->

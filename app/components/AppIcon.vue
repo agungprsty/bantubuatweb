@@ -46,6 +46,9 @@ const icons = {
   database: 'lucide:database',
   workflow: 'lucide:workflow',
   shieldCheck: 'lucide:shield-check',
+  shieldAlert: 'lucide:shield-alert',
+  triangleAlert: 'lucide:triangle-alert',
+  alertTriangle: 'lucide:triangle-alert',
   trendingUp: 'lucide:trending-up',
 }
 

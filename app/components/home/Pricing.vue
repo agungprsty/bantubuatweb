@@ -79,7 +79,6 @@ import { HOME_PLANS } from '~/data/homeData'
       <!-- Bottom Custom Consultation Banner -->
       <div class="mt-10 sm:mt-14 neo-box bg-neo-cyan text-black p-5 sm:p-8 border-3 sm:border-4 border-white shadow-[6px_6px_0px_0px_#fff] sm:shadow-[8px_8px_0px_0px_#fff] flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
         <div class="space-y-1 sm:space-y-2 text-center md:text-left">
-          <span class="neo-badge bg-black text-white text-[9px] sm:text-[10px]">KONSULTASI FLEKSIBEL</span>
           <h3 class="text-lg sm:text-2xl font-black text-black">
             Butuh Fitur Khusus atau Integrasi Sistem Custom?
           </h3>
