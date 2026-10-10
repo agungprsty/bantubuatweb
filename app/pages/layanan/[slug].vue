@@ -195,7 +195,7 @@ const next = SERVICES[(SERVICES.findIndex((s) => s.slug === service.slug) + 1) %
               </div>
               <div class="flex justify-between items-center">
                 <span class="text-zinc-400">Teknologi</span>
-                <span class="font-black text-white">Nuxt 4 &amp; Modern Stack</span>
+                <span class="font-black text-white">Modern Stack</span>
               </div>
             </div>
 

@@ -6,7 +6,7 @@ const features = [
     stat: '< 1.2 Detik',
     statLabel: 'Loading Time Instan',
     title: 'Arsitektur Web Cepat & High Conversion',
-    desc: 'Dibangun dengan Nuxt 4 tanpa template lambat. Loading instan meningkatkan retensi pengunjung, menaikkan ranking Google, dan memaksimalkan konversi penjualan.',
+    desc: 'Dibangun dengan Teknologi terbaru tanpa template lambat. Loading instan meningkatkan retensi pengunjung, menaikkan ranking Google, dan memaksimalkan konversi penjualan.',
     color: 'bg-neo-yellow text-black border-2 border-black shadow-[6px_6px_0px_0px_#fff]',
     img: '/images/gumroad/easy.svg',
     colSpan: 'lg:col-span-7',
