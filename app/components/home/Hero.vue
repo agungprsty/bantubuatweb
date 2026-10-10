@@ -67,21 +67,21 @@
             <div class="space-y-3 sm:space-y-4">
               <div class="rounded-xl border-2 border-black bg-neo-pink p-3 sm:p-4 shadow-[3px_3px_0px_0px_#000] sm:shadow-[4px_4px_0px_0px_#000] flex items-center justify-between gap-2">
                 <div>
-                  <div class="text-[10px] sm:text-xs font-black uppercase">Fitur Utama</div>
-                  <div class="text-base sm:text-xl lg:text-2xl font-black text-black mt-0.5">Order via WhatsApp</div>
-                  <div class="text-[10px] sm:text-[11px] font-bold text-slate-900 leading-tight mt-0.5">Pengunjung bisa langsung kirim pesan dalam 1 klik.</div>
+                  <div class="text-[10px] sm:text-xs font-black uppercase tracking-wider">Pertumbuhan Bisnis</div>
+                  <div class="text-base sm:text-xl lg:text-2xl font-black text-black mt-0.5">Mesin Penjualan Digital</div>
+                  <div class="text-[10px] sm:text-[11px] font-bold text-slate-900 leading-tight mt-0.5">Ubah traffic pengunjung jadi leads & transaksi nyata setiap hari secara konsisten.</div>
                 </div>
                 <img src="/images/gumroad/sales-graph.svg" class="h-10 w-auto sm:h-12 border border-black rounded p-1 bg-white shrink-0" alt="Sales Graph" />
               </div>
 
               <div class="grid grid-cols-2 gap-2.5 sm:gap-3">
                 <div class="rounded-xl border-2 border-black bg-neo-yellow p-3 sm:p-4 shadow-[2px_2px_0px_0px_#000] sm:shadow-[3px_3px_0px_0px_#000] relative overflow-hidden">
-                  <div class="text-base sm:text-xl lg:text-2xl font-black text-black">&lt; 2 Detik</div>
-                  <div class="text-[10px] sm:text-xs font-bold text-black mt-0.5">Kecepatan Load</div>
+                  <div class="text-sm sm:text-lg font-black text-black">High-Converting</div>
+                  <div class="text-[10px] sm:text-xs font-bold text-black mt-0.5">Alur Closing Otomatis</div>
                 </div>
                 <div class="rounded-xl border-2 border-black bg-neo-cyan p-3 sm:p-4 shadow-[2px_2px_0px_0px_#000] sm:shadow-[3px_3px_0px_0px_#000] relative overflow-hidden">
-                  <div class="text-base sm:text-xl lg:text-2xl font-black text-black">30 Hari</div>
-                  <div class="text-[10px] sm:text-xs font-bold text-black mt-0.5">Garansi Pemeliharaan</div>
+                  <div class="text-sm sm:text-lg font-black text-black">Siap Scale-Up</div>
+                  <div class="text-[10px] sm:text-xs font-bold text-black mt-0.5">Ekosistem Bisnis Modern</div>
                 </div>
               </div>
             </div>
