@@ -38,14 +38,14 @@ Biaya untuk merancang antarmuka (UI/UX), menulis kode yang bersih, optimasi kece
 
 ## Estimasi Biaya Berdasarkan Kebutuhan Bisnis
 
-Berikut adalah kisaran harga pasar yang sehat dan wajar di Indonesia:
+Berikut adalah rincian estimasi biaya investasi dan durasi pengerjaan profesional yang kami sediakan di BantuBuatWeb sesuai dengan skala kebutuhan bisnis Anda:
 
-| Kategori Website | Karakteristik & Halaman | Estimasi Biaya Wajar | Durasi Pengerjaan |
+| Kategori / Paket | Karakteristik & Cakupan Fitur | Biaya Investasi | Durasi Pengerjaan |
 | :--- | :--- | :--- | :--- |
-| **Landing Page Iklan** | 1 Halaman Fokus Konversi | Rp 800.000 – Rp 1.800.000 | 2 – 4 Hari Kerja |
-| **Company Profile UMKM** | 4 – 8 Halaman Lengkap | Rp 1.500.000 – Rp 3.500.000 | 1 – 2 Minggu |
-| **Toko Online / Katalog** | Daftar Produk + Order WA | Rp 2.200.000 – Rp 5.000.000 | 2 – 3 Minggu |
-| **Aplikasi Web Custom** | Sistem Internal / Booking | Rp 6.000.000 – Rp 20.000.000+ | 3 – 6 Minggu |
+| **Starter Bisnis (Landing Page)** | 1 Halaman Siap Konversi (1–5 Section), Fast Load, Tombol WhatsApp & Google Maps | Rp 2.500.000 | 5 – 10 Hari Kerja |
+| **Company Profile UMKM** | Hingga 10 Halaman Lengkap, Email Bisnis Resmi (@bisnis.com), Basic SEO & Desain Custom | Rp 4.900.000 | 2 – 3 Minggu |
+| **Toko Online & Payment** | Katalog & Stok, Payment Gateway (QRIS/VA), Hitung Ongkir Otomatis & Notifikasi WA | Rp 10.000.000 | 3 – 5 Minggu |
+| **Custom System / AI** | Arsitektur Web & Database Bebas Request, Integrasi Chatbot AI/LLM, CRM & Dashboard | Mulai Rp 15.000.000+ | 5 – 8 Minggu+ |
 
 ---
 
@@ -54,18 +54,18 @@ Berikut adalah kisaran harga pasar yang sehat dan wajar di Indonesia:
 Sebelum memutuskan vendor pembuatan website, pastikan 4 poin krusial ini sudah disepakati secara tertulis:
 
 1. **Biaya Perpanjangan Tahunan:**  
-   Banyak vendor menawarkan harga pembuatan sangat murah di tahun pertama, namun menagih biaya perpanjangan domain dan hosting yang tidak masuk akal di tahun kedua. Pastikan biaya tahun berikutnya transparan sejak awal.
+   Banyak vendor menawarkan harga pembuatan sangat murah di tahun pertama, namun menagih biaya perpanjangan domain dan hosting yang tidak masuk akal di tahun kedua. Pastikan biaya tahun berikutnya transparan sejak awal (misal di BantuBuatWeb, perpanjangan sudah jelas mulai Rp 800rb/tahun untuk server cloud & domain .com).
 2. **Hak Kepemilikan Source Code & Akun Domain:**  
    Pastikan domain didaftarkan atas nama bisnis Anda, dan Anda memiliki akses penuh terhadap source code website. Hindari sistem sewa yang membuat bisnis Anda terkunci.
 3. **Sertifikat Keamanan SSL (HTTPS):**  
    Website modern wajib menggunakan enkripsi SSL agar tidak dilabeli "Tidak Aman" oleh browser dan aman untuk transaksi data pelanggan.
 4. **Garansi Maintenance Pasca Peluncuran:**  
-   Pilih penyedia yang memberikan jaminan perbaikan bug dan bantuan teknis minimal 30 hari setelah website online.
+   Pilih penyedia yang memberikan jaminan perbaikan bug dan bantuan teknis minimal 30–60 hari setelah website online.
 
 ---
 
 ## Kesimpulan
 
-Jika fokus bisnis Anda saat ini adalah menjalankan kampanye iklan digital di Meta Ads atau Google Ads, landing page satu halaman adalah opsi paling hemat dan efektif. Namun jika bisnis Anda membutuhkan profil kredibel untuk tender B2B dan proposal kerjasama, buatlah company profile resmi yang rapi.
+Jika fokus bisnis Anda saat ini adalah menjalankan kampanye iklan digital di Meta Ads atau Google Ads, paket **Starter Bisnis (Landing Page)** adalah opsi paling efisien untuk memvalidasi penawaran dan konversi. Namun jika bisnis Anda membutuhkan profil kredibel untuk tender B2B, legalitas, dan proposal kerjasama, buatlah **Company Profile** multi-halaman resmi.
 
-Di BantuBuatWeb, kami menghadirkan paket pembuatan website yang transparan mulai dari Rp 800.000-an tanpa biaya tersembunyi, load cepat, dan garansi penuh.
+Di BantuBuatWeb, kami menghadirkan paket investasi pembuatan website yang transparan mulai dari paket **Starter Bisnis Rp 2.500.000** tanpa biaya tersembunyi, load ultra-cepat, gratis domain & cloud hosting tahun pertama, serta garansi pemeliharaan teknis.
