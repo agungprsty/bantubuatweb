@@ -7,7 +7,7 @@ authorRole: "Founder & Tech Lead BantuBuatWeb"
 category: "Teknologi & Web"
 tags: ["WordPress", "Custom Web", "Nuxt", "Kecepatan Website"]
 readTime: "7 menit baca"
-image: "/og-cover.svg"
+image: "/og-cover.webp"
 ---
 
 Salah satu pertanyaan mendasar yang sering dihadapi calon pemilik website adalah: apakah sebaiknya menggunakan platform WordPress atau membangun website kustom dengan teknologi modern (seperti Nuxt, Vue, atau React)?

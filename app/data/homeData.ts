@@ -51,7 +51,7 @@ export const HOME_SERVICES: HomeService[] = [
     title: 'Toko Online & Payment Gateway',
     desc: 'Katalog produk modern dengan integrasi pembayaran otomatis (Midtrans/Xendit/QRIS) serta cek ongkir otomatis multi-ekspedisi.',
     color: 'bg-neo-yellow text-black',
-    img: '/images/gumroad/sell-anywhere.png',
+    img: '/images/gumroad/sell-anywhere.webp',
     items: ['Payment Gateway (QRIS, VA, E-Wallet)', 'Hitung Ongkir Otomatis (JNE/J&T/Sicepat)', 'Order via Web & Notifikasi WhatsApp'],
   },
   {

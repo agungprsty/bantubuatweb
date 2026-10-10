@@ -23,7 +23,7 @@ export const ARTICLES: Article[] = [
     category: 'Edukasi Bisnis',
     tags: ['Biaya Website', 'UMKM', 'Tips Bisnis', 'Domain Hosting'],
     readTime: '6 menit baca',
-    image: '/og-cover.svg',
+    image: '/og-cover.webp',
     content: `
 Banyak pemilik bisnis dan pelaku UMKM ragu membuat website karena ketidakjelasan rincian biaya. Di satu sisi, ada penawaran instan dengan harga ratusan ribu, namun di sisi lain agensi mematok harga hingga puluhan juta rupiah.
 
@@ -96,7 +96,7 @@ Di BantuBuatWeb, kami menghadirkan paket investasi pembuatan website yang transp
     category: 'Teknologi & Web',
     tags: ['WordPress', 'Custom Web', 'Nuxt', 'Kecepatan Website'],
     readTime: '7 menit baca',
-    image: '/og-cover.svg',
+    image: '/og-cover.webp',
     content: `
 Salah satu pertanyaan mendasar yang sering dihadapi calon pemilik website adalah: apakah sebaiknya menggunakan platform WordPress atau membangun website kustom dengan teknologi modern (seperti Nuxt, Vue, atau React)?
 
@@ -164,7 +164,7 @@ Untuk kebutuhan profil bisnis modern dan landing page berkonversi tinggi, custom
     category: 'Digital Marketing',
     tags: ['Landing Page', 'Google Ads', 'Facebook Ads', 'Konversi'],
     readTime: '5 menit baca',
-    image: '/og-cover.svg',
+    image: '/og-cover.webp',
     content: `
 Banyak pelaku usaha mengalokasikan anggaran jutaan rupiah untuk beriklan di Meta Ads, TikTok Ads, maupun Google Ads, namun mendapatkan hasil yang minim dalam perolehan pesan atau penjualan.
 
@@ -250,7 +250,7 @@ Landing page yang berhasil bukan sekadar yang terlihat meriah, melainkan yang ma
     category: 'Edukasi Bisnis',
     tags: ['Go Digital', 'Strategi Bisnis', 'UMKM', 'Transformasi Digital', 'Website Bisnis'],
     readTime: '7 menit baca',
-    image: '/og-cover.svg',
+    image: '/og-cover.webp',
     content: `
 Banyak pemilik bisnis dan pelaku UMKM beranggapan bahwa "Go Digital" cukup dengan membuat akun media sosial, mengunggah konten secara acak, lalu menunggu pembeli berdatangan. Faktanya, sebagian besar bisnis yang hanya mengandalkan cara tersebut akhirnya berhenti di tengah jalan karena kelelahan mengejar algoritma yang terus berubah tanpa ada peningkatan penjualan yang terukur.
 

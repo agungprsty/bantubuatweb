@@ -1,24 +1,99 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <!-- Dark Background with Dot Matrix Grid -->
+  <rect width="1200" height="630" fill="#09090b"/>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#1e1b4b"/>
-      <stop offset="1" stop-color="#312e81"/>
-    </linearGradient>
-    <linearGradient id="mark" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4f46e5"/>
-      <stop offset="0.55" stop-color="#7c3aed"/>
-      <stop offset="1" stop-color="#14b8a6"/>
-    </linearGradient>
+    <pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#ffffff" opacity="0.12"/>
+    </pattern>
   </defs>
-  <rect fill="url(#bg)" width="1200" height="630"/>
-  <circle cx="1040" cy="90" r="260" fill="#4f46e5" opacity="0.35"/>
-  <circle cx="120" cy="560" r="240" fill="#14b8a6" opacity="0.18"/>
-  <g transform="translate(120 250)">
-    <rect fill="url(#mark)" rx="18" width="96" height="96" transform="scale(1.1)"/>
-    <path d="M30 70V42l14 18 10-16 10 16 9-17v27" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" transform="translate(-12 -10)"/>
-    <path d="M72 62l15 9-15 9z" fill="#fff" transform="translate(-12 -10)"/>
+  <rect width="1200" height="630" fill="url(#dot-grid)"/>
+
+  <!-- Main Neo-Brutalism Card Container -->
+  <!-- Hard Shadow -->
+  <rect x="52" y="52" width="1120" height="550" rx="24" fill="#FF90E8"/>
+  <!-- Card Face -->
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="#ffffff" stroke="#000000" stroke-width="4"/>
+
+  <!-- Brand Logo & Header -->
+  <g transform="translate(85, 75)">
+    <!-- Logo Icon Box -->
+    <rect x="3" y="3" width="56" height="56" rx="14" fill="#000000"/>
+    <rect x="0" y="0" width="56" height="56" rx="14" fill="#FF90E8" stroke="#000000" stroke-width="3"/>
+    <!-- Code Brackets < > -->
+    <path d="M23 18L13 28L23 38" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M33 38L43 28L33 18" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Brand Name Text -->
+    <text x="72" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="900" fill="#000000">bantu</text>
+    <!-- Highlight Badge -->
+    <rect x="156" y="12" width="138" height="36" rx="8" fill="#FFC901" stroke="#000000" stroke-width="2"/>
+    <text x="168" y="37" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="24" font-weight="900" fill="#000000">buatweb</text>
+    <text x="298" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="900" fill="#000000">.id</text>
+
+    <!-- Top Badge Tag -->
+    <rect x="740" y="10" width="280" height="38" rx="19" fill="#23A6F0" stroke="#000000" stroke-width="2"/>
+    <text x="760" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="900" fill="#000000" letter-spacing="0.5">⚡ SOLUSI TRANSFORMASI DIGITAL #1</text>
   </g>
-  <text x="280" y="292" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="2">Jasa Pembuatan Website di Lampung</text>
-  <text x="280" y="360" fill="#a5b4fc" font-family="Arial, Helvetica, sans-serif" font-size="28">lampung<span fill="#14b8a6">media</span><tspan fill="#818cf8">web</tspan> · Software House Bandar Lampung</text>
-  <text x="280" y="420" fill="#c7d2fe" font-family="Arial, Helvetica, sans-serif" font-size="22">Company Profile · Toko Online · Aplikasi Web · SEO</text>
+
+  <!-- Headline -->
+  <text x="85" y="215" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="44" font-weight="900" fill="#000000" letter-spacing="-1">Jasa Pembuatan Website &amp;</text>
+  
+  <rect x="85" y="235" width="485" height="58" fill="#FFC901" stroke="#000000" stroke-width="3"/>
+  <text x="98" y="278" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="44" font-weight="900" fill="#000000" letter-spacing="-1">Sistem Digital Modern</text>
+
+  <!-- Subheadline -->
+  <text x="85" y="335" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="700" fill="#4b5563">
+    Bangun kehadiran online profesional, berkecepatan kilat (&lt; 1 Detik), integrasi AI &amp;
+  </text>
+  <text x="85" y="365" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="700" fill="#4b5563">
+    pembayaran otomatis untuk akselerasi pertumbuhan bisnis Anda.
+  </text>
+
+  <!-- Feature Pills -->
+  <g transform="translate(85, 400)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="210" height="42" rx="10" fill="#FFFDF0" stroke="#000000" stroke-width="2"/>
+    <text x="18" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#000000">💼 Company Profile</text>
+
+    <!-- Pill 2 -->
+    <rect x="225" y="0" width="220" height="42" rx="10" fill="#FFFDF0" stroke="#000000" stroke-width="2"/>
+    <text x="243" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#000000">🛒 Toko Online &amp; QRIS</text>
+
+    <!-- Pill 3 -->
+    <rect x="460" y="0" width="205" height="42" rx="10" fill="#FFFDF0" stroke="#000000" stroke-width="2"/>
+    <text x="478" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#000000">🚀 Landing Page Iklan</text>
+
+    <!-- Pill 4 -->
+    <rect x="680" y="0" width="200" height="42" rx="10" fill="#FFFDF0" stroke="#000000" stroke-width="2"/>
+    <text x="698" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#000000">🤖 Integrasi AI / LLM</text>
+
+    <!-- Pill 5 -->
+    <rect x="895" y="0" width="135" height="42" rx="10" fill="#FFFDF0" stroke="#000000" stroke-width="2"/>
+    <text x="913" y="26" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#000000">📈 Advance SEO</text>
+  </g>
+
+  <!-- Divider Line -->
+  <line x1="85" y1="480" x2="1115" y2="480" stroke="#000000" stroke-width="3"/>
+
+  <!-- Bottom Bar -->
+  <g transform="translate(85, 505)">
+    <!-- Perk 1 -->
+    <rect x="0" y="3" width="20" height="20" rx="5" fill="#23C552" stroke="#000000" stroke-width="1.5"/>
+    <text x="4" y="18" font-family="sans-serif" font-size="13" font-weight="900" fill="#000000">✓</text>
+    <text x="28" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#111827">100% Hak Milik Source Code</text>
+
+    <!-- Perk 2 -->
+    <rect x="250" y="3" width="20" height="20" rx="5" fill="#23C552" stroke="#000000" stroke-width="1.5"/>
+    <text x="254" y="18" font-family="sans-serif" font-size="13" font-weight="900" fill="#000000">✓</text>
+    <text x="278" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#111827">Gratis Domain &amp; Cloud Server</text>
+
+    <!-- Perk 3 -->
+    <rect x="520" y="3" width="20" height="20" rx="5" fill="#23C552" stroke="#000000" stroke-width="1.5"/>
+    <text x="524" y="18" font-family="sans-serif" font-size="13" font-weight="900" fill="#000000">✓</text>
+    <text x="548" y="18" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#111827">Garansi Pemeliharaan Penuh</text>
+
+    <!-- URL Badge -->
+    <rect x="850" y="-3" width="180" height="34" rx="8" fill="#000000"/>
+    <text x="872" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="900" fill="#ffffff" letter-spacing="0.5">bantubuat.web.id</text>
+  </g>
 </svg>

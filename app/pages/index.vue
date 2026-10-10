@@ -22,7 +22,7 @@ useHead({
         '@id': 'https://bantubuat.web.id/#business',
         name: 'BantuBuatWeb',
         url: 'https://bantubuat.web.id/',
-        image: 'https://bantubuat.web.id/og-cover.svg',
+        image: 'https://bantubuat.web.id/og-cover.webp',
         logo: 'https://bantubuat.web.id/favicon.svg',
         description: 'BantuBuatWeb: Solusi transformasi digital dan jasa pembuatan website profesional untuk meningkatkan omzet bisnis. Layanan company profile, e-commerce, advance SEO, chatbot AI, integrasi LLM, payment gateway & sistem otomasi bergaransi.',
         telephone: '+6289686804015',

@@ -7,7 +7,7 @@ authorRole: "Founder & Tech Lead BantuBuatWeb"
 category: "Edukasi Bisnis"
 tags: ["Go Digital", "Strategi Bisnis", "UMKM", "Transformasi Digital", "Website Bisnis"]
 readTime: "7 menit baca"
-image: "/og-cover.svg"
+image: "/og-cover.webp"
 ---
 
 Banyak pemilik bisnis dan pelaku UMKM beranggapan bahwa "Go Digital" cukup dengan membuat akun media sosial, mengunggah konten secara acak, lalu menunggu pembeli berdatangan. Faktanya, sebagian besar bisnis yang hanya mengandalkan cara tersebut akhirnya berhenti di tengah jalan karena kelelahan mengejar algoritma yang terus berubah tanpa ada peningkatan penjualan yang terukur.

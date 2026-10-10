@@ -289,7 +289,7 @@ const formatTime = (p: number) => {
               </div>
 
               <div class="absolute top-3 right-3 hidden sm:block">
-                <img src="/images/gumroad/sell-anywhere.png" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" alt="Sell Anywhere" />
+                <img src="/images/gumroad/sell-anywhere.webp" class="h-10 sm:h-12 w-auto opacity-80 hover:opacity-100 transition-opacity" alt="Sell Anywhere" />
               </div>
 
             </div>

@@ -7,7 +7,7 @@ authorRole: "Founder & Tech Lead BantuBuatWeb"
 category: "Edukasi Bisnis"
 tags: ["Biaya Website", "UMKM", "Tips Bisnis", "Domain Hosting"]
 readTime: "6 menit baca"
-image: "/og-cover.svg"
+image: "/og-cover.webp"
 ---
 
 Banyak pemilik bisnis dan pelaku UMKM ragu membuat website karena ketidakjelasan rincian biaya. Di satu sisi, ada penawaran instan dengan harga ratusan ribu, namun di sisi lain agensi mematok harga hingga puluhan juta rupiah.

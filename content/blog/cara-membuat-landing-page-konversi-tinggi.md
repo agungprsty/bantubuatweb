@@ -7,7 +7,7 @@ authorRole: "UI/UX & Growth Specialist BantuBuatWeb"
 category: "Digital Marketing"
 tags: ["Landing Page", "Google Ads", "Facebook Ads", "Konversi"]
 readTime: "5 menit baca"
-image: "/og-cover.svg"
+image: "/og-cover.webp"
 ---
 
 Banyak pelaku usaha mengalokasikan anggaran jutaan rupiah untuk beriklan di Meta Ads, TikTok Ads, maupun Google Ads, namun mendapatkan hasil yang minim dalam perolehan pesan atau penjualan.

@@ -1,12 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 48 48" fill="none">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4f46e5"/>
-      <stop offset="0.55" stop-color="#7c3aed"/>
-      <stop offset="1" stop-color="#14b8a6"/>
-    </linearGradient>
-  </defs>
-  <rect fill="url(#g)" rx="12" width="48" height="48"/>
-  <path d="M10 34V20l7 9 5-8 5 8 6-9v14" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M37 30.5l6.5 4-6.5 4z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Neo Brutalist Drop Shadow -->
+  <rect x="8" y="8" width="50" height="50" rx="14" fill="#000000"/>
+  <!-- Main Box -->
+  <rect x="5" y="5" width="50" height="50" rx="14" fill="#FF90E8" stroke="#000000" stroke-width="4"/>
+  <!-- Code Brackets -->
+  <g fill="none" stroke="#000000" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="23 20 14 30 23 40" />
+    <polyline points="37 40 46 30 37 20" />
+  </g>
 </svg>
