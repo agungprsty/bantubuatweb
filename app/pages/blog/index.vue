@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ARTICLES } from '~/data/articles'
+import { getSortedArticles } from '~/data/articles'
+
+const sortedArticles = computed(() => getSortedArticles())
 
 const categories = computed(() => {
   const set = new Set<string>()
-  ARTICLES.forEach((p) => {
+  sortedArticles.value.forEach((p) => {
     if (p.category) set.add(p.category)
   })
   return ['Semua', ...Array.from(set)]
@@ -12,8 +14,9 @@ const categories = computed(() => {
 const selectedCategory = ref('Semua')
 
 const filteredPosts = computed(() => {
-  if (selectedCategory.value === 'Semua') return ARTICLES
-  return ARTICLES.filter((p) => p.category === selectedCategory.value)
+  const list = sortedArticles.value
+  if (selectedCategory.value === 'Semua') return list
+  return list.filter((p) => p.category === selectedCategory.value)
 })
 
 useHead({

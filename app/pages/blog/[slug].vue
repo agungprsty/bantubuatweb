@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { marked } from 'marked'
-import { ARTICLES, getArticleBySlug } from '~/data/articles'
+import { getArticleBySlug, getSortedArticles } from '~/data/articles'
 import { wa } from '~/utils/wa'
 
 const route = useRoute()
@@ -12,7 +12,7 @@ if (!post) {
 }
 
 const otherArticles = computed(() => {
-  return ARTICLES.filter((a) => a.slug !== slug)
+  return getSortedArticles().filter((a) => a.slug !== slug)
 })
 
 const renderedHtml = computed(() => {

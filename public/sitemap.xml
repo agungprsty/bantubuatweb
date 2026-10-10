@@ -51,6 +51,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://bantubuat.web.id/blog/strategi-go-digital-bisnis-umkm</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Local Landing Pages (Target Wilayah) -->
   <url>

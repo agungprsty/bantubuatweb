@@ -42,10 +42,10 @@ Berikut adalah rincian estimasi biaya investasi dan durasi pengerjaan profesiona
 
 | Kategori / Paket | Karakteristik & Cakupan Fitur | Biaya Investasi | Durasi Pengerjaan |
 | :--- | :--- | :--- | :--- |
-| **Starter Bisnis (Landing Page)** | 1 Halaman Siap Konversi (1–5 Section), Fast Load, Tombol WhatsApp & Google Maps | Rp 2.500.000 | 5 – 10 Hari Kerja |
-| **Company Profile UMKM** | Hingga 10 Halaman Lengkap, Email Bisnis Resmi (@bisnis.com), Basic SEO & Desain Custom | Rp 4.900.000 | 2 – 3 Minggu |
-| **Toko Online & Payment** | Katalog & Stok, Payment Gateway (QRIS/VA), Hitung Ongkir Otomatis & Notifikasi WA | Rp 10.000.000 | 3 – 5 Minggu |
-| **Custom System / AI** | Arsitektur Web & Database Bebas Request, Integrasi Chatbot AI/LLM, CRM & Dashboard | Mulai Rp 15.000.000+ | 5 – 8 Minggu+ |
+| **Starter Bisnis (Landing Page)** | 1 Halaman Siap Konversi (1–5 Section), Fast Load, Tombol WhatsApp & Google Maps | Rp 2.500.000 | 2 – 10 Hari Kerja |
+| **Company Profile UMKM** | Hingga 10 Halaman Lengkap, Email Bisnis Resmi (@bisnis.com), Basic SEO & Desain Custom | Rp 4.900.000 | 2 – 5 Minggu |
+| **Toko Online & Payment** | Katalog & Stok, Payment Gateway (QRIS/VA), Hitung Ongkir Otomatis & Notifikasi WA | Rp 10.000.000 | 6 – 8 Minggu |
+| **Custom System / AI** | Arsitektur Web & Database Bebas Request, Integrasi Chatbot AI/LLM, CRM & Dashboard | Mulai Rp 15.000.000+ | 9 – 15 Minggu |
 
 ---
 
