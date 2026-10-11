@@ -49,7 +49,7 @@ useHead({
 </script>
 
 <template>
-  <div class="bg-black text-white min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
+  <div class="bg-black text-white min-h-screen pt-8 sm:pt-16 pb-16 sm:pb-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">

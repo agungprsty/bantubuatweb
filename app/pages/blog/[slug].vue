@@ -102,7 +102,7 @@ useHead(() => ({
 </script>
 
 <template>
-  <div v-if="post" class="bg-black text-white min-h-screen pt-16 sm:pt-24 pb-16 sm:pb-20">
+  <div v-if="post" class="bg-black text-white min-h-screen pt-8 sm:pt-16 pb-16 sm:pb-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       
       <!-- Breadcrumb -->
@@ -121,9 +121,8 @@ useHead(() => ({
         
         <!-- Left / Main Editorial Content (8 cols) -->
         <div class="lg:col-span-8 space-y-6 sm:space-y-8 min-w-0 max-w-full">
-          
-          <!-- Article Header Card -->
-          <header class="neo-box bg-white text-black p-4 sm:p-7 lg:p-10 border-2 sm:border-3 lg:border-4 border-white shadow-[4px_4px_0px_0px_#fff] sm:shadow-[6px_6px_0px_0px_#fff] lg:shadow-[8px_8px_0px_0px_#fff] min-w-0 overflow-hidden">
+          <!-- Article Content Body -->
+          <main class="neo-box bg-white text-black p-4 sm:p-7 lg:p-10 border-2 sm:border-3 lg:border-4 border-white shadow-[4px_4px_0px_0px_#FF90E8] sm:shadow-[6px_6px_0px_0px_#FF90E8] lg:shadow-[8px_8px_0px_0px_#FF90E8] min-w-0 max-w-full overflow-hidden">
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
               <span class="neo-badge bg-neo-yellow text-black text-[10px] sm:text-xs">{{ post.category }}</span>
               <span class="text-[10px] sm:text-xs font-black uppercase text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded border border-zinc-300">
@@ -138,24 +137,6 @@ useHead(() => ({
               {{ post.title }}
             </h1>
 
-            <p class="text-xs sm:text-sm lg:text-base font-bold text-slate-800 leading-relaxed border-l-4 border-neo-pink pl-3 sm:pl-4 py-1.5 bg-neo-pink/10 break-words">
-              {{ post.description }}
-            </p>
-
-            <!-- Author Byline -->
-            <div class="flex items-center gap-3 border-t-2 border-black pt-4 sm:pt-5 mt-4 sm:mt-6">
-              <div class="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border-2 border-black bg-neo-yellow text-black font-black text-base sm:text-lg shadow-[2px_2px_0px_0px_#000]">
-                {{ (post.author || 'A')[0] }}
-              </div>
-              <div class="min-w-0">
-                <span class="text-xs sm:text-sm font-black text-black block truncate">{{ post.author }}</span>
-                <span class="text-[11px] sm:text-xs font-bold text-zinc-600 block truncate">{{ post.authorRole }}</span>
-              </div>
-            </div>
-          </header>
-
-          <!-- Article Content Body -->
-          <main class="neo-box bg-white text-black p-4 sm:p-7 lg:p-10 border-2 sm:border-3 lg:border-4 border-white shadow-[4px_4px_0px_0px_#FF90E8] sm:shadow-[6px_6px_0px_0px_#FF90E8] lg:shadow-[8px_8px_0px_0px_#FF90E8] min-w-0 max-w-full overflow-hidden">
             <div
               class="prose prose-sm sm:prose-base lg:prose-lg max-w-none text-slate-900 font-medium leading-relaxed min-w-0 break-words [overflow-wrap:anywhere] sm:[overflow-wrap:normal]
                      [&_h2]:text-lg sm:[&_h2]:text-2xl lg:[&_h2]:text-3xl [&_h2]:font-black [&_h2]:text-black [&_h2]:border-b-2 [&_h2]:border-black [&_h2]:pb-2 [&_h2]:mt-8 sm:[&_h2]:mt-10 [&_h2]:mb-3 sm:[&_h2]:mb-4 [&_h2]:leading-snug [&_h2]:break-words
@@ -203,7 +184,7 @@ useHead(() => ({
                 </span>
                 <h3 class="text-base sm:text-xl font-black text-black">{{ post.author }}</h3>
                 <p class="text-xs sm:text-sm font-bold text-slate-900 mt-1 leading-relaxed break-words">
-                  {{ post.authorRole }}. Berpengalaman dalam pengembangan website dan optimasi digital untuk ratusan brand, pelaku UMKM, dan perusahaan di Indonesia.
+                  {{ post.authorRole }}
                 </p>
               </div>
             </div>
