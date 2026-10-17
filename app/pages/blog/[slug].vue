@@ -12,7 +12,30 @@ if (!post) {
 }
 
 const otherArticles = computed(() => {
-  return getSortedArticles().filter((a) => a.slug !== slug)
+  if (!post) return []
+
+  const postTags = (post.tags || []).map((t) => t.toLowerCase())
+  const postCategory = (post.category || '').toLowerCase()
+
+  // Ambil hanya artikel yang terkait (kategori sama ATAU memiliki kesamaan tag)
+  const related = getSortedArticles().filter((a) => {
+    if (a.slug === slug) return false
+    const sameCategory = Boolean(postCategory && a.category && a.category.toLowerCase() === postCategory)
+    const shareTag = Boolean(
+      Array.isArray(a.tags) && a.tags.some((t) => postTags.includes(t.toLowerCase()))
+    )
+    return sameCategory || shareTag
+  })
+
+  // Urutkan dari yang terbaru (getSortedArticles sudah terurut tanggal terbaru) dan ambil maksimal 5
+  if (related.length > 0) {
+    return related.slice(0, 5)
+  }
+
+  // Fallback jika belum ada artikel terkait lainnya
+  return getSortedArticles()
+    .filter((a) => a.slug !== slug)
+    .slice(0, 5)
 })
 
 const renderedHtml = computed(() => {

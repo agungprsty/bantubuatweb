@@ -19,6 +19,31 @@ const filteredPosts = computed(() => {
   return list.filter((p) => p.category === selectedCategory.value)
 })
 
+// Pagination (Maksimal 9 data per halaman)
+const ITEMS_PER_PAGE = 9
+const currentPage = ref(1)
+
+// Reset ke halaman 1 jika kategori diganti
+watch(selectedCategory, () => {
+  currentPage.value = 1
+})
+
+const totalPages = computed(() => Math.ceil(filteredPosts.value.length / ITEMS_PER_PAGE))
+
+const paginatedPosts = computed(() => {
+  const start = (currentPage.value - 1) * ITEMS_PER_PAGE
+  return filteredPosts.value.slice(start, start + ITEMS_PER_PAGE)
+})
+
+const goToPage = (page: number) => {
+  if (page >= 1 && page <= totalPages.value) {
+    currentPage.value = page
+    if (import.meta.client) {
+      window.scrollTo({ top: 250, behavior: 'smooth' })
+    }
+  }
+}
+
 useHead({
   title: 'Blog & Panduan Website Bisnis Indonesia | BantuBuatWeb',
   meta: [
@@ -105,44 +130,106 @@ useHead({
       </div>
 
       <!-- Articles Grid -->
-      <div v-if="filteredPosts.length > 0" class="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <article
-          v-for="post in filteredPosts"
-          :key="post.slug"
-          class="neo-box bg-white text-black p-4 sm:p-6 border-3 sm:border-4 border-white shadow-[6px_6px_0px_0px_#FF90E8] sm:shadow-[8px_8px_0px_0px_#FF90E8] flex flex-col justify-between hover:-translate-y-1 transition-transform"
-        >
-          <div>
-            <div class="flex items-center justify-between gap-2 mb-3 sm:mb-4">
-              <span class="neo-badge bg-neo-cyan text-black text-[10px] sm:text-[11px]">{{ post.category }}</span>
-              <span class="text-[11px] sm:text-xs font-bold text-zinc-500">{{ post.readTime }}</span>
-            </div>
-
-            <NuxtLink :to="`/blog/${post.slug}`">
-              <h2 class="text-lg sm:text-xl font-black text-black leading-snug hover:text-neo-pink transition-colors line-clamp-2 mb-2 sm:mb-3">
-                {{ post.title }}
-              </h2>
-            </NuxtLink>
-
-            <p class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed line-clamp-3 mb-5 sm:mb-6">
-              {{ post.description }}
-            </p>
-          </div>
-
-          <div class="border-t-2 border-black pt-3 sm:pt-4 mt-auto">
-            <div class="flex items-center justify-between">
-              <div class="text-xs font-black text-slate-900">
-                <span class="block text-black text-xs sm:text-sm">{{ post.author }}</span>
-                <span class="text-[10px] sm:text-[11px] text-zinc-500 font-bold">{{ post.date }}</span>
+      <div v-if="filteredPosts.length > 0" class="space-y-10">
+        <div class="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article
+            v-for="post in paginatedPosts"
+            :key="post.slug"
+            class="neo-box bg-white text-black p-4 sm:p-6 border-3 sm:border-4 border-white shadow-[6px_6px_0px_0px_#FF90E8] sm:shadow-[8px_8px_0px_0px_#FF90E8] flex flex-col justify-between hover:-translate-y-1 transition-transform"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+                <span class="neo-badge bg-neo-cyan text-black text-[10px] sm:text-[11px]">{{ post.category }}</span>
+                <span class="text-[11px] sm:text-xs font-bold text-zinc-500">{{ post.readTime }}</span>
               </div>
-              <NuxtLink
-                :to="`/blog/${post.slug}`"
-                class="neo-btn bg-black text-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs font-black hover:bg-neo-yellow hover:text-black inline-flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
-              >
-                Baca →
+
+              <NuxtLink :to="`/blog/${post.slug}`">
+                <h2 class="text-lg sm:text-xl font-black text-black leading-snug hover:text-neo-pink transition-colors line-clamp-2 mb-2 sm:mb-3">
+                  {{ post.title }}
+                </h2>
               </NuxtLink>
+
+              <p class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed line-clamp-3 mb-5 sm:mb-6">
+                {{ post.description }}
+              </p>
             </div>
+
+            <div class="border-t-2 border-black pt-3 sm:pt-4 mt-auto">
+              <div class="flex items-center justify-between">
+                <div class="text-xs font-black text-slate-900">
+                  <span class="block text-black text-xs sm:text-sm">{{ post.author }}</span>
+                  <span class="text-[10px] sm:text-[11px] text-zinc-500 font-bold">{{ post.date }}</span>
+                </div>
+                <NuxtLink
+                  :to="`/blog/${post.slug}`"
+                  class="neo-btn bg-black text-white px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs font-black hover:bg-neo-yellow hover:text-black inline-flex items-center gap-1.5 shadow-[2px_2px_0px_0px_#000]"
+                >
+                  Baca →
+                </NuxtLink>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Pagination Controls (Maksimal 9 data per halaman, tampil jika total halaman > 1) -->
+        <div
+          v-if="totalPages > 1"
+          class="flex flex-col sm:flex-row items-center justify-between gap-4 border-t-2 border-zinc-800 pt-6 sm:pt-8"
+        >
+          <div class="text-xs sm:text-sm font-bold text-zinc-400">
+            Menampilkan <span class="text-white font-black">{{ (currentPage - 1) * ITEMS_PER_PAGE + 1 }}</span> – 
+            <span class="text-white font-black">{{ Math.min(currentPage * ITEMS_PER_PAGE, filteredPosts.length) }}</span> dari 
+            <span class="text-neo-cyan font-black">{{ filteredPosts.length }}</span> artikel
           </div>
-        </article>
+
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <!-- Tombol Sebelumnya -->
+            <button
+              type="button"
+              @click="goToPage(currentPage - 1)"
+              :disabled="currentPage === 1"
+              :class="[
+                'px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-black border-2 border-white transition-all shadow-[2px_2px_0px_0px_#fff]',
+                currentPage === 1
+                  ? 'opacity-40 cursor-not-allowed bg-zinc-800 text-zinc-400'
+                  : 'bg-white text-black hover:bg-neo-yellow active:translate-x-0.5 active:translate-y-0.5 cursor-pointer',
+              ]"
+            >
+              ← Prev
+            </button>
+
+            <!-- Nomor Halaman -->
+            <button
+              v-for="page in totalPages"
+              :key="page"
+              type="button"
+              @click="goToPage(page)"
+              :class="[
+                'w-8 h-8 sm:w-10 sm:h-10 text-xs sm:text-sm font-black border-2 border-white transition-all shadow-[2px_2px_0px_0px_#fff] flex items-center justify-center cursor-pointer',
+                currentPage === page
+                  ? 'bg-neo-pink text-black translate-x-0.5 translate-y-0.5 shadow-none'
+                  : 'bg-zinc-900 text-white hover:bg-white hover:text-black',
+              ]"
+            >
+              {{ page }}
+            </button>
+
+            <!-- Tombol Selanjutnya -->
+            <button
+              type="button"
+              @click="goToPage(currentPage + 1)"
+              :disabled="currentPage === totalPages"
+              :class="[
+                'px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-black border-2 border-white transition-all shadow-[2px_2px_0px_0px_#fff]',
+                currentPage === totalPages
+                  ? 'opacity-40 cursor-not-allowed bg-zinc-800 text-zinc-400'
+                  : 'bg-white text-black hover:bg-neo-yellow active:translate-x-0.5 active:translate-y-0.5 cursor-pointer',
+              ]"
+            >
+              Next →
+            </button>
+          </div>
+        </div>
       </div>
 
       <div v-else class="text-center py-12 sm:py-16 neo-box bg-zinc-900 text-white p-6 sm:p-8 border-2 border-zinc-700">
