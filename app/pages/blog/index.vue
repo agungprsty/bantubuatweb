@@ -11,7 +11,9 @@ const categories = computed(() => {
   return ['Semua', ...Array.from(set)]
 })
 
-const selectedCategory = ref('Semua')
+// ?kategori= dari breadcrumb detail artikel
+const route = useRoute()
+const selectedCategory = ref(categories.value.includes(String(route.query.kategori)) ? String(route.query.kategori) : 'Semua')
 
 const filteredPosts = computed(() => {
   const list = sortedArticles.value
@@ -80,7 +82,7 @@ useHead({
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuat.web.id/' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://bantubuat.web.id/blog' },
+          { '@type': 'ListItem', position: 2, name: 'Blog & Panduan', item: 'https://bantubuat.web.id/blog' },
         ],
       }),
     },
@@ -96,7 +98,7 @@ useHead({
       <nav class="flex flex-wrap items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
         <NuxtLink to="/" class="hover:underline">Beranda</NuxtLink>
         <span>/</span>
-        <span class="bg-neo-cyan text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff]">
+        <span aria-current="page" class="bg-neo-cyan text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff]">
           Blog &amp; Panduan
         </span>
       </nav>
@@ -104,7 +106,7 @@ useHead({
       <!-- Header Section -->
       <div class="mt-6 sm:mt-8 mb-8 sm:mb-12">
         <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-          Panduan &amp; Artikel <span class="bg-neo-pink text-black px-2.5 py-0.5 sm:px-3 sm:py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff] inline-block">BantuBuatWeb</span>
+          Blog &amp; Panduan <span class="bg-neo-pink text-black px-2.5 py-0.5 sm:px-3 sm:py-0.5 border-2 border-black shadow-[3px_3px_0px_0px_#fff] sm:shadow-[4px_4px_0px_0px_#fff] inline-block">BantuBuatWeb</span>
         </h1>
         <p class="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-zinc-300 max-w-3xl font-bold leading-relaxed">
           Pelajari seluk-beluk biaya pembuatan website, strategi konversi iklan, perbandingan teknologi web, dan rahasia sukses go digital untuk bisnis Anda.

@@ -114,7 +114,7 @@ useHead(() => ({
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Beranda', item: 'https://bantubuat.web.id/' },
-              { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://bantubuat.web.id/blog' },
+              { '@type': 'ListItem', position: 2, name: 'Blog & Panduan', item: 'https://bantubuat.web.id/blog' },
               { '@type': 'ListItem', position: 3, name: post.title, item: `https://bantubuat.web.id/blog/${post.slug}` },
             ],
           }),
@@ -132,11 +132,14 @@ useHead(() => ({
       <nav class="flex flex-wrap items-center gap-2 text-xs font-black uppercase text-zinc-300" aria-label="Breadcrumb">
         <NuxtLink to="/" class="hover:underline">Beranda</NuxtLink>
         <span>/</span>
-        <NuxtLink to="/blog" class="hover:underline">Blog</NuxtLink>
+        <NuxtLink to="/blog" class="hover:underline">Blog &amp; Panduan</NuxtLink>
         <span>/</span>
-        <span class="bg-neo-cyan text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff] truncate max-w-[140px] xs:max-w-[200px] sm:max-w-xs">
+        <NuxtLink
+          :to="{ path: '/blog', query: { kategori: post.category } }"
+          class="bg-neo-cyan text-black px-2 py-0.5 rounded border border-black shadow-[1.5px_1.5px_0px_0px_#fff] truncate max-w-[180px] sm:max-w-xs hover:bg-neo-yellow"
+        >
           {{ post.category }}
-        </span>
+        </NuxtLink>
       </nav>
 
       <!-- Main Layout: 12-Columns Grid -->
@@ -147,7 +150,6 @@ useHead(() => ({
           <!-- Article Content Body -->
           <main class="neo-box bg-white text-black p-4 sm:p-7 lg:p-10 border-2 sm:border-3 lg:border-4 border-white shadow-[4px_4px_0px_0px_#FF90E8] sm:shadow-[6px_6px_0px_0px_#FF90E8] lg:shadow-[8px_8px_0px_0px_#FF90E8] min-w-0 max-w-full overflow-hidden">
             <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-              <span class="neo-badge bg-neo-yellow text-black text-[10px] sm:text-xs">{{ post.category }}</span>
               <span class="text-[10px] sm:text-xs font-black uppercase text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded border border-zinc-300">
                 {{ post.readTime }}
               </span>
