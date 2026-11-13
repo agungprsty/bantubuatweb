@@ -170,7 +170,7 @@ server/
     ├── testimoni/[token].get.ts, [token].post.ts
     └── admin/
         ├── auth/               # login, logout, me
-        ├── projects/           # CRUD (+ buat token testimoni di Fase 2)
+        ├── projects/           # CRUD + [id]/testimonial-link.post.ts (token testimoni)
         ├── payments/, expenses/ # termin & biaya (expenses?umum=1 = biaya umum)
         ├── plans/              # pilihan paket untuk form proyek
         ├── testimonials/
@@ -180,7 +180,7 @@ server/
 
 app/
 ├── layouts/admin.vue
-├── components/admin/       # Stat, StatusBadge, ProjectForm, PaymentManager, ExpenseManager
+├── components/admin/       # Stat, StatusBadge, ProjectForm, PaymentManager, ExpenseManager, TestimonialForm, TestimonialLink
 ├── composables/usePortfolio.ts
 ├── middleware/admin.ts
 └── pages/
@@ -225,6 +225,8 @@ Perubahan pada file yang sudah ada:
 - Testimoni dirender sebagai teks biasa, **tanpa `v-html`**.
 - Token testimoni dari `crypto.randomBytes`, sekali pakai, ada masa berlaku.
 - `noindex` untuk `/admin/**` & `/testimoni/**`.
+- Token testimoni disamarkan (`/testimoni/_`) di semua data yang dikirim ke GA4, dan halaman `/admin` tidak dilacak GA4.
+- Testimoni hanya bisa berstatus Disetujui jika ada izin publikasi (`consent`), baik dari form klien maupun input admin.
 - Analitik tidak menyimpan IP mentah.
 - Secret (session password, hash admin) hanya di `.env` server, tidak masuk Git.
 - **Hardening VPS:** login SSH hanya dengan key (password & root login dimatikan), `ufw` hanya buka 22/80/443, `unattended-upgrades` untuk patch keamanan, `fail2ban` untuk SSH. Aplikasi jalan sebagai user non-root.

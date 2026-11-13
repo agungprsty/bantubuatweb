@@ -8,6 +8,7 @@ const nav = [
   { label: 'Dashboard', to: '/admin', icon: 'layout-dashboard' },
   { label: 'Proyek', to: '/admin/proyek', icon: 'folder-kanban' },
   { label: 'Keuangan', to: '/admin/keuangan', icon: 'wallet' },
+  { label: 'Testimoni', to: '/admin/testimoni', icon: 'message-square-quote' },
 ]
 
 const isActive = (to: string) => route.path === to || (to !== '/admin' && route.path.startsWith(`${to}/`))

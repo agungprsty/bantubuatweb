@@ -17,6 +17,9 @@ export const BILLABLE_STATUSES: ProjectStatus[] = ['deal', 'dikerjakan', 'review
 
 export const PAYMENT_STATUS = { belum: 'Belum dibayar', lunas: 'Lunas' } as const
 
+export const TESTIMONIAL_STATUS = { pending: 'Menunggu', disetujui: 'Disetujui', ditolak: 'Ditolak' } as const
+export type TestimonialStatus = keyof typeof TESTIMONIAL_STATUS
+
 export const EXPENSE_CATEGORY = {
   domain: 'Domain',
   hosting: 'Hosting',

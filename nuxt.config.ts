@@ -12,9 +12,14 @@ export default defineNuxtConfig({
     sessionPassword: '',
     adminEmail: '',
     adminPasswordHash: '',
+    public: {
+      // link "Beri ulasan" Google Business Profile di halaman terima kasih testimoni (opsional)
+      googleReviewUrl: '',
+    },
   },
   routeRules: {
     '/admin/**': { ssr: false, headers: { 'x-robots-tag': 'noindex, nofollow' } },
+    '/testimoni/**': { headers: { 'x-robots-tag': 'noindex, nofollow' } },
     // perubahan dari admin tampil di situs maksimal ±1 menit kemudian
     '/api/public/**': { swr: 60 },
   },
@@ -44,6 +49,7 @@ export default defineNuxtConfig({
         'ph:star-fill', 'mdi:whatsapp',
         'lucide:layout-dashboard', 'lucide:log-out', 'lucide:folder-kanban', 'lucide:wallet',
         'lucide:plus', 'lucide:pencil', 'lucide:trash-2', 'lucide:arrow-left', 'lucide:external-link',
+        'lucide:message-square-quote', 'lucide:copy', 'lucide:link',
       ],
     },
   },
@@ -104,7 +110,10 @@ export default defineNuxtConfig({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-BV260BCP64');
+            // panel admin tidak dilacak; token testimoni di URL tidak dikirim ke Google
+            if (!location.pathname.startsWith('/admin')) {
+              gtag('config', 'G-BV260BCP64', { page_location: location.href.replace(/\\/testimoni\\/[^/?#]+/, '/testimoni/_') });
+            }
           `,
           type: 'text/javascript',
         },

@@ -46,7 +46,10 @@ watch(tab, (t) => navigateTo({ query: t === 'anggaran' ? { tab: t } : {} }, { re
         </button>
       </div>
 
-      <AdminProjectForm v-if="tab === 'detail'" :project="project" @saved="refresh" />
+      <template v-if="tab === 'detail'">
+        <AdminTestimonialLink :project="project" />
+        <AdminProjectForm :project="project" @saved="refresh" />
+      </template>
 
       <div v-else class="space-y-5">
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-5">

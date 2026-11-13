@@ -1,8 +1,13 @@
 export default defineNuxtPlugin((nuxtApp) => {
   if (typeof window === 'undefined') return
 
+  // Panel admin tidak dilacak; token testimoni di URL disamarkan
+  const isAdmin = () => window.location.pathname.startsWith('/admin')
+  const pageLocation = () => window.location.href.replace(/\/testimoni\/[^/?#]+/, '/testimoni/_')
+
   // Helper to send GA4 custom events safely
   const trackEvent = (eventName: string, params: Record<string, any> = {}) => {
+    if (isAdmin()) return
     if (typeof (window as any).gtag === 'function') {
       ;(window as any).gtag('event', eventName, params)
     }
@@ -20,7 +25,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         event_category: 'engagement',
         event_label: text,
         link_url: href,
-        page_location: window.location.href,
+        page_location: pageLocation(),
         page_title: document.title,
       })
     }
@@ -29,9 +34,9 @@ export default defineNuxtPlugin((nuxtApp) => {
   // Track pageviews on Nuxt route changes
   nuxtApp.hook('page:finish', () => {
     trackEvent('page_view', {
-      page_location: window.location.href,
+      page_location: pageLocation(),
       page_title: document.title,
-      page_path: window.location.pathname,
+      page_path: new URL(pageLocation()).pathname,
     })
   })
 
