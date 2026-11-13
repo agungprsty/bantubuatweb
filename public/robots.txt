@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /testimoni/
 
 Sitemap: https://bantubuat.web.id/sitemap.xml

@@ -115,7 +115,7 @@ Production berjalan di **VPS** (Ubuntu 24.04, 1 vCPU / 2 GB RAM, Jakarta): Node 
 Cek build production di lokal sebelum deploy:
 
 ```bash
-npm run build && node .output/server/index.mjs   # http://localhost:3000
+npm run build && NUXT_DB_PATH=.data/dev.db node --env-file-if-exists=.env .output/server/index.mjs   # http://localhost:3000
 ```
 
 ### 1. Siapkan VPS (sekali, sebagai root)
@@ -131,9 +131,12 @@ fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /
 echo '/swapfile none swap sw 0 0' >> /etc/fstab
 
 # paket dasar (unattended-upgrades sudah aktif default di Ubuntu)
-apt update && apt install -y git build-essential fail2ban unattended-upgrades
+apt update && apt install -y git sqlite3 rclone fail2ban unattended-upgrades
 curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt install -y nodejs
 npm install -g pm2
+
+# folder database & backup, hanya bisa dibaca user aplikasi
+mkdir -p /var/lib/bantubuat && chown bantubuat: /var/lib/bantubuat && chmod 700 /var/lib/bantubuat
 
 # firewall
 ufw allow OpenSSH && ufw allow 80,443/tcp && ufw enable
@@ -152,8 +155,11 @@ sshd -t && systemctl reload ssh
 
 ```bash
 ssh-keygen -t ed25519 -C bantubuat-vps    # tambahkan ~/.ssh/id_ed25519.pub sebagai Deploy key (read-only) di repo GitHub
-git clone git@github.com:agungprsty/lampungmediaweb.git ~/app
-cd ~/app && ./deploy/deploy.sh
+git clone git@github.com:agungprsty/bantubuatweb.git ~/app
+cd ~/app && cp .env.example .env && chmod 600 .env
+# isi .env: NUXT_DB_PATH=/var/lib/bantubuat/app.db, NUXT_SESSION_PASSWORD (openssl rand -hex 32), NUXT_ADMIN_EMAIL,
+# NUXT_ADMIN_PASSWORD_HASH (read -rs PW && printf '%s' "$PW" | node scripts/hash-password.mjs && unset PW)
+./deploy/deploy.sh                         # start pertama membuat tabel & mengisi data awal dari app/data
 
 pm2 install pm2-logrotate
 pm2 startup                                # jalankan perintah sudo yang dicetak, agar app hidup lagi setelah reboot
@@ -183,5 +189,28 @@ Setiap deploy disimpan di `releases/` (3 terakhir). Rollback ke release sebelumn
 ```bash
 cd ~/app && ls releases/
 ln -sfn releases/<release-sebelumnya> current && pm2 reload bantubuat
+```
+
+Rollback kode tidak membatalkan migrasi database. Migrasi hanya boleh menambah (`server/database/migrations.ts`), jadi kode lama tetap jalan di DB yang lebih baru.
+
+### Backup & restore database
+
+Backup harian (`sqlite3 .backup` + cek integritas, simpan 7 hari di `/var/lib/bantubuat/backups`):
+
+```bash
+crontab -e   # sebagai bantubuat, tambahkan:
+0 3 * * * /home/bantubuat/app/deploy/backup.sh >> /home/bantubuat/backup.log 2>&1
+```
+
+Salinan ke luar server: `rclone config`, buat remote storage (mis. Cloudflare R2 / Google Drive), lalu remote **crypt** bernama `backup` yang membungkusnya. `backup.sh` otomatis mengirim ke `backup:bantubuat` jika remote itu ada.
+
+Restore (uji sekali setelah setup, lalu tiap kali dibutuhkan):
+
+```bash
+pm2 stop bantubuat
+cp /var/lib/bantubuat/app.db /var/lib/bantubuat/app.db.sebelum-restore
+gunzip -c /var/lib/bantubuat/backups/app-<tanggal>.db.gz > /var/lib/bantubuat/app.db
+rm -f /var/lib/bantubuat/app.db-wal /var/lib/bantubuat/app.db-shm
+pm2 start bantubuat
 ```
 

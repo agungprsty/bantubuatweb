@@ -37,10 +37,11 @@
 
 ## 2. Keputusan Arsitektur
 
-### 2.1 Database: SQLite lokal via `db0`
-- `nitro.experimental.database` dengan connector `better-sqlite3`. Dependency baru: **`better-sqlite3`** (satu-satunya).
-- File DB di luar folder aplikasi: `/var/lib/bantubuat/app.db` di production (dibaca dari env `DB_PATH` saat build), `.data/dev.db` di lokal. Deploy ulang atau `git clean` tidak menyentuh data.
-- Saat start: `PRAGMA journal_mode=WAL` dan `busy_timeout=5000`, supaya tracking analitik tidak mengunci baca.
+### 2.1 Database: SQLite lokal via `better-sqlite3`
+- `better-sqlite3` dipakai langsung lewat `useDb()` di `server/utils/db.ts`, tanpa `db0` / `nitro.experimental.database` (tidak experimental, API sinkron, ada transaksi). Dependency baru: **`better-sqlite3`** (satu-satunya; prebuild sudah ikut di paket, tanpa compile).
+- File DB di luar folder aplikasi: `/var/lib/bantubuat/app.db` di production lewat env runtime `NUXT_DB_PATH` (wajib; app gagal start jika kosong), `.data/dev.db` saat `npm run dev`. Deploy ulang atau `git clean` tidak menyentuh data.
+- Saat start: `PRAGMA journal_mode=WAL`, `busy_timeout=5000`, `foreign_keys=ON`.
+- **Migrasi:** daftar langkah di `server/database/migrations.ts`, dijalankan sekali per DB dan dicatat di `PRAGMA user_version`. Seed adalah salah satu langkahnya, jadi data awal tidak terisi ulang setelah dihapus admin. Langkah baru hanya boleh ditambah di akhir.
 - Latensi query nyaris nol karena DB berada di disk yang sama dengan aplikasi.
 - **Backup:** cron harian `sqlite3 app.db ".backup …"` → simpan 7 hari di VPS + salin ke luar server (Cloudflare R2 / Google Drive via `rclone`). Restore diuji sekali di Fase 0.
 
@@ -158,10 +159,11 @@ events              id, type ('pageview'|'wa_click'), path, referrer, utm_source
 ```text
 server/
 ├── database/
-│   ├── schema.sql
-│   └── seed.ts                 # app/data/*.ts → DB (sekali jalan, idempoten)
+│   ├── migrations.ts           # schema + langkah migrasi (PRAGMA user_version)
+│   └── seed.ts                 # app/data/*.ts → DB, langkah migrasi ke-2
+├── plugins/db.ts               # buka DB + migrasi saat start
 ├── middleware/admin-auth.ts
-├── utils/                      # db, requireAdmin, password (scrypt), rateLimit
+├── utils/                      # db, adminSession, password (scrypt), rateLimit + clientIp
 └── api/
     ├── track.post.ts
     ├── public/                 # settings, plans, faqs, testimonials, portfolio (GET, cache SWR 60 dtk)
@@ -196,7 +198,7 @@ deploy/
 ```
 
 Perubahan pada file yang sudah ada:
-- `nuxt.config.ts`: `nitro.experimental.database` (better-sqlite3, path dari `DB_PATH`), `routeRules` untuk `/admin/**` & `/api/public/**`, `runtimeConfig`.
+- `nuxt.config.ts`: `routeRules` untuk `/admin/**` & `/api/public/**`, `runtimeConfig`.
 - `app/plugins/analytics.client.ts`: tambah beacon ke `/api/track`.
 - `home/Testimonials.vue`, `Pricing.vue`, `Faq.vue`, `PortfolioCarousel.vue`, `pages/proyek.vue`: data dari `/api/public/**`.
 - `app/utils/wa.ts`, `layouts/default.vue`: nomor WA & sosial media dari settings.
@@ -212,8 +214,9 @@ Perubahan pada file yang sudah ada:
 - Semua endpoint `/api/admin/**` dicek session di server.
 - Password di-hash dengan scrypt. Cookie session `httpOnly`, `secure`, `sameSite=lax`.
 - Rate limit (memori): login 5x / 15 menit, form testimoni, dan `/api/track`.
-- IP klien diambil dari header proxy (`CF-Connecting-IP` / `X-Forwarded-For`). Header ini aman dipercaya hanya karena Node listen di `127.0.0.1` dan Caddy menerima trafik dari IP Cloudflare saja.
-- Semua input divalidasi di server (tipe, panjang, enum status, nominal ≥ 0). Query parameterized lewat `db.sql`.
+- IP klien diambil dari header `X-Real-IP`, yang selalu ditimpa Caddy dengan `{client_ip}`. Caddy hanya membaca `CF-Connecting-IP` jika request datang dari rentang IP Cloudflare (`trusted_proxies`), jadi tidak bisa dipalsukan. Node listen di `127.0.0.1`.
+- Middleware admin mengecek path yang sudah di-decode (`/api/%61dmin/...` juga dicek), karena router Nitro men-decode path.
+- Semua input divalidasi di server (tipe, panjang, enum status, nominal ≥ 0). Query parameterized lewat prepared statement `better-sqlite3`.
 - Testimoni dirender sebagai teks biasa, **tanpa `v-html`**.
 - Token testimoni dari `crypto.randomBytes`, sekali pakai, ada masa berlaku.
 - `noindex` untuk `/admin/**` & `/testimoni/**`.
@@ -248,8 +251,7 @@ Total sekitar **12–17 hari kerja**. Setiap fase dirilis terpisah. Karena tidak
 | Disk penuh (log, event analitik) | `pm2-logrotate`; event mentah dihapus berkala (backlog); cek kapasitas di monitoring |
 | Server dibobol | Hardening di bagian 6; patch keamanan otomatis |
 | Lonjakan trafik melebihi kapasitas VPS | Cloudflare cache aset statis; SWR di endpoint publik; upgrade paket VPS jika perlu |
-| `nitro.experimental.database` berlabel experimental | Akses DB terpusat di `server/utils/db.ts`, mudah diganti |
-| `better-sqlite3` modul native, gagal build | `npm ci` & build dijalankan di VPS itu sendiri (bukan di-copy dari laptop); pasang `build-essential` |
+| `better-sqlite3` modul native tidak cocok dengan server | Prebuild Linux x64/arm64 ikut di paket dan disalin Nitro ke `.output`; `npm ci` & build tetap dijalankan di VPS itu sendiri |
 | Data keuangan bocor | Bagian 6 |
 
 ---

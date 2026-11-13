@@ -6,6 +6,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/icon'],
   css: ['~/assets/css/main.css'],
+  // diisi lewat env NUXT_* saat runtime (lihat .env.example)
+  runtimeConfig: {
+    dbPath: '',
+    sessionPassword: '',
+    adminEmail: '',
+    adminPasswordHash: '',
+  },
+  routeRules: {
+    '/admin/**': { ssr: false, headers: { 'x-robots-tag': 'noindex, nofollow' } },
+  },
   vite: {
     plugins: [tailwindcss()],
     vue: {
@@ -30,6 +40,7 @@ export default defineNuxtConfig({
         'lucide:truck', 'lucide:cpu', 'lucide:zap', 'lucide:database',
         'lucide:workflow', 'lucide:shield-check', 'lucide:trending-up',
         'ph:star-fill', 'mdi:whatsapp',
+        'lucide:layout-dashboard', 'lucide:log-out',
       ],
     },
   },

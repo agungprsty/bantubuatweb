@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/icon": "^2.5.1",
     "@tailwindcss/vite": "^4.3.3",
+    "better-sqlite3": "^13.1.1",
     "marked": "^18.1.0",
     "nuxt": "^4.5.2",
     "tailwindcss": "^4.3.3",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.135",
     "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/ph": "^1.2.2"
+    "@iconify-json/ph": "^1.2.2",
+    "@types/better-sqlite3": "^9.6.0"
   }
 }
