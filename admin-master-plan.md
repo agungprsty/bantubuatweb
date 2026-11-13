@@ -56,6 +56,9 @@
 - Disimpan: path, domain referrer, device, UTM, tipe event, label CTA, waktu.
 - **Tanpa IP mentah.** Pengunjung unik = `HMAC(secret, tanggal + IP + UA)`. Salt harian diturunkan dari secret + tanggal, jadi tidak perlu disimpan.
 - GA4 tetap berjalan seperti sekarang.
+- Beacon dikirim sebagai `text/plain` (perilaku `sendBeacon`), server mem-parse JSON sendiri dan membatasi body 2 KB. Bot (termasuk browser headless) diabaikan. Rate limit 120/menit per IP.
+- Referrer & UTM hanya diambil dari halaman pertama kunjungan (`landing`); referrer dari domain sendiri dihitung "Langsung".
+- Konversi = persentase pengunjung yang klik WA (bukan jumlah klik), dan pengunjung dihitung unik per hari karena hash berganti tiap hari.
 
 ### 2.4 Rendering & cache
 - `/admin/**` di-render sebagai SPA (`ssr: false` via `routeRules`) + header `X-Robots-Tag: noindex`.
@@ -146,7 +149,8 @@ plans               id, name, description, price, original, renewal, cta, featur
                     badge, perks (JSON), sort_order
 faqs                id, question, answer, sort_order
 events              id, type ('pageview'|'wa_click'), path, referrer, utm_source, utm_medium,
-                    utm_campaign, device, label, visitor_hash, created_at
+                    utm_campaign, device, label, visitor_hash, created_at,
+                    landing   -- migrasi ke-3: 1 = halaman pertama kunjungan (sumber trafik)
 ```
 
 - Indeks: `events(type, created_at)`, `projects(status)`, `payments(status, due_date)`.
@@ -174,7 +178,8 @@ server/
         ├── payments/, expenses/ # termin & biaya (expenses?umum=1 = biaya umum)
         ├── plans/              # pilihan paket untuk form proyek
         ├── testimonials/
-        ├── analytics/
+        ├── analytics.get.ts    # ?from&to (WIB): total, harian, halaman, sumber, UTM, perangkat, klik WA
+        ├── dashboard.get.ts    # proyek berjalan, piutang, testimoni menunggu
         ├── finance/summary.get.ts
         └── settings/           # settings, plans, faqs, password
 
@@ -182,6 +187,7 @@ app/
 ├── layouts/admin.vue
 ├── components/admin/       # Stat, StatusBadge, ProjectForm, PaymentManager, ExpenseManager, TestimonialForm, TestimonialLink
 ├── composables/usePortfolio.ts
+├── components/admin/BarChart.vue, TopList.vue   # grafik kolom SVG + tabel peringkat
 ├── middleware/admin.ts
 └── pages/
     ├── admin/

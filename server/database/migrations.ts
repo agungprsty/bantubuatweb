@@ -127,4 +127,6 @@ export const MIGRATIONS: ((db: Database.Database) => void)[] = [
     CREATE INDEX events_type_created ON events(type, created_at);
   `),
   seed,
+  // halaman pertama kunjungan: referrer/UTM hanya bermakna di sini, kunjungan tanpa keduanya = langsung
+  (db) => db.exec('ALTER TABLE events ADD COLUMN landing INTEGER NOT NULL DEFAULT 0'),
 ]

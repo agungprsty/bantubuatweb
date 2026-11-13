@@ -12,7 +12,7 @@ defineProps<{ label: string, value: string, hint?: string, tone?: 'default' | 'w
     ]"
   >
     <p class="text-[11px] font-extrabold uppercase tracking-wide text-zinc-700">{{ label }}</p>
-    <p class="mt-1 text-base font-black tabular-nums sm:text-xl">{{ value }}</p>
+    <p class="mt-1 text-base font-black sm:text-xl">{{ value }}</p>
     <p v-if="hint" class="mt-0.5 text-xs font-semibold text-zinc-700">{{ hint }}</p>
   </div>
 </template>

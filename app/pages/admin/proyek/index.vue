@@ -18,7 +18,7 @@ const filtered = computed(() => {
     && (!term || `${p.title} ${p.client_name}`.toLowerCase().includes(term)))
 })
 
-const active = computed(() => projects.value.filter((p) => ['deal', 'dikerjakan', 'review'].includes(p.status)).length)
+const active = computed(() => projects.value.filter((p) => ACTIVE_STATUSES.includes(p.status)).length)
 const receivable = computed(() => projects.value.reduce((t, p) => t + p.receivable, 0))
 </script>
 

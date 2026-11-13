@@ -14,6 +14,8 @@ export type ProjectStatus = keyof typeof PROJECT_STATUS
 
 // status yang sudah deal: nilai kontraknya dihitung sebagai pendapatan & piutang
 export const BILLABLE_STATUSES: ProjectStatus[] = ['deal', 'dikerjakan', 'review', 'selesai', 'maintenance']
+// proyek yang sedang berjalan
+export const ACTIVE_STATUSES: ProjectStatus[] = ['deal', 'dikerjakan', 'review']
 
 export const PAYMENT_STATUS = { belum: 'Belum dibayar', lunas: 'Lunas' } as const
 

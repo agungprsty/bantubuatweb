@@ -6,6 +6,7 @@ const { data: me } = await useFetch('/api/admin/auth/me', { key: 'admin-me' })
 // fase berikutnya menambah menu di sini
 const nav = [
   { label: 'Dashboard', to: '/admin', icon: 'layout-dashboard' },
+  { label: 'Analitik', to: '/admin/analitik', icon: 'chart-column' },
   { label: 'Proyek', to: '/admin/proyek', icon: 'folder-kanban' },
   { label: 'Keuangan', to: '/admin/keuangan', icon: 'wallet' },
   { label: 'Testimoni', to: '/admin/testimoni', icon: 'message-square-quote' },

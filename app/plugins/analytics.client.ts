@@ -13,6 +13,13 @@ export default defineNuxtPlugin((nuxtApp) => {
     }
   }
 
+  // Analitik first-party (/api/track). Admin & form testimoni tidak dihitung.
+  let landing = true
+  const track = (type: 'pageview' | 'wa_click', extra: Record<string, unknown> = {}) => {
+    if (/^\/(admin|testimoni)(\/|$)/.test(window.location.pathname)) return
+    navigator.sendBeacon?.('/api/track', JSON.stringify({ type, path: window.location.pathname, ...extra }))
+  }
+
   // Global event delegation for WhatsApp clicks
   document.addEventListener('click', (event) => {
     const target = (event.target as HTMLElement)?.closest('a')
@@ -28,6 +35,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         page_location: pageLocation(),
         page_title: document.title,
       })
+      track('wa_click', { label: text })
     }
   })
 
@@ -38,6 +46,12 @@ export default defineNuxtPlugin((nuxtApp) => {
       page_title: document.title,
       page_path: new URL(pageLocation()).pathname,
     })
+    // referrer & UTM hanya dari halaman pertama; navigasi berikutnya adalah perpindahan di dalam situs
+    const utm = new URLSearchParams(window.location.search)
+    track('pageview', landing
+      ? { landing: true, referrer: document.referrer, utm_source: utm.get('utm_source'), utm_medium: utm.get('utm_medium'), utm_campaign: utm.get('utm_campaign') }
+      : {})
+    landing = false
   })
 
   return {
