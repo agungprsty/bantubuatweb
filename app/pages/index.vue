@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { useHead } from '#imports'
 
+// judul & deskripsi beranda = SEO default dari Pengaturan admin (app.vue)
+const settings = useSiteSettings()
+
 useHead({
-  title: 'BantuBuatWeb | Solusi Transformasi Digital & Jasa Pembuatan Website #1 Indonesia',
-  meta: [
-    { name: 'description', content: 'Solusi transformasi digital & pembuatan website berkecepatan tinggi: company profile, e-commerce, chatbot AI, integrasi LLM, payment gateway, dan advance SEO untuk meningkatkan omzet bisnis.' },
-    { property: 'og:title', content: 'BantuBuatWeb | Solusi Transformasi Digital & Jasa Pembuatan Website #1 Indonesia' },
-    { property: 'og:description', content: 'Solusi transformasi digital & pembuatan website berkecepatan tinggi: company profile, e-commerce, chatbot AI, integrasi LLM, payment gateway, dan advance SEO.' },
-  ],
   link: [{ rel: 'canonical', href: 'https://bantubuat.web.id/' }],
   script: [
     {
@@ -16,7 +13,7 @@ useHead({
     },
     {
       type: 'application/ld+json',
-      innerHTML: JSON.stringify({
+      innerHTML: () => JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ProfessionalService',
         '@id': 'https://bantubuat.web.id/#business',
@@ -25,16 +22,12 @@ useHead({
         image: 'https://bantubuat.web.id/og-cover.webp',
         logo: 'https://bantubuat.web.id/favicon.svg',
         description: 'BantuBuatWeb: Solusi transformasi digital dan jasa pembuatan website profesional untuk meningkatkan omzet bisnis. Layanan company profile, e-commerce, advance SEO, chatbot AI, integrasi LLM, payment gateway & sistem otomasi bergaransi.',
-        telephone: '+6289686804015',
-        email: 'halo@bantubuat.web.id',
+        telephone: `+${settings.value.wa_number}`,
+        email: settings.value.email,
         priceRange: 'Rp 2.500.000 - Rp 25.000.000+',
         openingHours: 'Mo-Sa 08:00-21:00',
         aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '150' },
-        sameAs: [
-          'https://www.instagram.com/bantubuatweb',
-          'https://www.facebook.com/bantubuatweb',
-          'https://www.linkedin.com/company/bantubuatweb',
-        ],
+        sameAs: [settings.value.instagram, settings.value.facebook, settings.value.linkedin].filter(Boolean),
         makesOffer: [
           { '@type': 'Offer', name: 'Starter Bisnis', price: '2500000', priceCurrency: 'IDR' },
           { '@type': 'Offer', name: 'Company Profile', price: '4900000', priceCurrency: 'IDR' },

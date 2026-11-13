@@ -49,7 +49,7 @@ export default defineNuxtConfig({
         'ph:star-fill', 'mdi:whatsapp',
         'lucide:layout-dashboard', 'lucide:log-out', 'lucide:folder-kanban', 'lucide:wallet',
         'lucide:plus', 'lucide:pencil', 'lucide:trash-2', 'lucide:arrow-left', 'lucide:external-link',
-        'lucide:message-square-quote', 'lucide:copy', 'lucide:link', 'lucide:chart-column',
+        'lucide:message-square-quote', 'lucide:copy', 'lucide:link', 'lucide:chart-column', 'lucide:clock', 'lucide:settings', 'lucide:arrow-up', 'lucide:arrow-down',
       ],
     },
   },

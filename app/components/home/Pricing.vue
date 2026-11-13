@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { HOME_PLANS } from '~/data/homeData'
+// paket dari Pengaturan admin
+const { data: plans } = await useFetch('/api/public/plans', { key: 'plans', default: () => [] })
 </script>
 
 <template>
@@ -17,9 +18,9 @@ import { HOME_PLANS } from '~/data/homeData'
       </div>
 
       <!-- Pricing Cards Grid -->
-      <div class="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+      <div v-if="plans.length" class="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
         <div
-          v-for="(p, idx) in HOME_PLANS"
+          v-for="(p, idx) in plans"
           :key="idx"
           :class="[
             'neo-box p-4 sm:p-6 flex flex-col justify-between relative border-2 transition-all duration-200',

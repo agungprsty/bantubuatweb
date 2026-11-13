@@ -21,4 +21,7 @@ export const hariLalu = (n: number) => {
   return d.toLocaleDateString('sv-SE')
 }
 
+// 6289686804015 → 0896-8680-4015
+export const nomorLokal = (n: string) => `0${n.slice(2)}`.replace(/^(\d{4})(\d{4})(\d+)$/, '$1-$2-$3')
+
 export const apiError = (e: any) => e?.data?.message || e?.message || 'Terjadi kesalahan, coba lagi'

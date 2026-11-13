@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { HOME_FAQ } from '~/data/homeData'
+
+// FAQ dari Pengaturan admin
+const { data: faqs } = await useFetch('/api/public/faqs', { key: 'faqs', default: () => [] })
 
 // Open the first item by default, or null if all closed
 const openIndex = ref<number | null>(0)
@@ -11,7 +13,7 @@ const toggleFaq = (idx: number) => {
 </script>
 
 <template>
-  <section class="border-b-2 border-zinc-800 bg-zinc-950 py-12 sm:py-20 lg:py-24">
+  <section v-if="faqs.length" class="border-b-2 border-zinc-800 bg-zinc-950 py-12 sm:py-20 lg:py-24">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10 sm:mb-16 space-y-3 sm:space-y-4">
         <h2 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">Pertanyaan Yang Sering Diajukan</h2>
@@ -19,7 +21,7 @@ const toggleFaq = (idx: number) => {
 
       <div class="space-y-3 sm:space-y-4">
         <div
-          v-for="(f, idx) in HOME_FAQ"
+          v-for="(f, idx) in faqs"
           :key="idx"
           class="neo-box bg-white text-black transition-all duration-200 overflow-hidden"
         >

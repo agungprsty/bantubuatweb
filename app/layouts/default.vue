@@ -2,11 +2,13 @@
 import { ref, onMounted } from 'vue'
 
 const open = ref(false)
+const settings = useSiteSettings()
+const socials = computed(() => (['instagram', 'facebook', 'linkedin'] as const)
+  .filter((s) => settings.value[s])
+  .map((s) => ({ name: s, url: settings.value[s] })))
 
 const nav = [
   { label: 'Layanan', href: '/layanan' },
-  { label: 'Proses', href: '/#proses' },
-  { label: 'Harga', href: '/#harga' },
   { label: 'Proyek', href: '/proyek' },
   { label: 'Blog', href: '/blog' },
   { label: 'Tim', href: '/team' },
@@ -136,13 +138,15 @@ onMounted(() => {
             </p>
             <div class="flex gap-3 pt-2">
               <a
-                v-for="s in ['instagram', 'facebook', 'linkedin']"
-                :key="s"
-                href="#"
-                :aria-label="`BantuBuatWeb di ${s}`"
+                v-for="s in socials"
+                :key="s.name"
+                :href="s.url"
+                target="_blank"
+                rel="noopener"
+                :aria-label="`BantuBuatWeb di ${s.name}`"
                 class="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-white bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#fff] transition-transform hover:-translate-y-1"
               >
-                <AppIcon :name="s" class="h-5 w-5" />
+                <AppIcon :name="s.name" class="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -193,17 +197,21 @@ onMounted(() => {
               Hubungi Kami
             </h4>
             <ul class="mt-5 space-y-3 text-sm font-bold text-zinc-300">
-              <li class="flex items-start gap-3">
+              <li v-if="settings.address" class="flex items-start gap-3">
                 <AppIcon name="mapPin" class="mt-1 h-5 w-5 shrink-0 text-neo-yellow" />
-                <span>Yogyakarta &amp; Bandar Lampung</span>
+                <span>{{ settings.address }}</span>
               </li>
               <li class="flex items-center gap-3">
                 <AppIcon name="phone" class="h-5 w-5 shrink-0 text-neo-yellow" />
-                <span>0896-8680-4015</span>
+                <a :href="wa()" target="_blank" rel="noopener" class="transition-colors hover:text-neo-yellow">{{ nomorLokal(settings.wa_number) }}</a>
               </li>
               <li class="flex items-center gap-3">
                 <AppIcon name="mail" class="h-5 w-5 shrink-0 text-neo-yellow" />
-                <span>halo@bantubuat.web.id</span>
+                <a :href="`mailto:${settings.email}`" class="break-all transition-colors hover:text-neo-yellow">{{ settings.email }}</a>
+              </li>
+              <li v-if="settings.hours" class="flex items-start gap-3">
+                <AppIcon name="clock" class="mt-0.5 h-5 w-5 shrink-0 text-neo-yellow" />
+                <span>{{ settings.hours }}</span>
               </li>
             </ul>
           </div>

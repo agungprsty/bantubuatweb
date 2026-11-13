@@ -1,5 +1,6 @@
 <script setup lang="ts">
 useHead({ title: 'Kebijakan Privasi | BantuBuatWeb' })
+const settings = useSiteSettings()
 </script>
 
 <template>
@@ -37,7 +38,7 @@ useHead({ title: 'Kebijakan Privasi | BantuBuatWeb' })
       {
         heading: '5. Hak Anda',
         body: [
-          'Anda berhak mengakses, memperbaiki, atau meminta penghapusan data pribadi Anda. Ajukan permintaan melalui email halo@bantubuat.web.id dan kami akan memprosesnya dalam waktu wajar.',
+          `Anda berhak mengakses, memperbaiki, atau meminta penghapusan data pribadi Anda. Ajukan permintaan melalui email ${settings.email} dan kami akan memprosesnya dalam waktu wajar.`,
         ],
       },
     ]"

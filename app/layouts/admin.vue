@@ -10,6 +10,7 @@ const nav = [
   { label: 'Proyek', to: '/admin/proyek', icon: 'folder-kanban' },
   { label: 'Keuangan', to: '/admin/keuangan', icon: 'wallet' },
   { label: 'Testimoni', to: '/admin/testimoni', icon: 'message-square-quote' },
+  { label: 'Pengaturan', to: '/admin/pengaturan', icon: 'settings' },
 ]
 
 const isActive = (to: string) => route.path === to || (to !== '/admin' && route.path.startsWith(`${to}/`))

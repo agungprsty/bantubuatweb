@@ -4,6 +4,7 @@ import { SERVICES, serviceBySlug } from '~/data/services'
 const route = useRoute()
 const slug = route.params.slug
 const service = serviceBySlug(String(slug))
+const settings = useSiteSettings()
 
 const getPageTitle = (s: typeof service) => {
   if (!s) return 'Layanan Tidak Ditemukan | BantuBuatWeb'
@@ -56,8 +57,8 @@ useHead(() => ({
           '@id': 'https://bantubuat.web.id/#business',
           name: 'BantuBuatWeb',
           url: 'https://bantubuat.web.id/',
-          telephone: '+6289686804015',
-          email: 'halo@bantubuat.web.id',
+          telephone: `+${settings.value.wa_number}`,
+          email: settings.value.email,
         },
         areaServed: getAreaServed(service),
       }),

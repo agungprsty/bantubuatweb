@@ -32,6 +32,16 @@ export const EXPENSE_CATEGORY = {
   lain: 'Lain-lain',
 } as const
 
+// Warna kartu paket harga (kelas Tailwind harus tertulis di source agar ikut di-build)
+export const PLAN_COLORS = {
+  'bg-zinc-900 text-white border-zinc-700': 'Hitam',
+  'bg-neo-pink text-black border-black': 'Pink',
+  'bg-neo-yellow text-black border-black': 'Kuning',
+  'bg-neo-cyan text-black border-black': 'Biru',
+  'bg-neo-green text-black border-black': 'Hijau',
+  'bg-white text-black border-black': 'Putih',
+} as const
+
 // Kelas Tailwind harus tertulis di source agar ikut di-build, jadi gradient portofolio dipilih dari daftar ini.
 export const PORTFOLIO_GRADIENTS = [
   'from-rose-500/80 to-pink-600/80',

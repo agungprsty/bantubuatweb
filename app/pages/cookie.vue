@@ -1,5 +1,6 @@
 <script setup lang="ts">
 useHead({ title: 'Kebijakan Cookie | BantuBuatWeb' })
+const settings = useSiteSettings()
 </script>
 
 <template>
@@ -30,7 +31,7 @@ useHead({ title: 'Kebijakan Cookie | BantuBuatWeb' })
       {
         heading: '4. Kontak',
         body: [
-          'Jika ada pertanyaan seputar kebijakan cookie ini, silakan hubungi kami di halo@bantubuat.web.id.',
+          `Jika ada pertanyaan seputar kebijakan cookie ini, silakan hubungi kami di ${settings.email}.`,
         ],
       },
     ]"

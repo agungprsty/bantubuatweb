@@ -10,6 +10,8 @@ const props = withDefaults(defineProps<{
   intro?: string
   sections: LegalSection[]
 }>(), { intro: '' })
+
+const settings = useSiteSettings()
 </script>
 
 <template>
@@ -64,7 +66,7 @@ const props = withDefaults(defineProps<{
         <h3 class="text-lg sm:text-xl lg:text-2xl font-black text-black">Ada Pertanyaan Seputar Dokumen Ini?</h3>
         <p class="mt-2 text-xs sm:text-sm lg:text-base font-bold text-black leading-relaxed">
           Tim BantuBuatWeb siap membantu menjawab pertanyaan Anda melalui WhatsApp atau email di
-          <a href="mailto:halo@bantubuat.web.id" class="underline font-black">halo@bantubuat.web.id</a>.
+          <a :href="`mailto:${settings.email}`" class="underline font-black break-all">{{ settings.email }}</a>.
         </p>
         <div class="mt-5 sm:mt-6">
           <a

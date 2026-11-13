@@ -181,12 +181,14 @@ server/
         ├── analytics.get.ts    # ?from&to (WIB): total, harian, halaman, sumber, UTM, perangkat, klik WA
         ├── dashboard.get.ts    # proyek berjalan, piutang, testimoni menunggu
         ├── finance/summary.get.ts
-        └── settings/           # settings, plans, faqs, password
+        ├── settings/           # GET/PUT pengaturan situs, password.post.ts
+        ├── plans/, faqs/       # CRUD + reorder.post.ts (urutan = array id)
 
 app/
 ├── layouts/admin.vue
 ├── components/admin/       # Stat, StatusBadge, ProjectForm, PaymentManager, ExpenseManager, TestimonialForm, TestimonialLink
-├── composables/usePortfolio.ts
+├── composables/usePortfolio.ts, useSiteSettings.ts
+├── plugins/settings.ts      # muat pengaturan sekali (SSR → payload), isi nomor & pesan wa()
 ├── components/admin/BarChart.vue, TopList.vue   # grafik kolom SVG + tabel peringkat
 ├── middleware/admin.ts
 └── pages/
@@ -212,7 +214,10 @@ Perubahan pada file yang sudah ada:
 - `app/plugins/analytics.client.ts`: tambah beacon ke `/api/track`.
 - `home/Testimonials.vue`, `Pricing.vue`, `Faq.vue`, `PortfolioCarousel.vue`, `pages/proyek.vue`: data dari `/api/public/**`.
 - `shared/utils/admin.ts`: status proyek, status termin, kategori biaya, dan daftar gradient portofolio (dipakai server & admin).
-- `app/utils/wa.ts`, `layouts/default.vue`: nomor WA & sosial media dari settings.
+- `app/utils/wa.ts`, `layouts/default.vue`: nomor WA & sosial media dari settings. `wa(text)` tetap dipakai apa adanya; nomor & pesan default diisi plugin.
+- `shared/utils/settings.ts`: `SETTINGS_DEFAULTS` = isi awal pengaturan (sama dengan nilai lama di kode) dan cadangan saat DB error.
+- `app/app.vue`: SEO default dari settings; beranda tidak lagi punya judul/deskripsi sendiri sehingga ikut SEO default. Halaman lain tetap memakai meta masing-masing.
+- Email di footer, JSON-LD (beranda & layanan), dan halaman legal diambil dari settings.
 - `public/robots.txt`: `Disallow: /admin` dan `Disallow: /testimoni/`.
 - `app/data/portfolio.ts`, `homeData.ts`: tetap ada sebagai sumber seed dan fallback.
 - `package.json`: tambah `better-sqlite3`.
