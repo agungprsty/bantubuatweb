@@ -1,7 +1,19 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
+const route = useRoute()
 const open = ref(false)
+const isActive = (href: string) => route.path === href || route.path.startsWith(`${href}/`)
+
+// menu mobile: tutup saat pindah halaman / Esc, dan kunci scroll halaman di belakangnya
+watch(() => route.fullPath, () => { open.value = false })
+watch(open, (v) => { document.documentElement.style.overflow = v ? 'hidden' : '' })
+const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') open.value = false }
+onMounted(() => window.addEventListener('keydown', onKey))
+onUnmounted(() => {
+  window.removeEventListener('keydown', onKey)
+  document.documentElement.style.overflow = ''
+})
 const settings = useSiteSettings()
 const socials = computed(() => (['instagram', 'facebook', 'linkedin'] as const)
   .filter((s) => settings.value[s])
@@ -82,8 +94,11 @@ onMounted(() => {
         </nav>
 
         <button
+          type="button"
           class="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border-2 border-white bg-neo-yellow text-black shadow-[2px_2px_0px_0px_#fff] md:hidden cursor-pointer"
-          aria-label="Buka menu navigasi"
+          :aria-label="open ? 'Tutup menu navigasi' : 'Buka menu navigasi'"
+          :aria-expanded="open"
+          aria-controls="mobile-menu"
           @click="open = !open"
         >
           <AppIcon :name="open ? 'x' : 'menu'" class="h-5 w-5 sm:h-6 sm:w-6" />
@@ -91,33 +106,52 @@ onMounted(() => {
       </div>
     </header>
 
-    <!-- Mobile Navigation Drawer -->
-    <div
-      v-if="open"
-      class="fixed inset-x-0 top-[82px] sm:top-[96px] z-40 border-b-4 border-white bg-zinc-950 p-4 sm:p-5 shadow-[0_10px_0_0_#fff] md:hidden max-h-[calc(100vh-82px)] overflow-y-auto"
+    <!-- Mobile Navigation: layar penuh di bawah header -->
+    <Transition
+      enter-active-class="motion-safe:transition motion-safe:duration-200 motion-safe:ease-out"
+      enter-from-class="opacity-0 -translate-y-2"
+      leave-active-class="motion-safe:transition motion-safe:duration-150 motion-safe:ease-in"
+      leave-to-class="opacity-0 -translate-y-2"
     >
-      <nav class="flex flex-col gap-2" aria-label="Menu mobile">
-        <NuxtLink
-          v-for="item in nav"
-          :key="item.href"
-          :to="item.href"
-          class="rounded-xl border-2 border-black bg-white px-4 py-2.5 text-sm font-black text-black shadow-[2px_2px_0px_0px_#000] active:translate-x-0.5 active:translate-y-0.5"
-          @click="open = false"
-        >
-          {{ item.label }}
-        </NuxtLink>
-        <a
-          :href="wa('Halo BantuBuatWeb, saya ingin konsultasi pembuatan website')"
-          target="_blank"
-          rel="noopener"
-          class="neo-btn mt-2 bg-neo-pink py-3 text-center text-sm font-black text-black shadow-[3px_3px_0px_0px_#fff] w-full"
-          @click="open = false"
-        >
-          <AppIcon name="whatsapp" class="mr-2 h-4 w-4" />
-          Hubungi via WhatsApp
-        </a>
-      </nav>
-    </div>
+      <div
+        v-if="open"
+        id="mobile-menu"
+        class="fixed inset-x-0 bottom-0 top-[84px] z-40 flex flex-col overflow-y-auto bg-black px-5 pb-8 pt-2 sm:top-[98px] md:hidden"
+      >
+        <nav aria-label="Menu mobile">
+          <NuxtLink
+            v-for="item in nav"
+            :key="item.href"
+            :to="item.href"
+            :aria-current="isActive(item.href) ? 'page' : undefined"
+            :class="[
+              'group flex items-center justify-between border-b-2 border-zinc-800 py-4 text-2xl font-black tracking-tight transition-colors',
+              isActive(item.href) ? 'text-neo-yellow' : 'text-white active:text-neo-yellow',
+            ]"
+          >
+            {{ item.label }}
+            <AppIcon name="arrowRight" class="h-5 w-5 text-zinc-500 transition-transform group-active:translate-x-1" />
+          </NuxtLink>
+        </nav>
+
+        <div class="mt-auto space-y-4 pt-10">
+          <p class="text-sm font-bold text-zinc-400">Siap bikin website untuk bisnis Anda? Konsultasi gratis, tanpa komitmen.</p>
+          <a
+            :href="wa('Halo BantuBuatWeb, saya ingin konsultasi pembuatan website')"
+            target="_blank"
+            rel="noopener"
+            class="neo-btn w-full bg-neo-pink py-3 text-base text-black shadow-[3px_3px_0px_0px_#fff]"
+          >
+            <AppIcon name="whatsapp" class="mr-2 h-5 w-5" />
+            Konsultasi via WhatsApp
+          </a>
+          <div class="flex flex-wrap justify-center gap-x-4 gap-y-1 text-xs font-bold text-zinc-400">
+            <a :href="`mailto:${settings.email}`" class="hover:text-white">{{ settings.email }}</a>
+            <span>{{ nomorLokal(settings.wa_number) }}</span>
+          </div>
+        </div>
+      </div>
+    </Transition>
 
     <!-- Main Content -->
     <main>
