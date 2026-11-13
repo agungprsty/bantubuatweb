@@ -6,6 +6,8 @@ const { data: me } = await useFetch('/api/admin/auth/me', { key: 'admin-me' })
 // fase berikutnya menambah menu di sini
 const nav = [
   { label: 'Dashboard', to: '/admin', icon: 'layout-dashboard' },
+  { label: 'Proyek', to: '/admin/proyek', icon: 'folder-kanban' },
+  { label: 'Keuangan', to: '/admin/keuangan', icon: 'wallet' },
 ]
 
 const isActive = (to: string) => route.path === to || (to !== '/admin' && route.path.startsWith(`${to}/`))

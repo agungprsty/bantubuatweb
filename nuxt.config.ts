@@ -15,6 +15,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/admin/**': { ssr: false, headers: { 'x-robots-tag': 'noindex, nofollow' } },
+    // perubahan dari admin tampil di situs maksimal ±1 menit kemudian
+    '/api/public/**': { swr: 60 },
   },
   vite: {
     plugins: [tailwindcss()],
@@ -40,7 +42,8 @@ export default defineNuxtConfig({
         'lucide:truck', 'lucide:cpu', 'lucide:zap', 'lucide:database',
         'lucide:workflow', 'lucide:shield-check', 'lucide:trending-up',
         'ph:star-fill', 'mdi:whatsapp',
-        'lucide:layout-dashboard', 'lucide:log-out',
+        'lucide:layout-dashboard', 'lucide:log-out', 'lucide:folder-kanban', 'lucide:wallet',
+        'lucide:plus', 'lucide:pencil', 'lucide:trash-2', 'lucide:arrow-left', 'lucide:external-link',
       ],
     },
   },

@@ -194,3 +194,24 @@ body {
     animation: none;
   }
 }
+/* Panel admin. Di layer components supaya utility Tailwind tetap bisa menimpanya. */
+@layer components {
+  .admin-input {
+    @apply w-full rounded-lg border-2 border-black bg-white px-3 py-2 text-sm font-semibold text-black outline-none focus:ring-4 focus:ring-neo-pink disabled:bg-zinc-100;
+  }
+  .admin-label {
+    @apply mb-1 block text-xs font-extrabold uppercase tracking-wide text-zinc-700;
+  }
+  .admin-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-black px-4 py-2 text-sm font-extrabold text-black shadow-neo-sm transition-transform hover:-translate-x-px hover:-translate-y-px active:translate-x-px active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .admin-table {
+    @apply w-full text-left text-sm;
+  }
+  .admin-table th {
+    @apply border-b-2 border-black px-3 py-2 text-xs font-extrabold uppercase tracking-wide whitespace-nowrap text-zinc-600;
+  }
+  .admin-table td {
+    @apply border-b border-zinc-200 px-3 py-2.5 align-top;
+  }
+}

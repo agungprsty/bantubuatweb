@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PORTFOLIO } from '~/data/portfolio'
+const { data: portfolio } = await usePortfolio()
 
 useHead({
   title: 'Portofolio Solusi Digital & Hasil Karya Website | BantuBuatWeb',
@@ -24,7 +24,7 @@ useHead({
     },
     {
       type: 'application/ld+json',
-      innerHTML: JSON.stringify({
+      innerHTML: () => JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'CollectionPage',
         name: 'Portofolio BantuBuatWeb',
@@ -32,8 +32,8 @@ useHead({
         description: 'Kumpulan proyek website profesional buatan BantuBuatWeb.',
         mainEntity: {
           '@type': 'ItemList',
-          numberOfItems: PORTFOLIO.length,
-          itemListElement: PORTFOLIO.map((p, i) => ({
+          numberOfItems: portfolio.value.length,
+          itemListElement: portfolio.value.map((p, i) => ({
             '@type': 'ListItem',
             position: i + 1,
             name: p.title,
@@ -69,7 +69,7 @@ useHead({
       <!-- Portfolio Grid -->
       <ul class="mt-8 sm:mt-12 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
         <li
-          v-for="p in PORTFOLIO"
+          v-for="p in portfolio"
           :key="p.title"
           class="neo-box-interactive bg-white text-black p-4 sm:p-6 flex flex-col justify-between"
         >

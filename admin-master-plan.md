@@ -170,7 +170,9 @@ server/
     ├── testimoni/[token].get.ts, [token].post.ts
     └── admin/
         ├── auth/               # login, logout, me
-        ├── projects/           # CRUD + payments + expenses + buat token testimoni
+        ├── projects/           # CRUD (+ buat token testimoni di Fase 2)
+        ├── payments/, expenses/ # termin & biaya (expenses?umum=1 = biaya umum)
+        ├── plans/              # pilihan paket untuk form proyek
         ├── testimonials/
         ├── analytics/
         ├── finance/summary.get.ts
@@ -178,6 +180,8 @@ server/
 
 app/
 ├── layouts/admin.vue
+├── components/admin/       # Stat, StatusBadge, ProjectForm, PaymentManager, ExpenseManager
+├── composables/usePortfolio.ts
 ├── middleware/admin.ts
 └── pages/
     ├── admin/
@@ -201,6 +205,7 @@ Perubahan pada file yang sudah ada:
 - `nuxt.config.ts`: `routeRules` untuk `/admin/**` & `/api/public/**`, `runtimeConfig`.
 - `app/plugins/analytics.client.ts`: tambah beacon ke `/api/track`.
 - `home/Testimonials.vue`, `Pricing.vue`, `Faq.vue`, `PortfolioCarousel.vue`, `pages/proyek.vue`: data dari `/api/public/**`.
+- `shared/utils/admin.ts`: status proyek, status termin, kategori biaya, dan daftar gradient portofolio (dipakai server & admin).
 - `app/utils/wa.ts`, `layouts/default.vue`: nomor WA & sosial media dari settings.
 - `public/robots.txt`: `Disallow: /admin` dan `Disallow: /testimoni/`.
 - `app/data/portfolio.ts`, `homeData.ts`: tetap ada sebagai sumber seed dan fallback.

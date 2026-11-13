@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { PORTFOLIO } from '~/data/portfolio'
 
-const displayPortfolio = [...PORTFOLIO.slice(0, 6), ...PORTFOLIO.slice(0, 6), ...PORTFOLIO.slice(0, 6)]
+const { data: portfolio } = await usePortfolio()
+// 3 salinan set yang sama agar scroll bisa berputar tanpa ujung
+const set = computed(() => portfolio.value.slice(0, 6))
+const displayPortfolio = computed(() => [...set.value, ...set.value, ...set.value])
 
 const carouselRef = ref<HTMLElement | null>(null)
 const isHovering = ref(false)
@@ -26,7 +28,7 @@ const handleInfinite = () => {
   const el = carouselRef.value
   if (!el) return
   const w = getCardWidth()
-  const setW = w * 6
+  const setW = w * set.value.length
   if (el.scrollLeft < setW * 0.5) {
     el.style.scrollBehavior = 'auto'
     el.scrollLeft += setW
@@ -67,7 +69,7 @@ onMounted(() => {
   const init = () => {
     const w = getCardWidth()
     el.style.scrollBehavior = 'auto'
-    el.scrollLeft = w * 6
+    el.scrollLeft = w * set.value.length
     void el.offsetHeight
     el.style.scrollBehavior = 'smooth'
   }
@@ -88,7 +90,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="border-b-2 border-zinc-800 bg-black py-12 sm:py-20 lg:py-24">
+  <section v-if="set.length" class="border-b-2 border-zinc-800 bg-black py-12 sm:py-20 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
         <div>
