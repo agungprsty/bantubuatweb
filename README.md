@@ -110,8 +110,78 @@ npm run generate
 
 ## 🚢 Deployment
 
-Proyek ini dapat di-deploy ke server Node.js maupun platform Jamstack/SSG (Vercel, Netlify, Cloudflare Pages):
+Production berjalan di **VPS** (Ubuntu 24.04, 1 vCPU / 2 GB RAM, Jakarta): Node 24 LTS + PM2 (1 instance) di belakang Caddy (SSL otomatis) dan Cloudflare (CDN). File konfigurasi ada di [`deploy/`](deploy/).
 
-- **SSR / Node Server:** Jalankan `npm run build`, lalu jalankan output via `node .output/server/index.mjs`.
-- **Static Hosting (SSG):** Jalankan `npm run generate`, lalu upload folder `.output/public/`.
+Cek build production di lokal sebelum deploy:
+
+```bash
+npm run build && node .output/server/index.mjs   # http://localhost:3000
+```
+
+### 1. Siapkan VPS (sekali, sebagai root)
+
+```bash
+# user aplikasi (non-root), login pakai SSH key yang sama dengan root
+adduser bantubuat && usermod -aG sudo bantubuat
+mkdir -p /home/bantubuat/.ssh && cp ~/.ssh/authorized_keys /home/bantubuat/.ssh/
+chown -R bantubuat: /home/bantubuat/.ssh
+
+# swap 2 GB, supaya `nuxt build` tidak kehabisan RAM
+fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+echo '/swapfile none swap sw 0 0' >> /etc/fstab
+
+# paket dasar (unattended-upgrades sudah aktif default di Ubuntu)
+apt update && apt install -y git build-essential fail2ban unattended-upgrades
+curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt install -y nodejs
+npm install -g pm2
+
+# firewall
+ufw allow OpenSSH && ufw allow 80,443/tcp && ufw enable
+```
+
+Install Caddy mengikuti [panduan resmi Debian/Ubuntu](https://caddyserver.com/docs/install#debian-ubuntu-raspbian).
+
+Terakhir, matikan login password & root. **Pastikan `ssh bantubuat@<IP>` sudah berhasil di terminal lain** sebelum reload, supaya tidak terkunci di luar server:
+
+```bash
+printf 'PasswordAuthentication no\nPermitRootLogin no\n' > /etc/ssh/sshd_config.d/99-hardening.conf
+sshd -t && systemctl reload ssh
+```
+
+### 2. Pasang aplikasi (sebagai `bantubuat`)
+
+```bash
+ssh-keygen -t ed25519 -C bantubuat-vps    # tambahkan ~/.ssh/id_ed25519.pub sebagai Deploy key (read-only) di repo GitHub
+git clone git@github.com:agungprsty/lampungmediaweb.git ~/app
+cd ~/app && ./deploy/deploy.sh
+
+pm2 install pm2-logrotate
+pm2 startup                                # jalankan perintah sudo yang dicetak, agar app hidup lagi setelah reboot
+
+sudo cp deploy/Caddyfile /etc/caddy/Caddyfile && sudo systemctl reload caddy
+```
+
+Cek situs sebelum DNS dipindah lewat tunnel: `ssh -L 3000:127.0.0.1:3000 bantubuat@<IP>`, lalu buka `http://localhost:3000`.
+
+### 3. Pindah DNS dari Vercel ke VPS (Cloudflare)
+
+1. Domain dikelola di Cloudflare (ganti nameserver di registrar jika belum).
+2. Record `A` untuk `@` dan `www` → IP VPS, mode **DNS only** (awan abu-abu) dulu.
+3. Tunggu Caddy mendapat sertifikat (`sudo journalctl -u caddy -f`), lalu cek `https://bantubuat.web.id`.
+4. Ubah record ke **Proxied** (awan oranye) dan set SSL/TLS ke **Full (strict)**.
+5. Pasang monitor HTTPS di [UptimeRobot](https://uptimerobot.com) untuk `https://bantubuat.web.id/` (interval 5 menit).
+6. Biarkan project Vercel tetap hidup ±1 minggu. Rollback darurat = kembalikan record DNS ke Vercel.
+
+### Deploy rutin & rollback
+
+```bash
+ssh bantubuat@<IP> 'cd ~/app && ./deploy/deploy.sh'
+```
+
+Setiap deploy disimpan di `releases/` (3 terakhir). Rollback ke release sebelumnya:
+
+```bash
+cd ~/app && ls releases/
+ln -sfn releases/<release-sebelumnya> current && pm2 reload bantubuat
+```
 

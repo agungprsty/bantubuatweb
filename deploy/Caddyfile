@@ -1,0 +1,11 @@
+www.bantubuat.web.id {
+	redir https://bantubuat.web.id{uri} permanent
+}
+
+bantubuat.web.id {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000 {
+		# 1 instance: saat pm2 reload app mati ±1-2 detik, Caddy menunggu alih-alih 502
+		lb_try_duration 10s
+	}
+}
