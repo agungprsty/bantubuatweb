@@ -3,7 +3,7 @@ import type { H3Event } from 'h3'
 // shortcut: disimpan di memori, hanya benar untuk 1 proses (deploy/ecosystem.config.cjs). Pindah ke DB jika app jalan lebih dari 1 instance.
 const hits = new Map<string, { count: number, resetAt: number }>()
 
-// X-Real-IP selalu ditimpa Caddy dengan IP asli pengunjung (deploy/Caddyfile), dan Node hanya listen di localhost.
+// X-Real-IP selalu ditimpa nginx dengan IP asli pengunjung (deploy/nginx.conf), dan Node hanya listen di localhost.
 export function clientIp(event: H3Event) {
   return getRequestHeader(event, 'x-real-ip') || getRequestIP(event) || 'unknown'
 }

@@ -110,7 +110,7 @@ npm run generate
 
 ## 🚢 Deployment
 
-Production berjalan di **VPS** (Ubuntu 24.04, 1 vCPU / 2 GB RAM, Jakarta): Node 24 LTS + PM2 (1 instance) di belakang Caddy (SSL otomatis) dan Cloudflare (CDN). File konfigurasi ada di [`deploy/`](deploy/).
+Production berjalan di **VPS Contabo** (Ubuntu 24.04, dipakai bersama app lain): Node 24 LTS + PM2 (1 instance, port 3100) di belakang nginx (SSL Let's Encrypt via certbot) dan Cloudflare (CDN). File konfigurasi ada di [`deploy/`](deploy/).
 
 Cek build production di lokal sebelum deploy:
 
@@ -142,7 +142,7 @@ mkdir -p /var/lib/bantubuat && chown bantubuat: /var/lib/bantubuat && chmod 700 
 ufw allow OpenSSH && ufw allow 80,443/tcp && ufw enable
 ```
 
-Install Caddy mengikuti [panduan resmi Debian/Ubuntu](https://caddyserver.com/docs/install#debian-ubuntu-raspbian).
+nginx + certbot sudah terpasang di VPS (dipakai situs lain). Jika belum: `apt install -y nginx certbot python3-certbot-nginx`.
 
 Terakhir, matikan login password & root. **Pastikan `ssh bantubuat@<IP>` sudah berhasil di terminal lain** sebelum reload, supaya tidak terkunci di luar server:
 
@@ -164,16 +164,18 @@ cd ~/app && cp .env.example .env && chmod 600 .env
 pm2 install pm2-logrotate
 pm2 startup                                # jalankan perintah sudo yang dicetak, agar app hidup lagi setelah reboot
 
-sudo cp deploy/Caddyfile /etc/caddy/Caddyfile && sudo systemctl reload caddy
+sudo cp deploy/nginx.conf /etc/nginx/sites-available/bantubuat.web.id
+sudo ln -s /etc/nginx/sites-available/bantubuat.web.id /etc/nginx/sites-enabled/
+sudo nginx -t && sudo systemctl reload nginx
 ```
 
-Cek situs sebelum DNS dipindah lewat tunnel: `ssh -L 3000:127.0.0.1:3000 bantubuat@<IP>`, lalu buka `http://localhost:3000`.
+Cek situs sebelum DNS dipindah lewat tunnel: `ssh -L 3100:127.0.0.1:3100 bantubuat@<IP>`, lalu buka `http://localhost:3100`.
 
 ### 3. Pindah DNS dari Vercel ke VPS (Cloudflare)
 
 1. Domain dikelola di Cloudflare (ganti nameserver di registrar jika belum).
 2. Record `A` untuk `@` dan `www` → IP VPS, mode **DNS only** (awan abu-abu) dulu.
-3. Tunggu Caddy mendapat sertifikat (`sudo journalctl -u caddy -f`), lalu cek `https://bantubuat.web.id`.
+3. Pasang sertifikat: `sudo certbot --nginx -d bantubuat.web.id -d www.bantubuat.web.id --redirect`, lalu cek `https://bantubuat.web.id`.
 4. Ubah record ke **Proxied** (awan oranye) dan set SSL/TLS ke **Full (strict)**.
 5. Pasang monitor HTTPS di [UptimeRobot](https://uptimerobot.com) untuk `https://bantubuat.web.id/` (interval 5 menit).
 6. Biarkan project Vercel tetap hidup ±1 minggu. Rollback darurat = kembalikan record DNS ke Vercel.
