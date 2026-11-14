@@ -131,7 +131,7 @@ fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /
 echo '/swapfile none swap sw 0 0' >> /etc/fstab
 
 # paket dasar (unattended-upgrades sudah aktif default di Ubuntu)
-apt update && apt install -y git sqlite3 rclone fail2ban unattended-upgrades
+apt update && apt install -y git sqlite3 rclone fail2ban unattended-upgrades build-essential   # build-essential: compile better-sqlite3
 curl -fsSL https://deb.nodesource.com/setup_24.x | bash - && apt install -y nodejs
 npm install -g pm2
 
