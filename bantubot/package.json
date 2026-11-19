@@ -1,0 +1,22 @@
+{
+  "name": "bantubot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "BantuBot AI assistant + FAQ quick-chips + WhatsApp escalation for bantubuat.web.id",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts",
+    "demo": "tsx demo/server.ts",
+    "e2e": "tsx test/e2e.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "playwright-core": "^1",
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

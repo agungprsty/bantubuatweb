@@ -12,6 +12,13 @@ export default defineNuxtConfig({
     sessionPassword: '',
     adminEmail: '',
     adminPasswordHash: '',
+    // BantuBot: server-only, jangan dipindah ke `public`.
+    // Env: NUXT_BANTUBOT_ANTHROPIC_API_KEY, NUXT_BANTUBOT_MODEL, NUXT_BANTUBOT_ALLOWED_ORIGINS
+    bantubot: {
+      anthropicApiKey: '',
+      model: 'claude-opus-5-5',
+      allowedOrigins: 'https://www.bantubuat.web.id,https://bantubuat.web.id',
+    },
     public: {
       // link "Beri ulasan" Google Business Profile di halaman terima kasih testimoni (opsional)
       googleReviewUrl: '',

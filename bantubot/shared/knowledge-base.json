@@ -1,0 +1,82 @@
+{
+  "version": "2026-11-19",
+  "brand": "BantuBuatWeb",
+  "site": "https://www.bantubuat.web.id",
+  "contact": {
+    "whatsapp": "6289686804015",
+    "whatsappDisplay": "0896-8680-4015",
+    "email": "prstyagung62@gmail.com",
+    "hours": "Senin - Sabtu, 24 jam",
+    "locations": ["Yogyakarta", "Bandar Lampung"]
+  },
+  "packages": [
+    {
+      "id": "starter",
+      "name": "Starter Bisnis",
+      "price": "Rp 2,5jt (normal Rp 3.500.000) + Rp 800rb/tahun",
+      "summary": "Landing page cepat & siap konversi: gratis domain .com & cloud server 1 tahun, 1-5 bagian halaman, tombol WhatsApp, pendaftaran Google Search & Maps, garansi pemeliharaan 30 hari."
+    },
+    {
+      "id": "company-profile",
+      "name": "Company Profile",
+      "price": "Rp 4,9jt (normal Rp 6.500.000) + Rp 1,2jt/tahun",
+      "summary": "Paling populer. Semua fitur Starter + hingga 10 halaman, email bisnis resmi, setup basic SEO, desain custom eksklusif, Google Analytics & Search Console, garansi 30 hari."
+    },
+    {
+      "id": "toko-online",
+      "name": "Toko Online & Payment",
+      "price": "Rp 15jt (normal Rp 18.000.000) + Rp 2jt/tahun",
+      "summary": "Semua fitur Company Profile + payment gateway Midtrans/Xendit (QRIS, VA), cek ongkir multi-ekspedisi otomatis, katalog & stok real-time, notifikasi WhatsApp, dashboard penjualan, garansi pemeliharaan 60 hari."
+    },
+    {
+      "id": "custom-ai",
+      "name": "Custom System / Integrasi AI",
+      "price": "Custom (dihitung setelah konsultasi)",
+      "summary": "Arsitektur web & database custom, chatbot AI & LLM, otomasi CRM, WhatsApp Business API, integrasi API pihak ke-3, sistem internal, dashboard analitik, SLA dedicated."
+    }
+  ],
+  "faq": [
+    {
+      "id": "durasi",
+      "chip": "Berapa lama pengerjaan?",
+      "question": "Berapa lama proses pembuatan website di BantuBuatWeb?",
+      "answer": "Paket Starter dan Company Profile umumnya selesai dalam 5–10 hari kerja setelah materi disetujui. Toko online atau sistem custom sekitar 2–3 minggu."
+    },
+    {
+      "id": "harga",
+      "chip": "Daftar harga paket",
+      "question": "Berapa harga paket website?",
+      "answer": "Starter Bisnis Rp 2,5jt, Company Profile Rp 4,9jt (paling populer), Toko Online & Payment Rp 15jt, dan Custom System / Integrasi AI dihitung sesuai kebutuhan. Semua paket sudah termasuk gratis domain & hosting tahun pertama."
+    },
+    {
+      "id": "domain",
+      "chip": "Domain & hosting gratis?",
+      "question": "Apakah domain dan hosting sudah gratis?",
+      "answer": "Ya, semua paket sudah termasuk gratis domain (.com / .id) dan hosting cepat untuk tahun pertama. Biaya perpanjangan tahun berikutnya transparan tanpa biaya tersembunyi."
+    },
+    {
+      "id": "mobile",
+      "chip": "Cepat dibuka di HP?",
+      "question": "Apakah website cepat dibuka dari HP?",
+      "answer": "Pasti. Website dibuat dengan kode bersih tanpa template berat, sehingga loading di bawah 2 detik baik di HP maupun komputer."
+    },
+    {
+      "id": "luar-kota",
+      "chip": "Melayani luar kota?",
+      "question": "Apakah BantuBuatWeb melayani klien dari luar kota?",
+      "answer": "Ya, kami melayani klien dari seluruh Indonesia secara online melalui WhatsApp, telepon, atau Google Meet."
+    },
+    {
+      "id": "garansi",
+      "chip": "Garansi setelah jadi",
+      "question": "Bagaimana jika ada kendala setelah website selesai?",
+      "answer": "Setiap pembuatan website sudah termasuk Garansi Pemeliharaan 30 Hari gratis (60 hari untuk Toko Online) untuk perbaikan kendala, update materi minor, dan panduan penggunaan."
+    },
+    {
+      "id": "payment",
+      "chip": "Bisa QRIS & cek ongkir?",
+      "question": "Apakah bisa integrasi payment gateway dan cek ongkir?",
+      "answer": "Bisa. Paket Toko Online sudah termasuk payment gateway Midtrans/Xendit (QRIS, Virtual Account, e-wallet) dan cek ongkir otomatis multi-ekspedisi (JNE, J&T, SiCepat)."
+    }
+  ]
+}
